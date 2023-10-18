@@ -13,9 +13,9 @@ npm install
 - To run the Project run these two commands on different Terminals
 
 ```bash
-php artisan serve
+npm run dev
 ```
 
 ```bash
-npm run dev
+php artisan serve
 ```
