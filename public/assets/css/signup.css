@@ -1,6 +1,6 @@
 body {
     align-items: center;
-    background-color: #15172b;
+    background-color: #0c1821;
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -67,11 +67,11 @@ body {
     top: -20px;
     transform: translateY(0);
     transition: transform 200ms;
-    width: 80px;
+    width: 76px;
   }
 
   .cut-short {
-    width: 60px;
+    width: 50px;
   }
 
   .input:focus ~ .cut,
@@ -80,15 +80,15 @@ body {
   }
 
   .placeholder {
-    color: #fff;
+    color: #f4f4f4;
     font-family: sans-serif;
     left: 20px;
-    line-height: 12px;
+    line-height: 14px;
     pointer-events: none;
     position: absolute;
     transform-origin: 0 50%;
     transition: transform 200ms, color 200ms;
-    top: 15px;
+    top: 14px;
   }
 
   .input:focus ~ .placeholder,
@@ -97,11 +97,11 @@ body {
   }
 
   .input:not(:placeholder-shown) ~ .placeholder {
-    color: #8585dc;
+    color: #ffffff;
   }
 
   .input:focus ~ .placeholder {
-    color: #f0e8ea;
+    color: #ffffff;
   }
 
   button {
@@ -117,4 +117,4 @@ body {
     margin-left: 55px;
     text-align: center;
     width: 60%;
-}
+  }
