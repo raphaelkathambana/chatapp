@@ -10,8 +10,7 @@
 
     <body>
         <form>
-
-            <div class="title">Hi there! </div>
+            <div class="title">Hi {{Auth::user()->name}}! </div>
 
             <div class="subtitle">Let's finish setting up your account!</div>
 
