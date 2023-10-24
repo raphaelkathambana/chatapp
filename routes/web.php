@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-})->middleware('verified');
+});
 
 Route::get('/SignIn', [AuthManager::class,'signin'])->name('signin');
 Route::get('/SignUp', [AuthManager::class,'signup'])->name('signup');

@@ -44,6 +44,7 @@
             <label for="password-confirm" class="placeholder">Confirm Password</label>
         </div>
 
-        <button type="submit">Sign Up</button>
+        <button type="submit">Register</button>
     </form>
+
 @endsection
