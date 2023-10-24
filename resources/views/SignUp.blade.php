@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
-    
+
     <link href="{{ asset('assets/css/signin.css') }}" rel="stylesheet" type="text/css" />
 
 
@@ -18,7 +18,7 @@
 
     <form action="{{route('signup.post')}}" method="POST" >
         @csrf
-        
+
         <div class="title">Welcome</div>
         <div class="subtitle">Let's create your account!</div>
 
@@ -44,7 +44,7 @@
 
         <div class="input-container ic2">
             <input id="email" class="input" name="email" type="text" placeholder=" " autocomplete="off" required />
-            <div class="cut cut-short"></div>
+            <div class="cut cut-shorter"></div>
             <label for="email" class="placeholder">Email</label>
         </div>
 
