@@ -1,43 +1,22 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="{{ asset('assets/css/signin.css') }}" rel="stylesheet" type="text/css" />
-
-    <link rel="preconnect" href="https://fonts.bunny.net">
-</head>
-
-
-<body>
-
+@extends('layouts.app')
+@section('content')
     <form>
-
         <div class="title">Sign In</div>
-
         <div class="subtitle">Lets chat! </div>
-
         <div class="input-container ic1">
-            <input id="username" class="input" type="text" placeholder=" " autocomplete= "off" >
+            <input id="username" class="input" type="text" placeholder=" " autocomplete= "off">
             <div class="cut"></div>
             <label for="username" class="placeholder">Username</label>
         </div>
-
         <div class="input-container ic2">
-            <input id="password" class="input" type="password" placeholder="" autocomplete= "off" >
+            <input id="password" class="input" type="password" placeholder="" autocomplete= "off">
             <div class="cut"></div>
             <label for="password" class="placeholder">Password</label>
         </div>
-        </div>
-
-
-        <button type="submit">Log In</button>
-
+        <button type="submit">Sign In</button>
     </form>
 
+    </body>
 
-</body>
-
-</html>
+    </html>
+@endsection
