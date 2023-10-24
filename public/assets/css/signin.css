@@ -71,7 +71,11 @@ body {
   }
 
   .cut-short {
-    width: 60px;
+    width: 75px;
+  }
+  
+  .cut-shorter {
+    width: 54px;
   }
 
   .input:focus ~ .cut,
