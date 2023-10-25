@@ -27,3 +27,7 @@ Route::post('/SignUp', [AuthManager::class,'signupPost'])->name('signup.post');
 Route::get('/SetAvatar', function () {
     return view('SetAvatar');
 });
+
+Route::get('/home', function() {
+    return view('home');
+})->middleware(['auth', 'verified']);
