@@ -2,25 +2,46 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 150vh;
 }
 .title {
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 30px;
     font-weight: bold;
-    margin: 10px 0;
+    margin-top: 30px;
+    color: #000000;
+    text-align: center;
+}
+
+.upload_image {
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.set_profile {
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    color: #070707;
+    text-align: center;
 
 }
 .subtitle {
     font-family: sans-serif;
     font-size: 16px;
     margin: 10px 0;
-
+    color: #000000;
+    text-align: center;
 }
 
 .choose_image_container {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
     border-radius: 100px;
     background-color: rgba(128, 128, 128, 0.489);
     margin: 20px;
@@ -36,26 +57,24 @@
 }
 
 .raw_image {
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    margin: auto;
+
 }
 .material-symbols-outlined {
     color: black;
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-  }
-  .white {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+.white {
     color: white;
-  }
+}
 
-  .aside {
+.aside {
     position: absolute;
     bottom: 10px;
-    right: 10px;
+    right: -10px;
     width: 40px;
     height: 40px;
     border-radius: 20px;
@@ -63,9 +82,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .avatar_container {
+.avatar_container {
     border: 1px solid black;
     border-radius: 15px;
     width: 50%;
@@ -74,62 +93,80 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
-  }
+}
 
-  .avatar {
+.blue {
+    background-color: #8E9DCC;
+    height: 50vh;
+    border-radius: 20px;
+    width: 40%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+
+}
+
+.avatar {
     width: 100px;
     height: 100px;
     border-radius: 50px;
     margin: 10px;
     cursor: pointer;
-  }
-
-
+}
 
 /* CSS */
 .done_btn {
-  align-items: center;
-  background-color: #0A66C2;
-  border: 0;
-  border-radius: 100px;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 20px;
-  max-width: 480px;
-  min-height: 40px;
-  min-width: 0px;
-  overflow: hidden;
-  padding: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-  touch-action: manipulation;
-  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
+    align-items: center;
+    background-color: #1b2a41;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 50px;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto,
+        "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+        "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    width: 90px;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    margin-left: 20px;
+    padding-right: 20px;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+        box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+        color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
 }
 
 .done_btn:hover,
-.done_btn:focus { 
-  background-color: #16437E;
-  color: #ffffff;
+.done_btn:focus {
+    background-color: #16437e;
+    color: #ffffff;
 }
 
 .done_btn:active {
-  background: #09223b;
-  color: rgb(255, 255, 255, .7);
+    background: #09223b;
+    color: rgb(255, 255, 255, 0.7);
 }
 
-.done_btn:disabled { 
-  cursor: not-allowed;
-  background: rgba(0, 0, 0, .08);
-  color: rgba(0, 0, 0, .3);
+.done_btn:disabled {
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.3);
 }
-
