@@ -117,7 +117,7 @@
 }
 
 .done_btn:hover,
-.done_btn:focus { 
+.done_btn:focus {
   background-color: #16437E;
   color: #ffffff;
 }
@@ -127,7 +127,7 @@
   color: rgb(255, 255, 255, .7);
 }
 
-.done_btn:disabled { 
+.done_btn:disabled {
   cursor: not-allowed;
   background: rgba(0, 0, 0, .08);
   color: rgba(0, 0, 0, .3);
