@@ -1,12 +1,19 @@
 @extends('layouts.app')
 @section('content')
+<style>
+    body {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+</style>
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <div class="title">Log In</div>
         <div class="subtitle">Lets chat! </div>
         <div class="input-container ic1">
             <input id="email" class="input @error('email') is-invalid @enderror" type="text" name="email" value="{{ old('email') }}" placeholder=" " autocomplete= "off">
-            <div class="cut"></div>
+            <div class="cut cut-shorter"></div>
             <label for="email" class="placeholder">Email</label>
             @error('email')
                 <span style="color: red;" class="subtitle invalid-feedback" role="alert">

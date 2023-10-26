@@ -1,0 +1,4 @@
+- Move welcome things to home
+- Combine css's to one css
+- Move from assets to views
+
