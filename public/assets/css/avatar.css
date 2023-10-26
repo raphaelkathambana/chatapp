@@ -144,8 +144,8 @@
 
 .done_btn:hover,
 .done_btn:focus {
-    background-color: #16437e;
-    color: #ffffff;
+  background-color: #16437E;
+  color: #ffffff;
 }
 
 .done_btn:active {
@@ -154,7 +154,7 @@
 }
 
 .done_btn:disabled {
-    cursor: not-allowed;
-    background: rgba(0, 0, 0, 0.08);
-    color: rgba(0, 0, 0, 0.3);
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
 }

@@ -14,6 +14,7 @@
     <!-- Styles -->
     <script src="{{ asset('assets/js/pages/datatable-pages.init.js') }}"></script>
     <link href="{{ asset('assets/css/signin.css') }}" rel="stylesheet" type="text/css" />
+    @vite('resources/css/app.css')
 
 </head>
 
