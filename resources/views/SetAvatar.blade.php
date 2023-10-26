@@ -41,9 +41,9 @@ crossorigin="anonymous">
                     <img onclick="handleClickAvatar('avatar7')"  class="avatar" src="{{asset('avatars/avatar7.png')}}" alt="avatar7">
                 </div>
             </div>
-            
-            
-            
+
+
+
         </div>
     <form action="{{route('upload_profile.post')}}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -51,8 +51,15 @@ crossorigin="anonymous">
         <input type="text" value="avatar4.png" hidden name="avatar" id="avatar_input">
         <input id="done_submit" type="submit" hidden />
     </form>
-    
+
     <script src="{{asset('assets/js/profile_photo.js')}}"></script>
     </body>
 
     </html>
+@extends('layouts.app')
+@section('content')
+    <form>
+        <div class="title">Hi {{ Auth::user()->name }}! </div>
+        <div class="subtitle">Let's finish setting up your account!</div>
+    </form>
+@endsection
