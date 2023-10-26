@@ -31,6 +31,5 @@ Route::get('/SetAvatar', function () {
     return view('SetAvatar');
 });
 
-Route::get('/home', function() {
-    return view('home');
-})->middleware(['auth', 'verified']);
+
+
