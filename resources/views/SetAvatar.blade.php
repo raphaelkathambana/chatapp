@@ -34,7 +34,6 @@
                 </div>
             </div>
 
-            <!-- <div class="upload_image">Upload Image </div> -->
 
         </div>
         <div class="set_profile">Choose an avatar </div>
@@ -75,3 +74,4 @@
 </body>
 
 </html>
+

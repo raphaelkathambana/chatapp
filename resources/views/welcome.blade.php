@@ -13,9 +13,21 @@
 
 <body>
     <div class="nav">
-        <a href="index.php">Home</a>
-        <a href="SignUp"> SignUp</a>
-        <a href="SignIn"> SignIn</a>
+        @if (Route::has('login'))
+                <a href="/"> Chatify</a>
+                @auth
+                    <a href="{{ url('/home') }}">Home</a>
+
+                        <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form action='{{ route('logout') }}' method='post' id="logout-form">
+                            @csrf
+                        </form>
+
+                @else
+                    <a href="{{ route('login') }}">Log in</a>
+                    <a href="{{ route('register') }}">Register</a>
+                @endauth
+    @endif
     </div>
 
     <input type="checkbox" name="" id="check">
@@ -31,6 +43,8 @@
             <li><a href="#">About</a></li>
         </ul>
     </div>
+
+
 
 </body>
 
