@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
+
 <body>
     <div class="nav">
         @if (Route::has('login'))
-            <a href="/"> Chatify</a>
+            <a href="/">Chatify</a>
             @auth
                 <a href="{{ url('/home') }}">Home</a>
                 <a href="{{ url('/logout') }}"
@@ -21,6 +22,7 @@
     <input  type="checkbox" name="" id="check">
     <div class="side">
         <label for="check">
+            <img srs="../css/images/times.png">
             <span class="span fas fa-times" id="times"></span>
             <span class="span fas fa-bars" id="bars"></span>
         </label>

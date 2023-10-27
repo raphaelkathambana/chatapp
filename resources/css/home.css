@@ -2,7 +2,10 @@ body {
     margin: 0px;
     box-sizing: border-box;
     color: #ccc9dc;
-    background-color: #15172b;
+    background-color: rgb(22, 24, 44);
+    background-image: url('images/bg.png');
+    background-size: cover;
+    background-position: center;
     font-family: sans-serif;
     height: 100vh;
 }
@@ -96,11 +99,30 @@ body {
     color: #ccc9dc;
     padding: 3px -48px;
     cursor: pointer;
-    background-color: #15172b;
+    background-color: rgb(22, 24, 44);
 
 }
+/* #times.span{
+    background-image: url('images/times.png');
+    width: 20px;
+    height: 20px;
+}
+#bars.span{
+    background-image: url('images/bars.png');
+    width: 20px;
+    height: 20px;
+}
 
-#check:checked ~ .side{
+.bars{
+    background-image: url('images/bars.png');
+    background-size: 20px;
+}
+.times{
+    background-image: url('images/times.png');
+    background-size: 20px;
+} */
+
+#check:checked ~ .side {
     transition: 0.7s ease;
     transform: translate(0);
 }
@@ -109,3 +131,29 @@ body {
     transition: 0.7s ease;
     display: none;
 }
+
+/* ******************************** */
+/* .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1
+}
+.fas {
+    font-family: "Font Awesome 5 Free"
+}
+.fas {
+    font-weight: 900
+}
+
+.fa-times:before {
+    background-image: url('images/bars.png');
+    background-size: 5px;
+}
+.fa-bars:before {
+    background-image: url('images/bars.png');
+    background-size: 5px;
+} */

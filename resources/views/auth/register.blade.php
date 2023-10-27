@@ -51,7 +51,10 @@
             <label for="password-confirm" class="placeholder">Confirm Password</label>
         </div>
 
-        <button type="submit">Register</button>
+        <button class="button1" type="submit">Register</button>
+        <div class="lowerLink">
+            <a href="{{ route('login') }}">Already have a account? Log In!</a>
+        </div>
     </form>
 
 @endsection
