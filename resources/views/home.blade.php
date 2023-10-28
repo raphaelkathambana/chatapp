@@ -19,7 +19,7 @@
         @endif
     </div>
 
-    <input  type="checkbox" name="" id="check">
+    <input type="checkbox" name="" id="check">
     <div class="side">
         <label for="check">
             <img srs="../css/images/times.png">
@@ -33,6 +33,12 @@
             <li><a href="#">About</a></li>
         </ul>
     </div>
+
+    <div class="chat">
+        <label for="check">
+        <input type="text" >
+    </div>
+</label>
 
 </body>
 </html>

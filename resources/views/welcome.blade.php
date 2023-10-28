@@ -30,7 +30,7 @@
             </div>
             <hr>
             <div class="lorem">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius blanditiis dignissimos nihil harum, eum quis
+                Lorem ipsum! dolor sit amet consectetur adipisicing elit. Eius blanditiis dignissimos nihil harum, eum quis
                 nisi laudantium quaerat laborum ratione mollitia tenetur consequuntur alias libero animi error numquam
                 nesciunt officia!
             </div>
