@@ -19,7 +19,7 @@
         @endif
     </div>
 
-    <input type="checkbox" name="" id="check">
+    <input style="display: none" type="checkbox" name="" id="check">
     <div class="side">
         <label for="check">
             <img srs="../css/images/times.png">
