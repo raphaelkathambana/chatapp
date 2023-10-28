@@ -3,7 +3,7 @@ body {
     box-sizing: border-box;
     color: #ccc9dc;
     background-color: rgb(22, 24, 44);
-    background-image: url('images/bg.png');
+    background-image: url('images/bg.gif');
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
@@ -15,7 +15,7 @@ body {
     top: 0px;
     left: 0px;
     right: 0px;
-    background-color: #324A5F;
+    background-color: #324A5F90;
     padding-bottom: 10px;
     padding-top: 10px;
 
@@ -41,9 +41,9 @@ body {
     height: 100%;
     width: 240px;
     position: fixed;
-    background-color: #324A5F;
+    background-color: #324a5f90;
     z-index: 1;
-    transition: 0.5s ease;
+    transition: 0.5s;
     transform: translate(-250px);
 }
 
@@ -52,6 +52,15 @@ body {
     font-size: 30px;
     padding: 30px;
     text-transform: uppercase;
+}
+
+#check:checked ~ .side {
+    transition: 0.5s;
+    transform: translate(0);
+
+}
+#check:checked ~ .side #bars{
+    display: none;
 }
 
 .ul{
@@ -102,58 +111,4 @@ body {
     background-color: rgb(22, 24, 44);
 
 }
-/* #times.span{
-    background-image: url('images/times.png');
-    width: 20px;
-    height: 20px;
-}
-#bars.span{
-    background-image: url('images/bars.png');
-    width: 20px;
-    height: 20px;
-}
 
-.bars{
-    background-image: url('images/bars.png');
-    background-size: 20px;
-}
-.times{
-    background-image: url('images/times.png');
-    background-size: 20px;
-} */
-
-#check:checked ~ .side {
-    transition: 0.7s ease;
-    transform: translate(0);
-}
-
-#check:checked ~ .side #bars{
-    transition: 0.7s ease;
-    display: none;
-}
-
-/* ******************************** */
-/* .fas {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1
-}
-.fas {
-    font-family: "Font Awesome 5 Free"
-}
-.fas {
-    font-weight: 900
-}
-
-.fa-times:before {
-    background-image: url('images/bars.png');
-    background-size: 5px;
-}
-.fa-bars:before {
-    background-image: url('images/bars.png');
-    background-size: 5px;
-} */
