@@ -21,8 +21,8 @@
 
             </div>
             @error('email')
-                <span style="color: rgb(255, 0, 0, 0.7)" class="subtitle invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
+                <span class="error invalid-feedback" role="alert">
+                    {{ $message }}
                 </span>
             @enderror
 
@@ -31,17 +31,17 @@
                     placeholder="" autocomplete= "off">
                 <div class="cut"></div>
                 <label for="password" class="placeholder">Password</label>
-
             </div>
+            <a style="float: right" class="a-link" id="forgot" href="{{ route('password.request') }}">Forgot password?</a><br>
             @error('password')
-                <span style="color: rgba(255, 0, 0, 0.7);" class="subtitle invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
+                <span class="error invalid-feedback" role="alert">
+                    {{ $message }}
                 </span>
             @enderror
         </div>
         <button class="button1" type="submit">Login</button>
         <div class="lowerLink">
-            <a href="{{ route('register') }}">Don't have a account? Sign Up!</a>
+            <a class="a-link" href="{{ route('register') }}">Don't have a account? Sign Up!</a>
         </div>
     </form>
 @endsection

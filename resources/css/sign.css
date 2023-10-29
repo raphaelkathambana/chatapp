@@ -1,9 +1,9 @@
-.form {
+form {
     border-radius: 20px;
     box-sizing: border-box;
-    height: 500px;
-    padding: 20px;
-    width: 320px;
+    /* height: 500px; */
+    /* padding: 20px; */
+    width: 360px;
 }
 
 .title {
@@ -20,6 +20,10 @@
     font-size: 16px;
     font-weight: 600;
     margin-top: 10px;
+}
+
+.error{
+    color: rgb(255, 0, 0);
 }
 
 /* ******************************************** */
@@ -48,7 +52,7 @@
     height: 80%;
     outline: 0;
     padding: 0px 25px 0;
-    width: 120%;
+    width: 100%;
 }
 
 .cut {
@@ -103,13 +107,13 @@
 
 .lowerLink{
     margin-top: 40px;
-    margin-left: 40px;
+    margin-left: 17%;
 }
-.lowerLink a{
+.a-link{
     color: #08d;
     text-decoration: none;
 }
-.lowerLink a:hover{
+.a-link:hover{
     transition: 0.3s;;
     color: rgb(139, 211, 255);
     text-decoration: none;
@@ -130,7 +134,7 @@ hr{
     font-size: 18px;
     height: 40px;
     margin-top: 20px;
-    margin-left: 25%;
+    margin-left: 20%;
     text-align: center;
     width: 60%;
 }
@@ -139,9 +143,7 @@ hr{
     background-color: rgb(14, 159, 249);
     font-size: 19px;
     color: #f0e8ea;
-    margin-left: 23.5%;
+    margin-left: 18.5%;
     width: 63%;
-    margin-top: 18px;
-    height: 42px;
     transition: 0.3s;
 }

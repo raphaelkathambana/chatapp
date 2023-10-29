@@ -17,6 +17,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-todo.txt
+mytodo.txt
 *.kra
 /resources/-unused-
