@@ -1,0 +1,36 @@
+
+
+body {
+    margin: 0px;
+    box-sizing: border-box;
+    color: #ccc9dc;
+    background-color: var(--bgColor);
+    background-image: url('images/bg.gif');
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: var(--navColor);
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+
+.nav a {
+    color: var(--fontColor);
+    text-decoration: none;
+    padding: 11px;
+}
+
+.nav a:hover {
+    transition: 0.2s;
+    background-color: var(--navHover);
+    text-decoration: none;
+}

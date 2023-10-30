@@ -4,18 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="{{ asset('assets/css/avatar.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous">
     <!-- <script src="{{ asset('assets/js/pages/datatable-pages.init.js') }}"></script> -->
-    <style>
-    </style>
 </head>
 
 <body>
 
+ {{-- @extends('layouts.app')
+ @section('content') --}}
 
     <div class="container">
         <div class="blue">
@@ -71,7 +72,5 @@
     </form>
 
     <script src="{{ asset('assets/js/profile_photo.js') }}"></script>
-</body>
-
-</html>
+{{-- @endsection --}}
 

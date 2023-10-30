@@ -12,7 +12,7 @@
         <div>
             <div style="display: flex">
                 <h1> Welcome To Chatify</h1>
-                <ul class = "menu list">
+                <ul class = "list">
                     @auth
                         <li><a href="{{ url('/home') }}">Home</a></li>
                         <li>

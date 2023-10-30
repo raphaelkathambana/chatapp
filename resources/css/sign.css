@@ -1,13 +1,11 @@
 form {
     border-radius: 20px;
     box-sizing: border-box;
-    /* height: 500px; */
-    /* padding: 20px; */
     width: 360px;
 }
 
 .title {
-    color: #eee;
+    color: var(--fontColor);
     font-family: sans-serif;
     font-size: 36px;
     font-weight: 600;
@@ -15,7 +13,7 @@ form {
 }
 
 .subtitle {
-    color: #eee;
+    color: var(--fontColor);
     font-family: sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -23,7 +21,7 @@ form {
 }
 
 .error{
-    color: rgb(255, 0, 0);
+    color: red;
 }
 
 /* ******************************************** */
@@ -43,11 +41,11 @@ form {
 }
 
 .input {
-    background-color: #324A5F;
+    background-color: var(--inputColor);
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
-    color: #eee;
+    color: var(--fontColor);
     font-size: 18px;
     height: 80%;
     outline: 0;
@@ -56,7 +54,7 @@ form {
 }
 
 .cut {
-    background-color: #15172b;
+    background-color: var(--bgColor);
     border-radius: 10px;
     height: 20px;
     left: 20px;
@@ -81,7 +79,7 @@ form {
 }
 
 .placeholder {
-    color: #fff;
+    color: var(--fontColor);
     font-family: sans-serif;
     left: 20px;
     line-height: 12px;
@@ -102,7 +100,7 @@ form {
 }
 
 .input:focus~.placeholder {
-    color: #f0e8ea;
+    color: var(--fontColor);
 }
 
 .lowerLink{
@@ -110,23 +108,18 @@ form {
     margin-left: 17%;
 }
 .a-link{
-    color: #08d;
+    color: var(--linkColor);
     text-decoration: none;
 }
 .a-link:hover{
-    transition: 0.3s;;
-    color: rgb(139, 211, 255);
+    transition: 0.3s;
+    color: var(--linkHover);
     text-decoration: none;
 }
-hr{
-    background-color: #58b4ff76;
-    margin-left: 30px;
-    height: 1px;
-    border: none;
-}
+
 .button1 {
-    background-color: rgb(0, 136, 221);
-    color: #f0e8ea;
+    background-color: var(--linkColor);
+    color: var(--fontColor);
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -140,7 +133,6 @@ hr{
 }
 
 .button1:hover {
-    background-color: rgb(14, 159, 249);
     font-size: 19px;
     color: #f0e8ea;
     margin-left: 18.5%;
