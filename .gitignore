@@ -20,3 +20,4 @@ yarn-error.log
 todo.txt
 *.kra
 /resources/-unused-
+*.todo
