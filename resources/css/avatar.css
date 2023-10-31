@@ -72,6 +72,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+
+.edit_icon {
+    cursor: pointer;
 }
 
 .avatar_container {
