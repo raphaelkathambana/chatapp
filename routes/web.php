@@ -15,26 +15,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/SignIn', [AuthManager::class, 'signin'])->name('signin');
+Route::get('/SignUp', [AuthManager::class, 'signup'])->name('signup');
+Route::post('/SignIn', [AuthManager::class, 'signinPost'])->name('signin.post');
+Route::post('/SignUp', [AuthManager::class, 'signupPost'])->name('signup.post');
+
+Route::get('/landing', function () {
+    return view('landing');
+});
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/SignIn', [AuthManager::class,'signin'])->name('signin');
-Route::get('/SignUp', [AuthManager::class,'signup'])->name('signup');
-Route::post('/SignIn', [AuthManager::class,'signinPost'])->name('signin.post');
-Route::post('/SignUp', [AuthManager::class,'signupPost'])->name('signup.post');
-
-Route::post('upload_profile_photo', [ProfileImageManager::class,'upload'])->name('upload_profile.post');
-
-
-Route::get('/SetAvatar', function () {
-    return view('SetAvatar');
-});
-
-Route::get('/home', function() {
-    return view('home');
-})->middleware(['auth', 'verified']);
-
-Route::get('/landing', function() {
-    return view('landing');
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::get('/SetAvatar', function () {
+        return view('SetAvatar');
+    });
+    Route::post('upload_profile_photo', [ProfileImageManager::class, 'upload'])->name('upload_profile.post');
+    Route::get('/home', function () {
+        return view('home');
+    });
 });
