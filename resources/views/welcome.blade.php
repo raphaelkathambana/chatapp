@@ -35,6 +35,7 @@
                 nesciunt officia!
             </div>
         </div>
-        <div class="tap"></div>
+        {{-- <div class="tap"></div> --}}
     @endif
+    <button onclick="Mode()">Mode</button>
 @endsection

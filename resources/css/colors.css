@@ -1,7 +1,17 @@
-:root {
-    /*  */
+.dark {
     --fontColor: #ccc9dc;
     --bgColor: #16182c;
+    --navColor: #324A5F90;
+    --navHover: #15172b68;
+    --inputColor: #324A5F;
+    --chatColor: #7D84b2;
+    --linkColor: #08d;
+    --linkHover: #8bd3ff;
+    --hr: #58b4ff76;
+}
+.light {
+    --fontColor: #ccc9dc;
+    --bgColor: #9b9daf;
     --navColor: #324A5F90;
     --navHover: #15172b68;
     --inputColor: #324A5F;
