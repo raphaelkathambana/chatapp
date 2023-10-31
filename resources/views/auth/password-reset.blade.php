@@ -43,6 +43,8 @@
             <label for="password-confirm" class="placeholder">Confirm Password</label>
         </div>
 
-        <button class="button1" type="submit">Register</button>
+        <button class="button1" type="submit">
+            {{ __('Update Password') }}
+        </button>
     </form>
 @endsection
