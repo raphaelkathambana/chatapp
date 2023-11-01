@@ -22,7 +22,6 @@
     <input style="display: none" type="checkbox" name="" id="check">
     <div class="side">
         <label for="check">
-            <img srs="../css/images/times.png">
             <span class="span fas fa-times" id="times"></span>
             <span class="span fas fa-bars" id="bars"></span>
         </label>
