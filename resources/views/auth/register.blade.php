@@ -34,6 +34,17 @@
             @enderror
         </div>
 
+        <div class="input-container ic1">
+            <input id="mobile_number" class="input @error('mobile_number') is-invalid @enderror" type="tel" placeholder=" " autocomplete="off" name="mobile_number" value="{{ old('mobile_number') }}" required />
+            <div class="cut cut-shorter"></div>
+            <label for="mobile_number" class="placeholder">Mobile Number</label>
+            @error('mobile_number')
+                <span style="color: red;" class="subtitle invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+
         <div class="input-container ic2">
             <input id="password" class="input @error('password') is-invalid @enderror" name="password" type="password" placeholder=" " autocomplete="off" required />
             <div class="cut cut-short"></div>
