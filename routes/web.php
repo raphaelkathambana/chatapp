@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\ProfileImageManager;
+use App\Http\Controllers\VerifyMobileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +28,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => ['auth', 'verified']], function () {
+Route::group(['middleware' => ['auth', 'verify.mobile']], function () {
     Route::get('/SetAvatar', function () {
         return view('SetAvatar');
     });
@@ -35,4 +36,12 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/home', function () {
         return view('home');
     });
+
+});
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('verify-mobile', [VerifyMobileController::class, '__invoke'])
+        ->middleware(['throttle:6,1'])
+        ->name('verification.verify-mobile');
+        
+    Route::view('verify-mobile', 'auth.mobile-verify')->name('verification-mobile.notice');
 });
