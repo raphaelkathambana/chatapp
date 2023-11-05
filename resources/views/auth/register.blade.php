@@ -9,8 +9,8 @@
 </style>
     <form action="{{ route('register') }}" method="POST">
         @csrf
-        <div class="title">Welcome</div>
-        <div class="subtitle">Let's create your account!</div>
+        <div class="login">Welcome</div>
+        <div class="sub">Let's create your account!</div>
 
         <div class="input-container ic1">
             <input id="name" class="input @error('name') is-invalid @enderror" type="text" placeholder=" " autocomplete="off" name="name" value="{{ old('name') }}" required />

@@ -17,17 +17,16 @@
                 <h1> Welcome To Chatify</h1>
                 <ul class = "list">
                     @auth
-                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        {{-- <li><a href="{{ url('/home') }}">Home</a></li>
                         <li>
                             <a href="{{ url('/logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                             <form action='{{ route('logout') }}' method='post' id="logout-form">
-                                @csrf
+                                @csrf --}}
                             </form>
                         </li>
                     @else
-                     <!--   <div class="buttons"><li><a href="{{ route('login') }}">Log in</a></div></li>
-                        <div class="buttons"><li><a href="{{ route('register') }}">Register</a></div></li> -->
+
                     @endauth
                 </ul>
             </div>
@@ -44,6 +43,7 @@
 @endsection
 
 <div class="set_mode">
+
 <button onclick="Mode()"><i id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #000000"></i></i></button>
 </div>
 
