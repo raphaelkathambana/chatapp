@@ -38,6 +38,9 @@
         <input type="text" >
     </div>
 </label>
+   <div class="set_mode">
+    <button onclick="Mode()"><i id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #000000"></i></i></button>
+    </div>
 
 </body>
 </html>

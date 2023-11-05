@@ -24,7 +24,7 @@
 }
 
 .options a{
-    color: rgb(80, 173, 255);
+    color: var(--linkColor);
     float: right;
     display: block;
     text-decoration: none;
@@ -54,7 +54,7 @@
 
 .welcome h1{
     font-size: 40px;
-    color: rgb(182, 181, 231);
+    color: var(--title);
     text-align: left;
     padding: 20px;
     margin-left: 120px;

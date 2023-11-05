@@ -44,9 +44,7 @@
 @endsection
 
 <div class="set_mode">
-
-<button onclick="Mode()"><i class="fa-solid fa-circle-half-stroke" style="color: #000000"></i></i></button>
-<!--<button onclick="Mode()"><i class="fa-solid fa-circle-half-stroke fa-rotate-180" style="color: #000000"></i></i></button>-->
+<button onclick="Mode()"><i id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #000000"></i></i></button>
 </div>
 
-<body>
+</body>
