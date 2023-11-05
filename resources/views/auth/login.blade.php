@@ -9,8 +9,9 @@
     </style>
     <form method="POST" action="{{ route('login') }}">
         @csrf
-        <div class="title">Log In</div>
-        <div class="subtitle">Lets chat! </div>
+
+        <div class="login">Log In</div>
+        <div class="sub">Lets chat! </div>
 
         <div>
             <div class="input-container ic1">
@@ -32,7 +33,7 @@
                 <div class="cut"></div>
                 <label for="password" class="placeholder">Password</label>
             </div>
-            <a style="float: right" class="a-link" id="forgot" href="{{ route('password.request') }}">Forgot password?</a><br>
+            <div class="forgot"><a style="float: right" class="a-link" href="{{ route('password.request') }}">Forgot password?</a><br></div>
             @error('password')
                 <span class="error invalid-feedback" role="alert">
                     {{ $message }}
@@ -41,7 +42,7 @@
         </div>
         <button class="button1" type="submit">Login</button>
         <div class="lowerLink">
-            <a class="a-link" href="{{ route('register') }}">Don't have a account? Sign Up!</a>
+            <a class="a-link" href="{{ route('register') }}">Don't have an account? Sign Up!</a>
         </div>
     </form>
 @endsection

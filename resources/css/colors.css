@@ -1,5 +1,5 @@
 .dark {
-    --fontColor: #ccc9dc;
+    --fontColor: #fefeff;
     --bgColor: #16182c;
     --navColor: #324A5F90;
     --navHover: #15172b68;
@@ -8,6 +8,7 @@
     --linkColor: #08d;
     --linkHover: #8bd3ff;
     --hr: #58b4ff76;
+    --title: rgb(255, 255, 255);
 }
 .light {
     --fontColor: #ccc9dc;
@@ -16,7 +17,8 @@
     --navHover: #15172b68;
     --inputColor: #324A5F;
     --chatColor: #7D84b2;
-    --linkColor: #08d;
-    --linkHover: #8bd3ff;
+    --linkColor: rgb(35, 60, 116);
+    --linkHover: #063653;
     --hr: #58b4ff76;
+    --title: #000000;
 }
