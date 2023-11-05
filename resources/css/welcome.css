@@ -14,8 +14,7 @@
 
 .options{
   display: inline;
-  border: solid white;
-
+  border: solid #10014a;
 }
 
 .options li{
@@ -34,7 +33,7 @@
     margin-right: 20px;
 }
 
-.a:after {
+/* .a:after {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
     content: "";
@@ -50,7 +49,7 @@
 .a:hover:after {
     width: 100%;
     left: 0;
-  }
+  } */
 
 
 .welcome h1{
@@ -63,7 +62,7 @@
 }
 
 .lorem p{
-    color: aliceblue;
+    color: rgb(254, 254, 254);
     width: 100%;
 }
 
@@ -84,6 +83,19 @@ hr{
     margin-right: 30px;
     height: 1px;
     border: none;
+}
+
+.set_mode{
+    padding: 10px;
+    float: left;
+    width:50%;
+}
+
+button{
+    width: 10%;
+    color: #252732;
+    border-radius: 14px;
+    height: 30px;
 }
 
 /* .tap {

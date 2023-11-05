@@ -8,6 +8,7 @@
     <title>{{ Config::get('app.name', 'Chatify') }}</title>
     {{-- <link rel="icon" href="resources\css\images\logo.png" type="image/icon"> --}}
 
+    <link rel="stylesheet" href="{{ asset('fontawesome-free-6.4.2-web\css') }}">
     <script>
         var dark = true;
         function Mode() {
@@ -23,6 +24,7 @@
     </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
     <script src="{{ asset('assets/js/pages/datatable-pages.init.js') }}"></script>
 
     @vite(['resources/css/app.css','resources/js/app.js'])
