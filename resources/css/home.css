@@ -52,7 +52,7 @@
 }
 
 .ul li:hover a{
-    background-color: #15172b64;
+    background-color: var(--navHover);
     letter-spacing: 1px;
 }
 
@@ -65,7 +65,7 @@
     color: var(--fontColor);
     padding: 3px -48px;
     cursor: pointer;
-    background-color: rgb(22, 24, 44);
+    background-color: var(--bgColor);
 
 }
 
@@ -82,7 +82,7 @@
     padding-top: 10px;
 }
 .chat input  {
-    background-color: var(--fontColor);
+    background-color: var(--chatBox);
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;

@@ -26,6 +26,7 @@
             <span class="span fas fa-bars" id="bars"></span>
         </label>
         <ul class="side-menu ul">
+            <button onclick="Mode()">Mode</button>
             <li><a href="#">Home</a></li>
             <li><a href="#">News</a></li>
             <li><a href="#">Contact</a></li>
