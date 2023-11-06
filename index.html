@@ -3,9 +3,6 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}" />
-
         <title>Chatify</title>
         <link
             rel="icon"
@@ -18,28 +15,6 @@
             href="public\fontawesome-free-6.4.2-web\css\all.css"
         />
 
-        <script>
-            var dark = true;
-            var toggle_icon = document.getElementById("light-toggle");
-
-            function Mode() {
-                if (dark == true) {
-                    document.body.className = "light";
-                    toggle_icon.setAttribute(
-                        "class",
-                        "fa-solid fa-circle-half-stroke"
-                    );
-                    dark = false;
-                } else if (dark == false) {
-                    document.body.className = "dark";
-                    toggle_icon.setAttribute(
-                        "class",
-                        "fa-solid fa-circle-half-stroke fa-rotate-180"
-                    );
-                    dark = true;
-                }
-            }
-        </script>
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
@@ -47,7 +22,6 @@
         <link rel="stylesheet" href="resources\css\app.css" />
         <script src="resources\js\app.js"></script>
 
-        <!-- @vite(['resources/css/app.css','resources/js/app.js']) -->
     </head>
 
     <body class="dark">
@@ -77,21 +51,21 @@
                         <a class="nav-link" href="#">Pricing</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ url('/home') }}">Home</a>
+                        <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item active">
                         <a
-                            href="{{ url('/logout') }}"
+                            href="#"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                             >Logout</a
                         >
-                        <form method="post" id="logout-form">@csrf</form>
+                        <form method="post" id="logout-form"></form>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                        <a class="nav-link" href="#">Login</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('register') }}"
+                        <a class="nav-link" href="#"
                             >Register</a
                         >
                     </li>
