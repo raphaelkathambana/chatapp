@@ -6,16 +6,18 @@ form {
 
 .login {
     color: var(--fontColor);
-    font-family: sans-serif;
+    font-family: comfortaa;
     font-size: 40px;
     font-weight: 600;
     margin-top: 30px;
+    letter-spacing: 0.15rem;
     text-align: center;
 }
 
 .sub {
     color: var(--fontColor);
-    font-family: sans-serif;
+    font-family: comfortaa;
+    letter-spacing: 0.10rem;
     font-size: 16px;
     font-weight: 600;
     margin-top: 10px;
@@ -51,6 +53,7 @@ form {
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
+    font-family: 'comfortaa';
     color: var(--fontColor);
     font-size: 18px;
     height: 80%;
@@ -86,7 +89,7 @@ form {
 
 .placeholder {
     color: var(--fontColor);
-    font-family: sans-serif;
+    font-family: 'comfortaa';
     left: 20px;
     line-height: 12px;
     pointer-events: none;

@@ -5,8 +5,8 @@
 
     <div class="options">
     <ul>
-    <li><a href="{{ route('login') }}"> Login </li>
-    <li><a href="{{ route('register') }}"> Register </li>
+    <li><a href="{{ route('login') }}"> Sign In </li><br />
+    <li><a href="{{ route('register') }}"> Sign Up</li>
     </ul>
     </div>
 
