@@ -9,8 +9,10 @@
 
 .image_container {
     width: 150px;
+    min-width: 150px;
     height: 150px;
     border-radius: 75px;
+    overflow: hidden;
     background-color: rgba(128, 128, 128, 0.489);
     margin-right: 40px;
 }
@@ -26,6 +28,11 @@ a {
     text-decoration: none;
 
 }
+
+.hidden {
+  display: none;
+}
+
 
 
 /* CSS */
