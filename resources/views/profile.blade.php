@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <style>
         body {
             display: flex;
@@ -7,16 +8,21 @@
 
         }
     </style>
+    
     <body>
         <div class="profile_page_container">
-
+        
         <h2>Profile</h2>
         <hr>
         <br>
         <div class="profile_header">
-            <div class="image_container"></div>
+            <p id="profile_image_url" class="hidden">{{ Auth::user()->profile_photo }}</p>
+            <div id="profile_image_container" class="image_container">
+                <img width="100%" id="profile_image" class="profile_image" src="" />
+            </div>
             <div>
-                <p class="user_name">Dennis Mugo</p>
+                <p class="user_name">{{ Auth::user()->name }}</p>
+                <p class="user_name">{{ Auth::user()->email }}</p>
             </div>
         </div>
         <br>
@@ -25,11 +31,8 @@
         </div>
         <hr>
         <div>
-            <p>Edit your bio</p>
-                    
-            <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="edit_bio_btn" role="button">Edit Bio</button>
-            
-            
+            <p>Edit your bio</p>        
+            <button class="edit_bio_btn" role="button">Edit Bio</button>
             
         </div>
         <br>
@@ -53,17 +56,28 @@
         </div>
         <br>
         <hr/>
+
         <div>
             <p style="color: rgb(184, 55, 55);">Delete My Account</p>
+
             <a href="#">
             <button class="delete_account" role="button">Delete Account</button>
             </a>
         </div>
         <br>
-        <hr/>
+        <hr/> -->
 
         </div>
     </body>
-
+    <script>
+        (function () {
+            let profileUrl = document.querySelector("#profile_image_url");
+            let profileImage = document.getElementById("profile_image");
+            let path = `uploads/${profileUrl.innerHTML}`;
+            if (!path) return;
+            profileImage.src = `{{asset('${path}')}}`;
+            console.log(profileImage.src);
+        })();
+    </script>
 
 @endsection

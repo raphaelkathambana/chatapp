@@ -22,12 +22,15 @@
 }
 
 .image_container {
+
     width: 120px;
+    min-width: 120px;
     height: 120px;
-    border-radius: 75px;
+    border-radius: 60px;
     background-color: rgba(0, 0, 0, 0.489);
     margin-left: 120px;
     margin-right: 20px;
+
 }
 
 .user_name {
@@ -48,6 +51,11 @@ a {
     text-decoration: none;
 
 }
+
+.hidden {
+  display: none;
+}
+
 
 
 /* CSS */
