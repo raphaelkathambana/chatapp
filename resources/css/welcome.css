@@ -38,6 +38,7 @@
     display: block;
     padding-bottom: 10px;
     padding-top: 10px;
+    font-family: "comfortaa";
     position: relative;
     margin-right:25px;
 
@@ -50,6 +51,7 @@
     display: block;
     height: 2px;
     left: 50%;
+
     position: absolute;
     background: var(--linkColor);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
@@ -64,6 +66,8 @@
 .welcome h1{
     font-size: 40px;
     color: var(--title);
+    letter-spacing: 0.10rem;
+    font-family: 'comfortaa';
     text-align: left;
     padding: 20px;
     margin-left: 120px;
