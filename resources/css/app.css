@@ -1,5 +1,9 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
 @import 'nav.css';
 @import 'home.css';
 @import 'sign.css';
 @import 'welcome.css';
 @import 'colors.css';
+@import 'avatar.css';
+@import 'profile.css';
+@import 'verification.css';

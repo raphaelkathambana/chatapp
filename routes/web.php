@@ -36,3 +36,13 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         return view('home');
     });
 });
+
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/home', function() {
+    return view('home');
+})->middleware(['auth', 'verified']);
+

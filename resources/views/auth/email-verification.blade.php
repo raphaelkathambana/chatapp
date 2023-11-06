@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Verify Your Email Address') }}</div>
-
+                    <br />
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
@@ -15,10 +15,17 @@
                         @endif
 
                         {{ __('Before proceeding, please check your email for a verification link.') }}
-                        {{ __('If you did not receive the email') }},
+                        <br />
+                        <br />
+
+                        {{ __('If you did not receive the email') }}, {{ __('click here to request another') }}
                         <form class="d-inline" method="POST" action="{{ route('verification.send') }}">
                             @csrf
-                            <input type="submit" value="Resend Email" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }} />
+                            <br />
+                            <br />
+                            <input type="submit" value="Resend Email" class="btn btn-link-baseline"/>
+
+
                         </form>
                     </div>
                 </div>

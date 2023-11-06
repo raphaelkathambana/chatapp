@@ -9,7 +9,7 @@
                 <a href="{{ url('/home') }}">Home</a>
                 <a href="{{ url('/logout') }}"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                <form action='{{ route('logout') }}' method='post' id="logout-form">
+                <form action="{{ route('logout') }}" method='post' id="logout-form">
                     @csrf
                 </form>
             @else
@@ -20,7 +20,7 @@
     </div>
 
     <input style="display: none" type="checkbox" name="" id="check">
-    <div class="side">
+    {{-- <div class="side">
         <label for="check">
             <span class="span fas fa-times" id="times"></span>
             <span class="span fas fa-bars" id="bars"></span>
@@ -32,13 +32,16 @@
             <li><a href="#">Contact</a></li>
             <li><a href="#">About</a></li>
         </ul>
-    </div>
+    </div> --}}
 
     <div class="chat">
         <label for="check">
         <input type="text" >
     </div>
 </label>
+   {{-- <div class="set_mode">
+    <button onclick="Mode()"><i id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #000000"></i></i></button>
+    </div> --}}
 
 </body>
 </html>
