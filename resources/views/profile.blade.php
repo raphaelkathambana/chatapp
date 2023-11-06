@@ -5,7 +5,7 @@
         body {
             display: flex;
             justify-content: center;
-            
+
         }
     </style>
     
@@ -26,7 +26,7 @@
             </div>
         </div>
         <br>
-        <div>
+        <div class="edit">
             <h3>Edit your details</h3>
         </div>
         <hr>
@@ -56,8 +56,10 @@
         </div>
         <br>
         <hr/>
-        <!-- <div>
-            <p style="color: red;">Delete My Account</p>
+
+        <div>
+            <p style="color: rgb(184, 55, 55);">Delete My Account</p>
+
             <a href="#">
             <button class="delete_account" role="button">Delete Account</button>
             </a>

@@ -12,6 +12,78 @@
     padding: 5px;
 }
 
+.options{
+  display: inline;
+  border: solid #10014a;
+}
+
+ .options ul{
+    margin: 10px auto 0;
+    list-style: none;
+    float: right;
+}
+
+.options li{
+    list-style-type: none;
+    position :relative;
+    display: inline;
+}
+
+.options a {
+    color:var(--linkColor);
+    /* text-transform: uppercase; */
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    float: right;
+    display: block;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: "comfortaa";
+    position: relative;
+    margin-right:25px;
+
+  }
+
+  .options a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+
+    position: absolute;
+    background: var(--linkColor);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+ .options a:hover:after {
+    width: 100%;
+    left: 0;
+  }
+
+.welcome h1{
+    font-size: 40px;
+    color: var(--title);
+    letter-spacing: 0.10rem;
+    font-family: 'comfortaa';
+    text-align: left;
+    padding: 20px;
+    margin-left: 120px;
+    margin-top: 200px;
+}
+
+.lorem p{
+    color: rgb(254, 254, 254);
+    width: 100%;
+}
+
+.lorem {
+    margin-left: 100px;
+    width: 60%;
+}
+
 .list a:hover{
     transition: 0.3s;;
     color: var(--linkHover);
@@ -25,6 +97,20 @@ hr{
     height: 1px;
     border: none;
 }
+
+.set_mode{
+    padding: 10px;
+    float: left;
+    width:50%;
+}
+
+button{
+    width: 10%;
+    color: #252732;
+    border-radius: 14px;
+    height: 30px;
+}
+
 /* .tap {
     background-image: url('../css/images/taptap.gif');
     background-size:contain;

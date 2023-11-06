@@ -1,41 +1,50 @@
 @extends('layouts.app')
 @section('content')
-    <style>
-        body {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
 
+<body>
+
+    <div class="options">
+    <ul>
+    <li><a href="{{ route('login') }}"> Sign In </li><br />
+    <li><a href="{{ route('register') }}"> Sign Up</li>
+    </ul>
+    </div>
+
+    <div>
     @if (Route::has('login'))
         <div>
-            <div style="display: flex">
+            <div class="welcome">
                 <h1> Welcome To Chatify</h1>
                 <ul class = "list">
                     @auth
-                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        {{-- <li><a href="{{ url('/home') }}">Home</a></li>
                         <li>
                             <a href="{{ url('/logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                             <form action='{{ route('logout') }}' method='post' id="logout-form">
-                                @csrf
+                                @csrf --}}
                             </form>
                         </li>
                     @else
-                        <li><a href="{{ route('login') }}">Log in</a></li>
-                        <li><a href="{{ route('register') }}">Register</a></li>
+
                     @endauth
                 </ul>
             </div>
             <hr>
             <div class="lorem">
-                Lorem ipsum! dolor sit amet consectetur adipisicing elit. Eius blanditiis dignissimos nihil harum, eum quis
+               <p> Lorem ipsum! dolor sit amet consectetur adipisicing elit. Eius blanditiis dignissimos nihil harum, eum quis
                 nisi laudantium quaerat laborum ratione mollitia tenetur consequuntur alias libero animi error numquam
-                nesciunt officia!
+                nesciunt officia!</p>
             </div>
         </div>
         {{-- <div class="tap"></div> --}}
     @endif
-    <button onclick="Mode()">Mode</button>
+    </div>
 @endsection
+
+<div class="set_mode">
+
+<button onclick="Mode()"><i id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #000000"></i></i></button>
+</div>
+
+</body>
