@@ -58,7 +58,7 @@
 
     <!-- Testimonial section -->
     <section class="testimonial-section">
-        <div class="col-md-12">
+        <div class="col-md-11">
             <h2>What our customers are saying</h2>
         </div>
         <div class="container">

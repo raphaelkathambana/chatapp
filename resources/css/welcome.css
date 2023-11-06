@@ -17,23 +17,33 @@
   border: solid #10014a;
 }
 
+ .options ul{
+    margin: 10px auto 0;
+    list-style: none;
+    float: right;
+}
+
 .options li{
     list-style-type: none;
     position :relative;
     display: inline;
 }
 
-.options a{
-    color: var(--linkColor);
+.options a {
+    color:var(--linkColor);
+    /* text-transform: uppercase; */
+    text-decoration: none;
+    letter-spacing: 0.15em;
     float: right;
     display: block;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 0px 10px;
-    margin-right: 20px;
-}
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+    margin-right:25px;
 
-/* .a:after {
+  }
+
+  .options a:after {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
     content: "";
@@ -41,16 +51,15 @@
     height: 2px;
     left: 50%;
     position: absolute;
-    background: rgb(224, 225, 229);
+    background: var(--linkColor);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
   }
 
-.a:hover:after {
+ .options a:hover:after {
     width: 100%;
     left: 0;
-  } */
-
+  }
 
 .welcome h1{
     font-size: 40px;

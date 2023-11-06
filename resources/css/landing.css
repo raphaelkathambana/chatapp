@@ -1,0 +1,20 @@
+.pricing-card{
+    border: solid;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 20px;
+    padding: 20px;
+    /* margin: 40px; */
+    font-size: 19px;
+    width: 78%;
+    height: 50vh;
+    margin-right: 80px;
+}
+
+
+.col-md-12{
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 10px;
+    padding: 10px;
+}
