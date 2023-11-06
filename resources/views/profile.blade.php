@@ -26,9 +26,11 @@
         <hr>
         <div>
             <p>Edit your bio</p>
-            <a href="#">
-                <button class="edit_bio_btn" role="button">Edit Bio</button>
-            </a>
+                    
+            <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="edit_bio_btn" role="button">Edit Bio</button>
+            
+            
+            
         </div>
         <br>
         <hr/>
@@ -42,10 +44,12 @@
         <hr/>
         <div>
             <p>Signing Out</p>
-            <a href="/">
-            <button class="profile_signout_btn" role="button">Sign Out</button>
+            
+            <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="profile_signout_btn" role="button">Sign Out</button>
 
-            </a>
+            <form action="{{ route('logout') }}" method='post' id="logout-form">
+                    @csrf
+                </form>
         </div>
         <br>
         <hr/>
