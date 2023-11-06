@@ -34,6 +34,7 @@
             <p>Edit your bio</p>        
             <button class="edit_bio_btn" role="button">Edit Bio</button>
             
+            
         </div>
         <br>
         <hr/>
