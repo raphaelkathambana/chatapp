@@ -31,13 +31,13 @@
                             <li class="nav-item active">
                                 <a href="{{ url('/logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                                <form action='{{ route('logout') }}' method='post' id="logout-form">
+                                <form class="form" action='{{ route('logout') }}' method='post' id="logout-form">
                                     @csrf
                                 </form>
                             </li>
                             {{-- <a href="{{ url('/logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                    <form action='{{ route('logout') }}' method='post' id="logout-form">
+                    <form class="form" action='{{ route('logout') }}' method='post' id="logout-form">
                         @csrf
                     </form> --}}
                         @else

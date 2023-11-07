@@ -14,7 +14,7 @@
 
 .options{
   display: inline;
-  border: solid #10014a;
+  border: solid transparent;
 }
 
  .options ul{
