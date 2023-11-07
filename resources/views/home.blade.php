@@ -19,19 +19,36 @@
         @endif
     </div>
 
-    <input style="display: none" type="checkbox" name="" id="check">
-    <div class="side">
-        <label for="check">
-            <span class="span fas fa-times" id="times"></span>
-            <span class="span fas fa-bars" id="bars"></span>
-        </label>
-        <ul class="side-menu ul">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-    </div>
+    {{ __('You are logged in!') }}
+    @if (!auth()->user()->two_factor_secret)
+            <div class="card-body">
+                <p>You have not enabled two-factor authentication yet.</p>
+                <form action="{{ url('user/two-factor-authentication') }}" method="post">
+                    @csrf
+                    <button type="submit">Enable</button>
+                </form>
+            </div>
+        @else
+            <div class="card-body">
+                <p>You have enabled two-factor authentication.</p>
+                <form action="{{ url('user/two-factor-authentication') }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Disable</button>
+                </form>
+            </div>
+    @endif
+    @if (session('status') == 'two-factor-authentication-enabled')
+        <div class="card-body">
+            <p>Two-factor authentication is now enabled. Scan the following QR code using your phone's authenticator application.</p>
+            {!! auth()->user()->twoFactorQrCodeSvg() !!}
+
+            <p>Store these recovery codes in a secure password manager. They can be used to recover access to your account if your two-factor authentication device is lost.</p>
+            @foreach (json_decode(decrypt(auth()->user()->two_factor_recovery_codes), true) as $code)
+                {{ trim($code) }}<br>
+            @endforeach
+        </div>
+    @endif
 
     <div class="chat">
         <label for="check">
