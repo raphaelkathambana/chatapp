@@ -32,12 +32,18 @@
         <hr>
         <div>
             <p>Edit your bio</p>        
-            <button class="edit_bio_btn" role="button">Edit Bio</button>
+            <!-- <button class="edit_bio_btn" role="button">Edit Bio</button> -->
+            
+            <form action="" class="about_form">
+                <input id="about" name="about" placeholder="Type your about..." class="about_input" />
+                <button id="save_btn" class="edit_bio_btn" role="button">Save</button>
+            </form>
+            
             
             
         </div>
-        <br>
-        <hr/>
+        
+        <!-- <hr/> -->
         <div>
             <p>Manage Password</p>
             <a href="/forgot-password">
@@ -66,7 +72,7 @@
             </a>
         </div>
         <br>
-        <hr/> -->
+        <hr/>
 
         </div>
     </body>
@@ -79,6 +85,7 @@
             profileImage.src = `{{asset('${path}')}}`;
             console.log(profileImage.src);
         })();
+        
     </script>
 
 @endsection
