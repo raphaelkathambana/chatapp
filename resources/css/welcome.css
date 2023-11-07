@@ -38,7 +38,7 @@
     display: block;
     padding-bottom: 10px;
     padding-top: 10px;
-    font-family: "comfortaa";
+    
     position: relative;
     margin-right:25px;
 
@@ -67,7 +67,6 @@
     font-size: 40px;
     color: var(--title);
     letter-spacing: 0.10rem;
-    font-family: 'comfortaa';
     text-align: left;
     padding: 20px;
     margin-left: 120px;
