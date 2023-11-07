@@ -28,20 +28,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => ['auth', 'verify.mobile']], function () {
+Route::group(['middleware' => ['auth', 'verify.mobile', 'verified']], function () {
     Route::get('/SetAvatar', function () {
         return view('SetAvatar');
     });
     Route::post('upload_profile_photo', [ProfileImageManager::class, 'upload'])->name('upload_profile.post');
     Route::get('/home', function () {
         return view('home');
-    });
+    })->middleware('verified');
 
 });
 Route::group(['middleware' => 'auth'], function () {
     Route::post('verify-mobile', [VerifyMobileController::class, '__invoke'])
         ->middleware(['throttle:6,1'])
         ->name('verification.verify-mobile');
-        
+
     Route::view('verify-mobile', 'auth.mobile-verify')->name('verification-mobile.notice');
 });
