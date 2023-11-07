@@ -19,7 +19,7 @@
                         <br />
 
                         {{ __('If you did not receive the email') }}, {{ __('click here to request another') }}
-                        <form class="d-inline" method="POST" action="{{ route('verification.send') }}">
+                        <form class="form" class="d-inline" method="POST" action="{{ route('verification.send') }}">
                             @csrf
                             <br />
                             <br />

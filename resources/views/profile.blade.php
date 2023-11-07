@@ -8,10 +8,10 @@
 
         }
     </style>
-    
+
     <body>
         <div class="profile_page_container">
-        
+
         <h2>Profile</h2>
         <hr>
         <br>
@@ -31,6 +31,7 @@
         </div>
         <hr>
         <div>
+
             <p>Edit your bio</p>        
             <!-- <button class="edit_bio_btn" role="button">Edit Bio</button> -->
             
@@ -41,6 +42,7 @@
             
             
             
+
         </div>
         
         <!-- <hr/> -->
@@ -54,10 +56,10 @@
         <hr/>
         <div>
             <p>Signing Out</p>
-            
+
             <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="profile_signout_btn" role="button">Sign Out</button>
 
-            <form action="{{ route('logout') }}" method='post' id="logout-form">
+            <form class="form" action="{{ route('logout') }}" method='post' id="logout-form">
                     @csrf
                 </form>
         </div>
