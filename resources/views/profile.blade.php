@@ -16,7 +16,7 @@
             <div class="profile_header">
                 <p id="profile_image_url" class="hidden">{{ Auth::user()->profile_photo }}</p>
                 <div id="profile_image_container" class="image_container">
-                    <img width="100%" id="profile_image" class="profile_image" src="" alt="" />
+                    <img width="100%" id="profile_image" class="profile_image" src="" alt="profile image" />
                 </div>
                 <div>
                     <p class="user_name">{{ Auth::user()->name }}</p>
@@ -29,8 +29,10 @@
             </div>
             <hr>
             <div>
+
                 <p>Edit your bio</p>
                 <!-- <button class="edit_bio_btn" role="button">Edit Bio</button> -->
+
                 <form action="" class="about_form">
                     <input id="about" name="about" placeholder="Type your about..." class="about_input" />
                     <button id="save_btn" class="edit_bio_btn" role="button">Save</button>
@@ -46,6 +48,7 @@
             <hr />
             <div>
                 <p>Signing Out</p>
+
                 <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                     class="profile_signout_btn" role="button">Sign Out</button>
                 <form class="form" action="{{ route('logout') }}" method='post' id="logout-form">
