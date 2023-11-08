@@ -35,12 +35,13 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/home', function () {
         return view('home');
     });
-    
+    Route::get('/profile', function () {
+        return view('profile');
+    });
+    Route::view('/profile/edit', 'profile-edit');
+    Route::view('/profile/password', 'profile-password');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
 
 
 
