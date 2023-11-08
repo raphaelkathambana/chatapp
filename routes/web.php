@@ -43,6 +43,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 });
 
 
+Route::get('/reset-pass', function () {
+    return view('reset-password');
+});
+
 
 
 
