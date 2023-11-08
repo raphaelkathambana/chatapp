@@ -10,7 +10,7 @@
 
 
 
-<form method="POST" action="{{ route('password.request') }}">
+<form class="form" method="POST" action="{{ route('password.request') }}">
     <div class="title">{{ __('Reset Password') }}</div>
     @if (session('status'))
     <div class="alert alert-success" role="alert">

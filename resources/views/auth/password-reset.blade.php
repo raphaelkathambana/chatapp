@@ -7,7 +7,7 @@
             justify-content: center;
         }
     </style>
-    <form action="{{ route('password.update') }}" method="POST">
+    <form class="form" action="{{ route('password.update') }}" method="POST">
         @csrf
         <div class="title">Write New Password</div>
 

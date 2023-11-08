@@ -7,7 +7,7 @@
     justify-content: center;
   }
 </style>
-    <form action="{{ route('register') }}" method="POST">
+    <form class="form" action="{{ route('register') }}" method="POST">
         @csrf
         <div class="login">Welcome</div>
         <div class="sub">Let's create your account!</div>

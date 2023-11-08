@@ -8,10 +8,10 @@
 
         }
     </style>
-    
+
     <body>
         <div class="profile_page_container">
-        
+
         <h2>Profile</h2>
         <hr>
         <br>
@@ -31,13 +31,21 @@
         </div>
         <hr>
         <div>
+
             <p>Edit your bio</p>        
-            <button class="edit_bio_btn" role="button">Edit Bio</button>
+            <!-- <button class="edit_bio_btn" role="button">Edit Bio</button> -->
+            
+            <form action="" class="about_form">
+                <input id="about" name="about" placeholder="Type your about..." class="about_input" />
+                <button id="save_btn" class="edit_bio_btn" role="button">Save</button>
+            </form>
             
             
+            
+
         </div>
-        <br>
-        <hr/>
+        
+        <!-- <hr/> -->
         <div>
             <p>Manage Password</p>
             <a href="/forgot-password">
@@ -48,10 +56,10 @@
         <hr/>
         <div>
             <p>Signing Out</p>
-            
+
             <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="profile_signout_btn" role="button">Sign Out</button>
 
-            <form action="{{ route('logout') }}" method='post' id="logout-form">
+            <form class="form" action="{{ route('logout') }}" method='post' id="logout-form">
                     @csrf
                 </form>
         </div>
@@ -66,7 +74,7 @@
             </a>
         </div>
         <br>
-        <hr/> -->
+        <hr/>
 
         </div>
     </body>
@@ -79,6 +87,7 @@
             profileImage.src = `{{asset('${path}')}}`;
             console.log(profileImage.src);
         })();
+        
     </script>
 
 @endsection
