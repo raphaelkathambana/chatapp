@@ -1,4 +1,4 @@
-form {
+.form {
     border-radius: 20px;
     box-sizing: border-box;
     width: 360px;
@@ -6,7 +6,6 @@ form {
 
 .login {
     color: var(--fontColor);
-    font-family: comfortaa;
     font-size: 40px;
     font-weight: 600;
     margin-top: 30px;
@@ -16,7 +15,6 @@ form {
 
 .sub {
     color: var(--fontColor);
-    font-family: comfortaa;
     letter-spacing: 0.10rem;
     font-size: 16px;
     font-weight: 600;
@@ -53,7 +51,6 @@ form {
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
-    font-family: 'comfortaa';
     color: var(--fontColor);
     font-size: 18px;
     height: 80%;
@@ -89,7 +86,7 @@ form {
 
 .placeholder {
     color: var(--fontColor);
-    font-family: 'comfortaa';
+
     left: 20px;
     line-height: 12px;
     pointer-events: none;

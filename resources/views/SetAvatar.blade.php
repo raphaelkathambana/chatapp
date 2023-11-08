@@ -50,7 +50,7 @@
 
 
     </div>
-    <form action="{{ route('upload_profile.post') }}" method="POST" enctype="multipart/form-data">
+    <form class="form" action="{{ route('upload_profile.post') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="file" name="input_file" class="form-control" id="input_file" hidden>
         <input type="text" value="avatar4.png" hidden name="avatar" id="avatar_input">
