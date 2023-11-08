@@ -7,6 +7,7 @@
             <a href="/">Chatify</a>
             @auth
                 <a href="{{ url('/home') }}">Home</a>
+                <a href="{{ url('/profile') }}">Profile</a>
                 <a href="{{ url('/logout') }}"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 <form class="form" action="{{ route('logout') }}" method='post' id="logout-form">
