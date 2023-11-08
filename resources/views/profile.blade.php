@@ -21,7 +21,10 @@
                 <img width="100%" id="profile_image" class="profile_image" src="" />
             </div>
             <div>
-                <p class="user_name">{{ Auth::user()->name }}</p>
+            <form action="" class="about_form">
+                <input id="about" name="about" placeholder="Type your about..." class="about_input" value="{{ Auth::user()->name }}" />
+                <button id="save_btn" class="edit_bio_btn" role="button">Save</button>
+            </form>
                 <p class="user_name">{{ Auth::user()->email }}</p>
             </div>
         </div>
