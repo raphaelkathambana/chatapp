@@ -48,7 +48,7 @@
         <!-- <hr/> -->
         <div>
             <p>Manage Password</p>
-            <a href="/forgot-password">
+            <a href="/reset-pass">
                 <button class="edit_bio_btn" role="button">Reset Password</button>
             </a>
         </div>
