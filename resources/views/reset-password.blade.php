@@ -46,9 +46,11 @@
             <div class="cut cut-longer"></div>
             <label for="password-confirm" class="placeholder">Confirm Password</label>
         </div>
-
-        <button class="button1" type="submit">
-            {{ __('Update Password') }}
-        </button>
+        <div class="center">
+            <button class="button1_reset" type="submit">
+                {{ __('Update Password') }}
+            </button>
+        </div>
+        
     </form>
 @endsection
