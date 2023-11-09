@@ -7,7 +7,7 @@
             <div class="options">
                 <ul>
                     @auth
-                    <li><a href="{{ url('/home') }}">Home</a></li><br />
+                        <li><a href="{{ url('/home') }}">Home</a></li>
                         <li>
                             <a href="{{ url('/logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
