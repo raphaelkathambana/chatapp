@@ -6,7 +6,7 @@ body {
     background-image: url('images/bg.gif');
     background-size: cover;
     background-position: center;
-    
+
     height: 100vh;
 }
 
@@ -32,7 +32,7 @@ body {
 }
 
 .nav a:hover {
-    background-color: var(--navHover);
+    /* background-color: var(--navHover); */
     text-decoration: none;
 }
 
@@ -43,7 +43,7 @@ body {
 
 .navbar-nav>li>a:hover {
     transition: 0.2s;
-    background-color: var(--navHover);
+    /* background-color: var(--navHover); */
     text-decoration: none;
 }
 

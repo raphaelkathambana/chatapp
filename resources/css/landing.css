@@ -28,9 +28,37 @@
 
 .navbar-nav {
     float: right;
-    margin: -30px -280px -50px;
-
+    margin: -40px -280px -50px;
 }
+
+
+.side-one a{
+    color:var(--linkColor);
+    text-decoration: none;
+    letter-spacing: 0.10em;
+    float: right;
+    display: block;
+    position: relative;
+}
+
+.side-one a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: var(--linkColor);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+ .side-one a:hover:after {
+    width: 100%;
+    left: 0;
+  }
+
 .col-md-12{
     font-size: 20px;
     text-transform: uppercase;

@@ -36,6 +36,7 @@
     color: var(--fontColor);
     padding: 15px 10px;
     text-decoration: none;
+    letter-spacing: 0.15em;
     display: block;
     font-size: 20px;
     position: relative;
@@ -52,7 +53,7 @@
 }
 
 .ul li:hover a{
-    background-color: var(--navHover);
+    /* background-color: var(--navHover); */
     letter-spacing: 1px;
 }
 
@@ -100,4 +101,21 @@
 #check:checked ~ .chat {
     transition: 0.47s;
     left: 240px;
+}
+
+
+
+/*********** NAV BAR **********/
+.nav a{
+    color:var(--linkColor);
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    float: left;
+    display: block;
+    margin-top: -10px;
+}
+
+
+.nav{
+    height: 20px;
 }
