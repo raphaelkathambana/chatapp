@@ -40,14 +40,14 @@
         border-radius: 5px;
         border: none;
       }
-
+/*
       .chat-input button {
         background-color: #333;
         color: #fff;
         padding: 5px 10px;
         border-radius: 5px;
         border: none;
-        cursor: pointer;
+        cursor: pointer; */
       }
     </style>
   </head>
@@ -61,7 +61,7 @@
       </div>
       <div class="chat-input">
         <input type="text" placeholder="Type your message...">
-        <button>Send</button>
+        <i class="fa-solid fa-paper-plane" style="color: #0d133f;">
       </div>
     </div>
   </body>

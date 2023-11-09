@@ -37,7 +37,10 @@
 
     <div class="chat">
         <label for="check">
+
         <input type="text" >
+
+        <i class="fa-solid fa-paper-plane" style="color: #0d133f; margin:10px;"></i> <!-- icon to send message -->
     </div>
 </label>
    {{-- <div class="set_mode">
