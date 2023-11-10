@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 class SetUpProfileIfAuthenticated
 {
     /**
-     * Handle an incoming request.
+     * Redirects you to Set Avatar Page once Authenticated to set up your profile.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
