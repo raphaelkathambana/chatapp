@@ -31,7 +31,7 @@
 
 .options a {
     color:var(--linkColor);
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.15em;
     float: right;

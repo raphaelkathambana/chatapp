@@ -43,8 +43,8 @@
 
     <div class="set_mode">
 
-        <button onclick="Mode()"><i id="light-toggle" class="fa-solid fa-circle-half-stroke"
-                style="color: #000000"></i></i></button>
+            <i onclick="Mode()" id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #fff; margin:10px;font-size:20px;"></i>
+            </i></i></button>
     </div>
 
 </body>
