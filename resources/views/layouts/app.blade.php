@@ -10,7 +10,7 @@
     <title>{{ Config::get('app.name', 'Chatify') }}</title>
     {{-- <link rel="icon" href="resources\css\images\logo.png" type="image/icon"> --}}
 
-    <link rel="stylesheet" href="{{ asset('fontawesome-free-6.4.2-web\css') }}">
+    <link rel="stylesheet" href="{{ asset('fontawesome-free-6.4.2-web/css/all.min.css') }}">
 
    <script>
     var dark = true;
@@ -19,12 +19,12 @@
     function Mode() {
         if (dark == true) {
             document.body.className = "light";
-            toggle_icon.setAttribute("class", "fa-solid fa-circle-half-stroke");
+            toggle_icon.setAttribute("class", "fa-solid fa-circle-half-stroke fa-rotate-180");
             dark = false;
         }
         else if (dark == false) {
             document.body.className = "dark";
-            toggle_icon.setAttribute("class", "fa-solid fa-circle-half-stroke fa-rotate-180");
+            toggle_icon.setAttribute("class", "fa-solid fa-circle-half-stroke");
             dark = true;
         }
     }
