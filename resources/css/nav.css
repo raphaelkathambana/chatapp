@@ -6,7 +6,6 @@ body {
     background-image: url('images/bg.gif');
     background-size: cover;
     background-position: center;
-
     height: 100vh;
 }
 
@@ -19,7 +18,7 @@ body {
     justify-content: space-between;
     align-items: center; */
     padding-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 13px;
     list-style: none;
     background-color: var(--navColor);
     margin-bottom: auto;
