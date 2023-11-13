@@ -34,7 +34,7 @@
         </label>
         <ul class="side-menu ul">
             <button onclick="Mode()">Mode</button>
-            <li><a href="#">Home</a></li>
+            <li><a href="{{ route('chat.get') }}">Chat</a></li>
             <li><a href="#">News</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">About</a></li>
