@@ -47,15 +47,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         return view('home');
     });
     Route::group(['prefix' => 'chat', 'as' => 'chat.'], function() {
-        Route::post('send', [App\Http\Controllers\MessageController::class, 'send'])->name('send');
         Route::get('/get-chat', [App\Http\Controllers\MessageController::class, 'index'])->name('get');
         Route::get('/get-chat/{receiver?}', [App\Http\Controllers\MessageController::class, 'index'])->name('getChatsBySenderAndReceiver');
         Route::post('/get-chat/{receiver?}', [App\Http\Controllers\MessageController::class, 'store'])->name('saveMessage');
+        Route::get('/fail', function() {
+            return view('chat.fail');
+        })->name('fail');
     });
 });
-        // Route::get('get/{id}', [App\Http\Controllers\MessageController::class, 'getById'])->name('getById');
-        // Route::get('get/{sender}/{receiver}/{limit}', [App\Http\Controllers\MessageController::class, 'getBySenderAndReceiverWithLimit'])->name('getBySenderAndReceiverWithLimit');
-        // Route::get('get/{sender}/{receiver}/{limit}/{offset}', [App\Http\Controllers\MessageController::class, 'getBySenderAndReceiverWithLimitAndOffset'])->name('getBySenderAndReceiverWithLimitAndOffset');
-        // Route::get('get/{sender}/{receiver}/{limit}/{offset}/{order}', [App\Http\Controllers\MessageController::class, 'getBySenderAndReceiverWithLimitAndOffsetAndOrder'])->name('getBySenderAndReceiverWithLimitAndOffsetAndOrder');
-        // Route::get('get/{sender}/{receiver}/{limit}/{offset}/{order}/{direction}', [App\Http\Controllers\MessageController::class, 'getBySenderAndReceiverWithLimitAndOffsetAndOrderAndDirection'])->name('getBySenderAndReceiverWithLimitAndOffsetAndOrderAndDirection');
-        // Route::get('get/{sender}/{receiver}/{limit}/{offset}/{order}/{direction}/{read}', [App\Http\Controllers\MessageController::class, 'getBySenderAndReceiverWithLimitAndOffsetAndOrderAndDirectionAndRead'])->name('getBySenderAndReceiverWithLimitAndOffsetAndOrderAndDirectionAndRead');
