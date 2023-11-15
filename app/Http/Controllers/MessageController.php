@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\MessageSent;
 use App\Models\Message;
+use App\Models\User;
 use App\Repositories\ChatRepository;
 use Illuminate\Http\Request;
 use Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
@@ -16,22 +19,33 @@ class MessageController extends Controller
     public function index(Request $request, ?int $receiverId = null)
     {
         $messages = empty($receiverId) ? [] : $this->chats->getUserChats($request->user()->id, $receiverId);
-        return view('chat.chat-layout', ['messages' => $messages]);
+        return view('chat.chat-layout', [
+            'messages' => $messages,
+            'recentMessages' => $this->chats->getRecentUsersWithMessage($request->user()->id),
+            'receiver' => User::find((int) $receiverId)
+        ]);
     }
 
     public function store(Request $request, ?int $receiverId = null)
     {
+        if (empty($receiverId) && $receiverId == 0) {
+            return view('chat.fail', [
+                "wa"=>$receiverId,
+                "wawawa"=> $request->get("receiverid"),
+                "message"=> $request->get("message"),
+            ]);
+        }
         $request->validate([
-            'receiver_id' => 'required|integer',
+            'receiverid' => 'required|integer',
             'message' => 'required|string',
         ]);
-        $this->chats->storeMessage([
-            'sender_id' => (int) $request->user()->id,
-            'receiver_id' => $request->$receiverId,
-            'message' => $request->message
+        $newMessage = $this->chats->storeMessage([
+            'sender_id' => (int) Auth::user()->id,
+            'receiver_id' => $request->get("receiverid"),
+            'message' => $request->get('message'),
         ]);
 
-        event();
+        event(new MessageSent($newMessage->message));
         return Redirect::route('chat.getChatsBySenderAndReceiver', $receiverId);
     }
 }
