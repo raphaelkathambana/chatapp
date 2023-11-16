@@ -16,6 +16,13 @@ class MessageController extends Controller
     {
         $this->chats = $chats;
     }
+    /**
+     * Display the chat messages for the authenticated user.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int|null  $receiverId
+     * @return \Illuminate\Contracts\View\View
+     */
     public function index(Request $request, ?int $receiverId = null)
     {
         $messages = empty($receiverId) ? [] : $this->chats->getUserChats($request->user()->id, $receiverId);
@@ -26,6 +33,12 @@ class MessageController extends Controller
         ]);
     }
 
+    /**
+     * Store a new message in the database.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int|null  $receiverId
+     */
     public function store(Request $request, ?int $receiverId = null)
     {
         if (empty($receiverId) && $receiverId == 0) {
