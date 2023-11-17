@@ -27,7 +27,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => ['auth', 'verified', 'profile.setup']], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('upload_profile_photo', [ProfileImageManager::class, 'upload'])->name('upload_profile.post');
     Route::get('/home', function () {
         return view('home');
@@ -38,6 +38,8 @@ Route::group(['middleware' => ['auth', 'verified', 'profile.setup']], function (
     Route::view('/profile/edit', 'profile-edit');
     Route::view('/profile/password', 'reset-password');
 });
+
+
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/SetAvatar', function () {

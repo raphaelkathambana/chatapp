@@ -12,6 +12,7 @@
         @if (Route::has('login'))
             <a href="/">Chatify</a>
             @auth
+            
             <i onClick="redirect()" class="fa-solid fa-circle-user" style="color: #fdfdfd; margin-right:20px; float:right; font-size:30px; cursor:pointer; margin-top:-5px;"></i>
                 {{-- <a href="{{ url('/home') }}">Home</a>
                 <a href="{{ url('/logout') }}"

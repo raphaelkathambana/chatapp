@@ -23,7 +23,7 @@ class ProfileImageManager extends Controller
 
             //Move the image to the uploads folder
             if (move_uploaded_file($file['tmp_name'], $destinationPath)) {
-                // echo "File Upload Success";
+                echo "File Upload Success";
                 $user = Auth::user();
                 $user->profile_photo = $userId . '.' . $extension; //Set user profile photo field to the image path
                 $user->save();
@@ -37,7 +37,7 @@ class ProfileImageManager extends Controller
             $user = Auth::user();
             $user->profile_photo = $path; //Set user profile photo field to the avatar path
             $user->save();
-            // echo $path;
+            echo $path;
         }
     }
 
