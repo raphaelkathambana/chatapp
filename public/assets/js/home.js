@@ -26,9 +26,10 @@ $(document).ready(function () {
                 } else {
                 sideListContent += `<h4 class='side_list_title'>Showing results for '${keyword}'</h4>`
                 for (let user of response) {
+                    let userProfilePhoto = user.profile_photo ? user.profile_photo : 'default.png';
                     sideListContent += `
                     <div class='side_list_item'>
-                        <img class='side_list_photo' src='uploads/${user.profile_photo}' />
+                        <img class='side_list_photo' src='uploads/${userProfilePhoto}' />
                         <p class='side_list_text'>${user.name}</p>
                     </div>
                     `;
