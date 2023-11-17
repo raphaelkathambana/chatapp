@@ -1,17 +1,23 @@
 @extends('layouts.app')
 @section('content')
 
-<script>
-    function redirect() {
-        window.location.assign("/profile");
-    }
-</script>
+
+
+<script src="{{ asset('assets/js/home.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+
+
 
 <body>
     <div class="nav">
         @if (Route::has('login'))
             <a href="/">Chatify</a>
             @auth
+            <div class="search_input_container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+                <input class="user_search_input" name="user_search_input" id="user_search_input" placeholder="Search friends" />
+            </div>
             
             <i onClick="redirect()" class="fa-solid fa-circle-user" style="color: #fdfdfd; margin-right:20px; float:right; font-size:30px; cursor:pointer; margin-top:-5px;"></i>
                 {{-- <a href="{{ url('/home') }}">Home</a>
@@ -26,7 +32,7 @@
             @endauth
         @endif
     </div>
-
+    
     <input style="display: none" type="checkbox" name="" id="check">
     <div class="side">
         <label for="check">
@@ -40,6 +46,11 @@
             <li><a href="#">Contact</a></li>
             <li><a href="#">About</a></li>
         </ul>
+        
+    </div>
+    
+    <div class="side_list" id="side_list">
+        <!-- Contents of this div are in public/assets/js/home.js line 20 - 35 and css in home.css from line 75 -->
     </div>
 
     <div class="chat">
@@ -54,6 +65,8 @@
     <button onclick="Mode()"><i id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #000000"></i></i></button>
     </div> --}}
 
+    
+    
 </body>
 </html>
 @endsection

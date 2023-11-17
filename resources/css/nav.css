@@ -14,9 +14,9 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    /* display: flex;
+    display: flex;
     justify-content: space-between;
-    align-items: center; */
+    align-items: center;
     padding-bottom: 10px;
     padding-top: 13px;
     list-style: none;
