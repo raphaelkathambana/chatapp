@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthManager;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileImageManager;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +29,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => ['auth', 'verified', 'profile.setup']], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('upload_profile_photo', [ProfileImageManager::class, 'upload'])->name('upload_profile.post');
     Route::get('/home', function () {
         return view('home');
@@ -46,6 +48,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/home', function () {
         return view('home');
     });
+    Route::post('/search_user', [HomeController::class,'searchUser'])->name('search_user.post');
     Route::group(['prefix' => 'chat', 'as' => 'chat.'], function() {
         Route::get('/get-chat', [App\Http\Controllers\MessageController::class, 'index'])->name('get');
         Route::get('/get-chat/{receiver?}', [App\Http\Controllers\MessageController::class, 'index'])->name('getChatsBySenderAndReceiver');

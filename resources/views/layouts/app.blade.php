@@ -36,6 +36,7 @@
 
     <script src="{{ asset('assets/js/pages/datatable-pages.init.js') }}"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>

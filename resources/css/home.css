@@ -71,6 +71,54 @@
 }
 
 /* ******************************** */
+.search_input_container {
+    background-color: white;
+    padding: 7px;
+    border-radius: 5px;
+}
+.user_search_input {
+    border: none;
+    outline: none;
+    background-color: inherit;
+
+}
+/*End of search friends styles*/
+
+/*Side list styles*/
+.side_list {
+    position: fixed;
+    background-color: white;
+    left: 0px;
+    top: 43px;
+    height: 100vh;
+    width: 30%;
+    padding: 40px 15px 15px 15px;
+}
+
+.side_list_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.side_list_title {
+    color: black;
+    margin: 15px 0;
+}
+
+.side_list_text {
+    color: black;
+    margin-left: 15px;
+}
+
+.side_list_photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+/*End of side list styles*/
+
 
 .chat {
     position: fixed;
