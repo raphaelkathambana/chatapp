@@ -13,9 +13,9 @@
     --chatBox: hsl(0, 0%, 95%);
     --linkColor: rgb(94, 185, 241);
     --navColor: #0b2235;
-    --profileIcon: #fffdfd;
-    --sendIcon: #e0e0e0;
-    --searchIcon: #f0ecec;
+    --profileIcon: #324A5F;
+    --sendIcon: #eae7e7;
+    --searchIcon: #000000;
 }
 
 .light {
