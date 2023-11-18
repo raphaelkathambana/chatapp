@@ -1,7 +1,8 @@
 .dark {
     background-image: url('images/bg.gif');
-    --fontColor: #fefeff;
-    --bgColor: #16182c;
+    --fontColor: hsl(240, 100%, 100%);
+    --bgColor: #171932;
+    --newbbg: rgb(229, 237, 237);
     --navColor: #324A5F90;
     --navHover: #15172b68;
     --inputColor: #324A5F;
@@ -14,15 +15,16 @@
 }
 .light {
     background-image: url('images/bg.png');
-    --fontColor: #17161b;
-    --bgColor: #9b9daf;
+    --fontColor: #ffffff;
+    --bgColor: #ffffff;
+    --newbbg: #000000;
     --navColor: #324A5F90;
     --navHover: #15172b68;
+    --linkColor: rgb(94, 185, 241);
     --inputColor: #324A5F;
     --chatColor: #7D84b2;
     --chatBox: #ccc9dc;
-    --linkColor: #233c74;
-    --linkHover: #063653;
+    --linkHover: #8bd3ff;
     --hr: #58b4ff76;
     --title: #000000;
 }

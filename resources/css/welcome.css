@@ -12,6 +12,10 @@
     padding: 5px;
 }
 
+body{
+    background-color: var(--newbbg);
+}
+
 .options{
   display: inline;
   border: solid transparent;
@@ -30,11 +34,12 @@
 }
 
 .options a {
-    color:var(--linkColor);
+    color:var(--bgColor);
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     float: right;
+    font-weight: 00;
     display: block;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -62,13 +67,27 @@
   }
 
 .welcome h1{
-    font-size: 40px;
-    color: var(--title);
+    font-size: 50px;
+    color: var(--bgColor);
     letter-spacing: 0.10rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: left;
     padding: 20px;
-    margin-left: 120px;
+    margin-left: 40px;
     margin-top: 200px;
+    font-weight: bold;
+}
+
+.chatify{
+    color: var(--linkHover);
+}
+
+#animation-container{
+    width: 30%;
+    float: right;
+    justify-content: center;
+    margin-top: -220px;
+    margin-right: 80px;
 }
 
 .lorem p{
@@ -114,3 +133,5 @@ button{
     width: 100px;
     height: 100px;
 } */
+
+

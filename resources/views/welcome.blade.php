@@ -2,7 +2,6 @@
 @section('content')
 
     <body>
-
         @if (Route::has('login'))
             <div class="options">
                 <ul>
@@ -16,7 +15,7 @@
                             </form>
                         </li>
                     @else
-                        <li><a href="{{ route('login') }}"> Sign In </li><br />
+                        <li><a href="{{ route('login') }}"> Sign In </li>
                         <li><a href="{{ route('register') }}"> Sign Up</li>
                     @endauth
                 </ul>
@@ -26,15 +25,30 @@
         <div>
             <div>
                 <div class="welcome">
-                    <h1> Welcome To Chatify</h1>
+                    <div class="message" id="animation-container"></div>
+                    <h1> Welcome To <span class="chatify">Chatify</span></h1>
+
+
+                    <script>
+                        var animation = bodymovin.loadAnimation({
+                            container:document.getElementById('animation-container'),
+                            path: 'https://lottie.host/140dbc61-982a-49ee-983e-82eea6102d06/sDxlQ7gWtj.json',
+                            render: 'svg',
+                            loop: true,
+                            autoplay: true,
+                            name: 'message animation'
+                        });
+                        </script>
                 </div>
                 <hr>
                 <div class="lorem">
-                    <p> Lorem ipsum! dolor sit amet consectetur adipisicing elit. Eius blanditiis dignissimos nihil
+                    {{-- <p> Lorem ipsum! dolor sit amet consectetur adipisicing elit. Eius blanditiis dignissimos nihil
                         harum, eum quis
                         nisi laudantium quaerat laborum ratione mollitia tenetur consequuntur alias libero animi error
                         numquam
-                        nesciunt officia!</p>
+                        nesciunt officia!</p> --}}
+
+
                 </div>
             </div>
             {{-- <div class="tap"></div> --}}
@@ -43,7 +57,7 @@
 
     <div class="set_mode">
 
-            <i onclick="Mode()" id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #fff; margin:10px;font-size:20px;"></i>
+            <i onclick="Mode()" id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #ffff; margin:10px;font-size:20px;"></i>
             </i></i></button>
     </div>
 
