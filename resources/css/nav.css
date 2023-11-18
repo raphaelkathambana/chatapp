@@ -2,7 +2,7 @@ body {
     margin: 0px;
     box-sizing: border-box;
     color: #ccc9dc;
-    background-color: var(--bgColor);
+    background-color: var(--bbg);
     background-image: url('images/bg.gif');
     background-size: cover;
     background-position: center;
