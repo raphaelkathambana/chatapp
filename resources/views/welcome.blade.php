@@ -15,8 +15,8 @@
                             </form>
                         </li>
                     @else
-                        <li><a href="{{ route('login') }}"> Sign In </li>
-                        <li><a href="{{ route('register') }}"> Sign Up</li>
+                        <li><a href="{{ route('login') }}"> Sign In </a></li>
+                        <li><a href="{{ route('register') }}"> Sign Up </a></li>
                     @endauth
                 </ul>
             </div>
@@ -57,7 +57,7 @@
 
     <div class="set_mode">
 
-            <i onclick="Mode()" id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #ffff; margin:10px;font-size:20px;"></i>
+            <i onclick="Mode()" id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #000000; margin:10px;font-size:20px;"></i>
             </i></i></button>
     </div>
 

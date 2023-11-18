@@ -33,12 +33,13 @@
                 <div class="cut"></div>
                 <label for="password" class="placeholder">Password</label>
             </div>
-            <div class="forgot"><a style="float: right" class="a-link" href="{{ route('password.request') }}">Forgot password?</a><br></div>
+
             @error('password')
                 <span class="error invalid-feedback" role="alert">
                     {{ $message }}
                 </span>
             @enderror
+            <div class="forgot"><a style="float: right" class="a-link" href="{{ route('password.request') }}">Forgot password?</a><br></div>
         </div>
         <button class="button1" type="submit">Login</button>
         <div class="lowerLink">

@@ -5,18 +5,20 @@
 }
 
 .login {
-    color: var(--fontColor);
+    color: var(--title);
     font-size: 40px;
     font-weight: 600;
     margin-top: 30px;
     letter-spacing: 0.15rem;
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .sub {
-    color: var(--fontColor);
+    color: var(--title);
     letter-spacing: 0.10rem;
     font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 600;
     margin-top: 10px;
     text-align: center;
@@ -34,10 +36,14 @@
     width: 100%;
 }
 
-.forgot a{
-    text-align: center;
+.forgot{
+    margin-right: 130px;
+    margin-top: 10px;
 }
 
+.forgot:hover{
+    color: var(--linkHover);
+}
 .ic1 {
     margin-top: 40px;
 }
@@ -46,21 +52,21 @@
     margin-top: 30px;
 }
 
+/*** Text input field ****/
 .input {
-    background-color: var(--inputColor);
-    border-radius: 12px;
     border: 0;
     box-sizing: border-box;
-    color: var(--fontColor);
+    border-bottom: 2px solid var(--color2);
     font-size: 18px;
     height: 80%;
     outline: 0;
-    padding: 0px 25px 0;
+    padding: 0px 20px 0;
     width: 100%;
+    background-color: var(--newbbg);
 }
 
+
 .cut {
-    background-color: var(--bgColor);
     border-radius: 10px;
     height: 20px;
     left: 20px;
@@ -75,18 +81,29 @@
     width: 120px;
 }
 
+
+/***** HIDE MOVING BUBBLE ***/
+
 .cut-shorter {
     width: 54px;
+    display: none;
+}
+
+.cut-short{
+    display: none;
+}
+
+.cut-longer{
+    display: none;
 }
 
 .input:focus~.cut,
 .input:not(:placeholder-shown)~.cut {
-    transform: translateY(8px);
+    transform: translateY(5px);
 }
 
 .placeholder {
-    color: var(--fontColor);
-
+    color: var(--placeholder);
     left: 20px;
     line-height: 12px;
     pointer-events: none;
@@ -98,20 +115,20 @@
 
 .input:focus~.placeholder,
 .input:not(:placeholder-shown)~.placeholder {
-    transform: translateY(-30px) translateX(10px) scale(0.75);
+    transform: translateY(-20px) translateX(8px) scale(0.75);
 }
 
 .input:not(:placeholder-shown)~.placeholder {
-    color: #8585dc;
+    color: var(--title);
 }
 
+/****** OnClick bubble ******/
 .input:focus~.placeholder {
-    color: var(--fontColor);
-}
-
-.lowerLink{
-    margin-top: 40px;
-    margin-left: 20%;
+    color: var(--color3);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.10rem;
+    margin: -6px auto;
 }
 
 .a-link{
@@ -127,31 +144,39 @@
 
 .button1 {
     background-color: var(--linkColor);
-    color: var(--fontColor);
-    border-radius: 12px;
+    color: var(--title);
+    border-radius: 18px;
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
     font-size: 18px;
+    letter-spacing: 0.05rem;
+    font-family: Georgia;
     height: 40px;
-    margin-top: 20px;
-    margin-left: 19.5%;
+    margin-top: 25px;
+    margin-left: 21%;
     text-align: center;
-    width: 63%;
+    width: 50%;
 }
 
-.button1:hover {
-    /* font-size: 19px; */
-    margin-left: 18.5%;
-    width: 65%;
-    transition: 0.3s;
+.lowerLink{
+    margin-top: 30px;
+    margin-left: 20%;
 }
+
+.lowerLink:hover{
+    color: var(--title);
+}
+
+
+/*
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.button1_reset {
+} */
+
+/* .button1_reset {
     background-color: var(--linkColor);
     color: var(--fontColor);
     border-radius: 12px;
@@ -161,10 +186,7 @@
     font-size: 18px;
     height: 40px;
     margin-top: 20px;
-    /* margin-left: 26%; */
     text-align: center;
     width: 63%;
 }
-
-
-
+*/
