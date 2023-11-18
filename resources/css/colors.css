@@ -1,28 +1,31 @@
 .dark {
-    background-image: url('images/bg.gif');
+    /* background-image: url('images/bg.gif'); */
     --bbg: hsl(0, 0%, 95%);
-    --fontColor: #171932;
     --newbbg: rgb(241, 241, 241);
+
+    --fontColor: #171932;
+    --title: rgb(0, 0, 0);
     --color2: #0a2d4a;
-    --linkHover: #0a2d4a;
     --color3: #8bd3ff;
     --placeholder: #00000068;
     --inputColor: #324A5F;
-    /* --chatColor: #7D84b2;
-    --chatBox: #ccc9dc; */
+    --chatColor: #0b2235;
+    --chatBox: hsl(0, 0%, 95%);
     --linkColor: rgb(94, 185, 241);
-    /* --hr: #58b4ff76; */
-    --title: rgb(0, 0, 0);
+    --navColor: #0b2235;
+    --profileIcon: #fffdfd;
+    --sendIcon: #e0e0e0;
+    --searchIcon: #fffdfd;
 }
 
 .light {
-    --color2: #324A5F90;
+    --color2: #324A5F;
     background-image: url('images/bg.png');
     --fontColor: #ffffff;
     --color3: #8bd3ff;
     --bgColor: #ffffff;
     --newbbg: #000000;
-    --navColor: #324A5F90;
+    /* --navColor: #0b2235; */
     --navHover: #15172b68;
     --linkColor: rgb(94, 185, 241);
     --inputColor: #324A5F;

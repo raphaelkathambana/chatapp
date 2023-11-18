@@ -71,6 +71,89 @@
 }
 
 /* ******************************** */
+.search_input_container {
+    border: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    outline: 0;
+    width: 40%;
+    padding: 7px;
+    border-radius: 2px;
+    margin-left: 20px;
+    border-radius: 10px;
+    min-height: 3vh;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    background-color: var(--bgColor);
+    /* background-color: antiquewhite; */
+}
+
+.search_input_container:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    margin-left: -205px;
+    position: relative;
+    background: var(--color3);
+    transition: width 0.3s ease 0s, left 0.5s ease 0s;
+    width: 0%;
+  }
+
+.search_input_container:hover:after{
+    width: 40%;
+    /* margin-left: -160px; */
+}
+.user_search_input {
+    border: none;
+    outline: none;
+    color:#fff;
+    background-color: inherit;
+    padding: 5px;
+}
+
+#icons{
+    float: right;
+
+}
+/*End of search friends styles*/
+
+/*Side list styles*/
+.side_list {
+    position: fixed;
+    background-color: white;
+    left: 0px;
+    top: 43px;
+    height: 100vh;
+    width: 25%;
+    padding: 40px 15px 15px 15px;
+}
+
+.side_list_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.side_list_title {
+    color: black;
+    margin: 15px 0;
+}
+
+.side_list_text {
+    color: black;
+    margin-left: 15px;
+}
+
+.side_list_photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+/*End of side list styles*/
+
 
 /*search friends styles*/
 .search_input_container {
@@ -137,22 +220,19 @@
     border: 0;
     box-sizing: border-box;
     outline: 0;
-
     font-family: comfortaa;
     font-size: 15px;
     color: black;
-
     height: 35px;
-    width: 75%;
-    margin-left: 25px;
+    width: 50%;
+    margin-left: 340px;
     padding-left: 10px;
 }
+
 #check:checked ~ .chat {
     transition: 0.47s;
     left: 240px;
 }
-
-
 
 /*********** NAV BAR **********/
 .nav a{

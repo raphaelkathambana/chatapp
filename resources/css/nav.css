@@ -2,7 +2,7 @@ body {
     margin: 0px;
     box-sizing: border-box;
     color: #ccc9dc;
-    background-color: var(--bgColor);
+    background-color: var(--bbg);
     background-image: url('images/bg.gif');
     background-size: cover;
     background-position: center;
@@ -14,7 +14,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    display: flex;
+     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 10px;

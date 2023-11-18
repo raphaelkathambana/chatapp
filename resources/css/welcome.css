@@ -1,3 +1,4 @@
+/* text under welcome chatify*/
 .lorem {
     margin: 20px;
     width: 400px;
@@ -16,6 +17,7 @@ body{
     background-color: var(--newbbg);
 }
 
+/* nav bar */
 .options{
   display: inline;
   border: solid transparent;
@@ -61,11 +63,14 @@ body{
     width: 0;
   }
 
+  /* line disappears when not hovering*/
  .options a:hover:after {
     width: 100%;
     left: 0;
   }
 
+
+  /*welcome text*/
 .welcome h1{
     font-size: 50px;
     color: var(--color2);
@@ -78,10 +83,12 @@ body{
     font-weight: bold;
 }
 
+/* to chatify*/
 .chatify{
     color: var(--color3);
 }
 
+/*phone animation lottie*/
 #animation-container{
     width: 30%;
     float: right;
@@ -114,6 +121,7 @@ hr{
     border: none;
 }
 
+/* dark mode light mode btn*/
 .set_mode{
     padding: 10px;
     float: left;
