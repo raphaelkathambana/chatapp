@@ -41,6 +41,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::view('/profile/password', 'reset-password');
 });
 
+
+
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/SetAvatar', function () {
         return view('SetAvatar');

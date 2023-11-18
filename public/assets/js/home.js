@@ -10,7 +10,6 @@ $(document).ready(function () {
     });
     $('#user_search_input').on("input", function() {
         let keyword = $(this).val();
-
         console.log(keyword);
         $.ajax({
             url: '/search_user',
@@ -44,3 +43,4 @@ $(document).ready(function () {
         })
      });
 });
+
