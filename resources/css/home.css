@@ -98,7 +98,7 @@
   }
 
 .search_input_container:hover:after{
-    width: 70%;
+    width: 80%;
     left:10;
 }
 .user_search_input {

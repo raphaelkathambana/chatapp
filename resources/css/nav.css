@@ -3,7 +3,7 @@ body {
     box-sizing: border-box;
     color: #ccc9dc;
     background-color: var(--bbg);
-    background-image: url('images/bg.gif');
+    /* background-image: url('images/bg.gif'); */
     background-size: cover;
     background-position: center;
     height: 100vh;

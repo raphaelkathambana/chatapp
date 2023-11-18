@@ -17,7 +17,6 @@
                     <input class="user_search_input" name="user_search_input" id="user_search_input" placeholder="Search friends" />
                 </div>
 
-
             <i onClick="redirect()" class="fa-solid fa-house" style="color: var(--profileIcon);font-size:25px; margin-left:550px; margin-right:20px;"></i>
             <i onClick="redirect()" class="fa-solid fa-circle-user" style="color: var(--profileIcon);font-size:30px; cursor:pointer; margin-right:30px;"></i>
 
@@ -52,11 +51,6 @@
 
     <div class="side_list" id="side_list">
         <!-- Contents of this div are in public/assets/js/home.js line 20 - 35 and css in home.css from line 75 -->
-    </div>
-
-
-    <div class="side_list" id="side_list">
-
     </div>
 
     <div class="chat">
