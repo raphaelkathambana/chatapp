@@ -12,6 +12,9 @@
 
     <link rel="stylesheet" href="{{ asset('fontawesome-free-6.4.2-web/css/all.min.css') }}">
 
+    <!-- Import lottie bodymovin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+
    <script>
     var dark = true;
     var toggle_icon = document.getElementById("light-toggle");
