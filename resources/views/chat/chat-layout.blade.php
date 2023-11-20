@@ -240,6 +240,7 @@
                                 <p class="last-message">{{ $message['message'] }}</p>
                             </div>
                         </a>
+                        <a href="/chat/testNewChat">New Chat</a>
                     @endforeach
                 </div>
             </div> <!-- end of sidebar -->
