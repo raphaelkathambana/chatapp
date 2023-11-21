@@ -1,9 +1,9 @@
 body {
     margin: 0px;
     box-sizing: border-box;
-    color: #ccc9dc;
+    /* color: #ccc9dc; */
     background-color: var(--bbg);
-    background-image: url('images/bg.gif');
+    /* background-image: url('images/bg.gif'); */
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -20,7 +20,7 @@ body {
     padding-bottom: 10px;
     padding-top: 13px;
     list-style: none;
-    background-color: var(--navColor);
+    background-color: white;
     margin-bottom: auto;
 }
 

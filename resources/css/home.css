@@ -173,7 +173,8 @@
 }
 /*End of side list styles*/
 
-/* .search_input_container {
+.search_input_container {
+    /* background-color: white; */
     padding: 7px;
     border-radius: 5px;
     width: 20%;
@@ -184,9 +185,9 @@
     color: rgb(0, 0, 0);
     background-color: inherit;
     width: 40%;
-}  */
+}
+/*End of search friends styles*/
 
-/*End of search friends styles
 
 /*Side list styles*/
 .side_list {

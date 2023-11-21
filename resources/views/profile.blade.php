@@ -13,7 +13,7 @@
             <h2>Profile</h2>
 
             <div class="profile_header">
-                <p id="profile_image_url" class="hidden">{{ Auth::user()->profile_photo }}</p>
+                {{-- <p id="profile_image_url" class="hidden">{{ Auth::user()->profile_photo }}</p> --}}
                 <div id="profile_image_container" class="image_container">
                     <img width="100%" id="profile_image" class="profile_image" src="" alt="profile image" />
                 </div>
@@ -48,7 +48,6 @@
                 <div class="edit"><h3>Other options</h3></div>
 
                 <div>
-                    {{-- <p>Signing Out</p> --}}
 
                     <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                         class="profile_signout_btn" role="button">Sign Out</button>
@@ -59,7 +58,6 @@
 
 
                 <div>
-                    {{-- <p style="color: rgb(184, 55, 55);">Delete My Account</p> --}}
                     <a href="#">
                         <button class="delete_account" role="button">Delete Account</button>
                     </a>
