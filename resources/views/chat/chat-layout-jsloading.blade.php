@@ -232,7 +232,7 @@
     <div class="chat-container">
         <!-- chat header -->
         <div class="chat-header">
-            <h1><a href="{{ route('chat.get') }}">{{ __('Chat') }}</a></h1>
+            <h1><a href="{{ route('chat.testNewChat') }}">{{ __('Chat') }}</a></h1>
         </div>
         <!-- chat messages -->
         <div class="chat-messages">
@@ -249,7 +249,7 @@
                     {{-- loaded as links(a tags) --}}
                     {{-- @foreach ($recentMessages as $message) --}}
                     {{-- contains the user's avatar, theeir name, and last message sent --}}
-                    <a class="chat-icon" href="#">
+                    <a class="chat-icon" id="chat-icon">
                         {{-- to be replaced with logic for retrieving a User's avatar --}}
                         <img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}" alt="Avatar">
                         {{-- div containing name and last message --}}
@@ -264,42 +264,42 @@
             {{-- chat screen --}}
             <div class="chat-screen">
                 {{-- check if a user has been selected for the chat --}}
-                @if (!isset($receiver['id']))
-                    {{-- if not, The following message is displayed --}}
-                    {{ __('Please Select a User to Start a Chat') }}
-                @else
-                    {{-- if a user has been selected, the following is displayed --}}
-                    {{-- this will contain all the messages from both users in the chat --}}
-                    {{-- the receiver's name and avatar being displayed --}}
-                    <div class="chat-username">
-                        <h2>{{ $receiver['name'] }}</h2> <!-- name -->
-                        {{-- to be replaced with logic for retrieving a User's avatar --}}
-                        <img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}" alt="Avatar">
-                    </div>
-                    <!-- Messages will be added dynamically with JavaScript -->
-                    {{-- Work in progress to achieve this --}}
-                    {{-- @foreach ($messages as $message)
-                        <!-- if the message is from the receiver, it will be displayed on the left -->
-                        @if ($message->sender_id != Auth::user()->id)
-                            <div class="received">
-                                <p>{{ $message->message }}</p>
-                            </div>
-                        @endif
-                        <!-- if the message is from the sender, it will be displayed on the right -->
-                        @if ($message->sender_id == Auth::user()->id)
-                            <div class="sent">
-                                <p>{{ $message->message }}</p>
-                            </div>
-                        @endif
-                    @endforeach --}}
+                {{-- @if (!isset($receiver['id'])) --}}
+                {{-- if not, The following message is displayed --}}
+                {{-- {{ __('Please Select a User to Start a Chat') }} --}}
+                {{-- @else --}}
+                {{-- if a user has been selected, the following is displayed --}}
+                {{-- this will contain all the messages from both users in the chat --}}
+                {{-- the receiver's name and avatar being displayed --}}
+                <div class="chat-username">
+                    <h2>Name</h2> <!-- name -->
+                    {{-- to be replaced with logic for retrieving a User's avatar --}}
+                    <img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}" alt="Avatar">
+                </div>
+                <!-- Messages will be added dynamically with JavaScript -->
+                {{-- Work in progress to achieve this --}}
+                {{-- @foreach ($messages as $message) --}}
+                <!-- if the message is from the receiver, it will be displayed on the left -->
+                {{-- @if ($message->sender_id != Auth::user()->id) --}}
+                <div class="received">
+                    <p class="message"></p>
+                </div>
+                {{-- @endif --}}
+                <!-- if the message is from the sender, it will be displayed on the right -->
+                {{-- @if ($message->sender_id == Auth::user()->id) --}}
+                <div class="sent">
+                    <p class="message"></p>
+                </div>
+                {{-- @endif --}}
+                {{-- @endforeach --}}
             </div>
         </div> <!-- end of chat screen -->
         <!-- chat input -->
         <div>
             {{-- a form to take in the input from the user --}}
-            <form action="{{ route('chat.saveMessage', $receiver['id']) }}" method="POST" class="chat-input">
+            <form action="" method="POST" class="chat-input">
                 @csrf
-                <input type="hidden" name="receiverid" value="{{ $receiver['id'] }}"> <!-- the recepient's user id -->
+                <input type="hidden" name="receiverid"> <!-- the recepient's user id -->
                 <input type="text" name="message" placeholder="Type your message..."> <!-- the message -->
                 <button type="submit">
                     <i class="fa-solid fa-paper-plane"
@@ -307,10 +307,14 @@
                     </i>
                 </button> <!-- submit button -->
             </form>
-            @endif
+            {{-- @endif --}}
         </div> <!-- end of chat input -->
     </div>
     <script>
+        // scrolling to the bottom of the screen
+        function scrollToBottom() {
+            $('.chat-screen').scrollTop($('.chat-screen')[0].scrollHeight);
+        }
         //loading the chats from the database
         function loadChats() {
             $.ajax({
@@ -334,17 +338,16 @@
                             );
                         }
                     });
+                    scrollToBottom();
                 }
             });
         }
-        // scrolling to the bottom of the screen
-        function scrollToBottom() {
-            $('.chat-screen').scrollTop($('.chat-screen')[0].scrollHeight);
-        }
 
         $(document).ready(function() {
+            //loading the chats
+            // loadChatsForUser();
             //scrolling to the bottom of the screen
-            scrollToBottom();
+            // scrollToBottom();
         });
 
         //load users to chat sidebar
@@ -359,7 +362,7 @@
                     $.each(data, function(key, value) {
                         // adding users to chat icon
                         $('.chat-icons').append(
-                            '<a class="chat-icon" href="/chat/get-chat/' + value.user_id +
+                            '<a class="chat-icon" href="/chat/testNewChat/' + value.user_id +
                             '"><img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}" alt="Avatar"><div><p>' +
                             value.name + '</p><p class="last-message">' + value.message +
                             '</p></div></a>'
@@ -368,6 +371,13 @@
                 }
             });
         }
+
+        loadUsers();
+        // Event listener for chat icons
+        $(document).on('click', '.chat-icon', function(e) {
+            e.preventDefault();
+            loadChats();
+        });
 
         //sending a new message
         $('.chat-input').submit(function(e) {
@@ -383,7 +393,7 @@
             var _token = $('input[name=_token]').val();
             //sending the ajax request
             $.ajax({
-                url: "{{ route('chat.saveMessage') }}",
+                url: "{{ route('chat.saveMessage', 2) }}",
                 type: "POST",
                 data: {
                     message: message,
@@ -411,7 +421,10 @@
                     //emptying the input field
                     $('input[name=message]').val('');
                 }
-            });
+            }).fail(function() {
+                    //displaying an error message
+                    alert("Oops! Something went wrong!")
+                });
         });
     </script>
 </body>

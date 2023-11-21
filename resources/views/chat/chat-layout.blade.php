@@ -8,6 +8,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ Config::get('app.name', 'Chatify') }}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     {{-- <link rel="icon" href="resources\css\images\logo.png" type="image/icon"> --}}
 
     <script>
@@ -229,19 +231,21 @@
                 <div class="chat-icons">
                     {{-- loaded as links(a tags) --}}
                     @foreach ($recentMessages as $message)
-                    {{-- contains the user's avatar, theeir name, and last message sent --}}
+                        {{-- contains the user's avatar, theeir name, and last message sent --}}
                         <a class="chat-icon" href="/chat/get-chat/{{ $message['user_id'] }}">
                             {{-- to be replaced with logic for retrieving a User's avatar --}}
                             <img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}"
                                 alt="Avatar">
-                                {{-- div containing name and last message --}}
+                            {{-- div containing name and last message --}}
                             <div>
                                 <p>{{ $message['name'] }}</p>
                                 <p class="last-message">{{ $message['message'] }}</p>
                             </div>
                         </a>
-                        <a href="/chat/testNewChat">New Chat</a>
                     @endforeach
+                    <a href="/chat/testNewChat">New Chat</a>
+                    <br>
+                    <a href="#" onclick="generateMessages();">Generate Test Messages</a>
                 </div>
             </div> <!-- end of sidebar -->
             {{-- chat screen --}}
@@ -256,7 +260,7 @@
                     {{-- the receiver's name and avatar being displayed --}}
                     <div class="chat-username">
                         <h2>{{ $receiver['name'] }}</h2> <!-- name -->
-                            {{-- to be replaced with logic for retrieving a User's avatar --}}
+                        {{-- to be replaced with logic for retrieving a User's avatar --}}
                         <img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}" alt="Avatar">
                     </div>
                     <!-- Messages will be added dynamically with JavaScript -->
@@ -293,6 +297,27 @@
             @endif
         </div> <!-- end of chat input -->
     </div>
+    </body>
+
+    </html>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function generateMessages() {
+            $.ajax({
+                url: "{{ route('chat.generate-messages') }}",
+                type: "POST",
+                dataType: "json",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
+
