@@ -12,6 +12,9 @@
 
     <link rel="stylesheet" href="{{ asset('fontawesome-free-6.4.2-web/css/all.min.css') }}">
 
+    <!-- Import lottie bodymovin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+
    <script>
     var dark = true;
     var toggle_icon = document.getElementById("light-toggle");
@@ -34,6 +37,7 @@
     <script src="{{ asset('assets/js/pages/datatable-pages.init.js') }}"></script>
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 

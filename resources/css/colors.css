@@ -1,28 +1,37 @@
 .dark {
-    background-image: url('images/bg.gif');
-    --fontColor: #fefeff;
-    --bgColor: #16182c;
-    --navColor: #324A5F90;
-    --navHover: #15172b68;
+    /* background-image: url('images/bg.gif'); */
+    --bbg: hsl(0, 0%, 95%);
+    --newbbg: rgb(241, 241, 241);
+
+    --fontColor: #171932;
+    --title: rgb(0, 0, 0);
+    --color2: #0a2d4a;
+    --color3: #8bd3ff;
+    --placeholder: #00000068;
     --inputColor: #324A5F;
-    --chatColor: #7D84b2;
-    --chatBox: #ccc9dc;
+    --chatColor: #0b2235;
+    --chatBox: hsl(0, 0%, 95%);
     --linkColor: rgb(94, 185, 241);
-    --linkHover: #8bd3ff;
-    --hr: #58b4ff76;
-    --title: rgb(255, 255, 255);
+    --navColor: #0b2235;
+    --profileIcon: #324A5F;
+    --sendIcon: #eae7e7;
+    --searchIcon: #000000;
 }
+
 .light {
+    --color2: #324A5F;
     background-image: url('images/bg.png');
-    --fontColor: #17161b;
-    --bgColor: #9b9daf;
-    --navColor: #324A5F90;
+    --fontColor: #ffffff;
+    --color3: #8bd3ff;
+    --bgColor: #ffffff;
+    --newbbg: #000000;
+    /* --navColor: #0b2235; */
     --navHover: #15172b68;
+    --linkColor: rgb(94, 185, 241);
     --inputColor: #324A5F;
-    --chatColor: #7D84b2;
-    --chatBox: #ccc9dc;
-    --linkColor: #233c74;
-    --linkHover: #063653;
-    --hr: #58b4ff76;
+    /* --chatColor: #7D84b2;
+    --chatBox: #ccc9dc; */
+    --linkHover: #8bd3ff;
+    /* --hr: #58b4ff76; */
     --title: #000000;
 }
