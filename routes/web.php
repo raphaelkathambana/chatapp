@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileImageManager;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,13 +50,18 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/home', function () {
         return view('home');
     });
-    Route::post('/search_user', [HomeController::class,'searchUser'])->name('search_user.post');
-    Route::group(['prefix' => 'chat', 'as' => 'chat.'], function() {
+    Route::post('/search_user', [HomeController::class, 'searchUser'])->name('search_user.post');
+    Route::group(['prefix' => 'chat', 'as' => 'chat.'], function () {
         Route::get('/get-chat', [App\Http\Controllers\MessageController::class, 'index'])->name('get');
         Route::get('/get-chat/{receiver?}', [App\Http\Controllers\MessageController::class, 'index'])->name('getChatsBySenderAndReceiver');
         Route::post('/get-chat/{receiver?}', [App\Http\Controllers\MessageController::class, 'store'])->name('saveMessage');
-        Route::get('/fail', function() {
+        Route::get('/fail', function () {
             return view('chat.fail');
         })->name('fail');
+        Route::get('/testNewChat/{receiver?}', function () {
+            return view('chat.chat-layout-jsloading');
+        })->name('testNewChat');
+        Route::get('/get-chats-json', [App\Http\Controllers\MessageController::class, 'getChatsJSON'])->name('getChatsJSON');
+        Route::get('/get-users-json', [App\Http\Controllers\MessageController::class, 'getUsersJSON'])->name('getUsersJSON');
     });
 });

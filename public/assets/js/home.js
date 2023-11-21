@@ -10,8 +10,10 @@ $(document).ready(function () {
     });
     $('#user_search_input').on("input", function() {
         let keyword = $(this).val();
+
         
         // console.log(keyword);
+
         $.ajax({
             url: '/search_user',
             method: 'POST',
@@ -36,11 +38,12 @@ $(document).ready(function () {
                 }
             }
                 $("#side_list").html(sideListContent);
-                
+
             },
             error: function (error) {
                 console.log(error);
             }
-        }) 
+        })
      });
 });
+

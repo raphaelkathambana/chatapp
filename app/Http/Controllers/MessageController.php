@@ -33,6 +33,16 @@ class MessageController extends Controller
         ]);
     }
 
+    public function getChatsJSON(Request $request) {
+        $messages = $this->chats->getUserChats($request->user()->id, $request->get("receiverid"));
+        return response()->json($messages);
+    }
+
+    public function getUsersJSON(Request $request) {
+        $users = $this->chats->getRecentUsersWithMessage($request->user()->id);
+        return response()->json($users);
+    }
+
     /**
      * Store a new message in the database.
      *
@@ -58,7 +68,7 @@ class MessageController extends Controller
             'message' => $request->get('message'),
         ]);
 
-        event(new MessageSent($newMessage->message));
+        event(new MessageSent($newMessage->message, Auth::user()));
         return Redirect::route('chat.getChatsBySenderAndReceiver', $receiverId);
     }
 }

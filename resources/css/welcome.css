@@ -1,24 +1,30 @@
+/* text under welcome chatify*/
 .lorem {
     margin: 20px;
     width: 400px;
 }
 
-.list{
+/* .list{
     width: 80px;
-}
-.list a{
+} */
+/* .list a{
     color: var(--linkColor);
     text-decoration: none;
     padding: 5px;
+} */
+
+body{
+    background-color: var(--newbbg);
 }
 
+/* nav bar */
 .options{
   display: inline;
   border: solid transparent;
 }
 
  .options ul{
-    margin: 10px auto 0;
+    margin: 8px auto 0;
     list-style: none;
     float: right;
 }
@@ -30,17 +36,18 @@
 }
 
 .options a {
-    color:var(--linkColor);
+    color:var(--color2);
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1rem;
     float: right;
+    /* font-weight: 0; */
     display: block;
     padding-bottom: 10px;
     padding-top: 10px;
-    position: relative;
+     position: relative;
     margin-right:25px;
-
+    cursor: pointer;
   }
 
   .options a:after {
@@ -51,11 +58,12 @@
     height: 2px;
     left: 50%;
     position: absolute;
-    background: var(--linkColor);
+    background: var(--color3);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
   }
 
+  /* line disappears when not hovering*/
  .options a:hover:after {
     width: 100%;
     left: 0;
@@ -78,33 +86,14 @@
     font-size: 50px;
     color: var(--color2);
     letter-spacing: 0.10rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: left;
     padding: 20px;
     margin-left: 40px;
-    /* margin-top: 200px; */
-    font-weight: bold;
+    margin-top: 200px;
 }
 
-/* to chatify*/
-.chatify{
-    color: var(--color3);
-}
-
-/*phone animation lottie*/
-#animation-container{
-    width: 30%;
-    /* flex: 0.5; */
-    margin-left: 40px;
-    /* border: 1px solid black; */
-    /* float: right; */
-    justify-content: center;
-    /* margin-top: -220px; */
-    /* margin-top: 20px; */
-    /* margin-right: 80px; */
-    
-}
-
-.lorem p{
+/* .lorem p{
     color: rgb(254, 254, 254);
     width: 100%;
 }
@@ -112,13 +101,13 @@
 .lorem {
     margin-left: 100px;
     width: 60%;
-}
-
+} */
+/*
 .list a:hover{
     transition: 0.3s;;
     color: var(--linkHover);
     text-decoration: none;
-}
+} */
 
 hr{
     background-color: var(--hr);
@@ -128,18 +117,19 @@ hr{
     border: none;
 }
 
+/* dark mode light mode btn*/
 .set_mode{
     padding: 10px;
     float: left;
     width:50%;
 }
 
-button{
-    width: 10%;
+/* button{
+    width: 8%;
     color: #252732;
     border-radius: 14px;
     height: 30px;
-}
+} */
 
 /* .tap {
     background-image: url('../css/images/taptap.gif');
