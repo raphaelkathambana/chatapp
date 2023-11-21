@@ -7,13 +7,12 @@
 
     <body>
         <div class="background">
-
             <div class="mess" id="animation-send"></div>
 
             <script>
                 var animation = bodymovin.loadAnimation({
                     container: document.getElementById('animation-send'),
-                    path: 'https://lottie.host/95127c83-012e-4e2b-94c8-c95b64b509b0/pDpD6reTWG.json',
+                    path: 'https://lottie.host/5ee34794-9b6a-4b52-80fa-666f57569a02/WpjPzWvMHC.json',
                     render: 'svg',
                     loop: true,
                     autoplay: true,
