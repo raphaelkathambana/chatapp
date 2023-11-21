@@ -4,6 +4,10 @@
     width: 400px;
 }
 
+.chatify {
+    color: var(--color3);
+}
+
 /* .list{
     width: 80px;
 } */
