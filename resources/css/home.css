@@ -1,3 +1,19 @@
+.background{
+    min-height: 50vh;
+    align-content: center;
+    background-color: var(--newbbg);
+}
+
+/* .lets-chat{
+    min-height: 10vh;
+    background-color: rgb(7, 29, 46);
+    margin-top: 100px;
+
+}
+
+.lets-chat h4{
+    color: rgb(255, 255, 255);
+} */
 
 .side {
     top: 38px;
@@ -8,6 +24,14 @@
     z-index: 1;
     transition: 0.5s;
     transform: translate(-250px);
+}
+
+
+#animation-send{
+    width: 25%;
+    margin: 120px auto;
+     margin-right: 280px;
+     margin-top: 20px;
 }
 
 .side .side-menu {
@@ -71,22 +95,18 @@
 }
 
 /* ******************************** */
-.search_input_container {
-    border: 0;
-    box-sizing: border-box;
+.search_input_container{
     font-size: 18px;
     outline: 0;
-    width: 40%;
+    width: 20%;
+    margin: 5px auto;
     padding: 7px;
-    border-radius: 2px;
-    margin-left: 20px;
-    border-radius: 10px;
-    min-height: 3vh;
+    margin-left: 10px;
+    min-height: 1vh;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    background-color: var(--bgColor);
-    /* background-color: antiquewhite; */
 }
 
+/* transition */
 .search_input_container:after {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
@@ -94,7 +114,7 @@
     display: block;
     height: 2px;
     left: 50%;
-    margin-left: -205px;
+    margin-left: -120px;
     position: relative;
     background: var(--color3);
     transition: width 0.3s ease 0s, left 0.5s ease 0s;
@@ -102,22 +122,19 @@
   }
 
 .search_input_container:hover:after{
-    width: 40%;
-    /* margin-left: -160px; */
+    width: 100%;
+    left:10;
 }
 .user_search_input {
     border: none;
     outline: none;
-    color:#fff;
+    color:#000000;
     background-color: inherit;
     padding: 5px;
 }
 
-#icons{
-    float: right;
-
-}
 /*End of search friends styles*/
+
 
 /*Side list styles*/
 .side_list {
@@ -154,29 +171,30 @@
 }
 /*End of side list styles*/
 
-
-/*search friends styles*/
-.search_input_container {
-    background-color: white;
+/* .search_input_container {
     padding: 7px;
     border-radius: 5px;
+    width: 20%;
 }
 .user_search_input {
     border: none;
     outline: none;
+    color: rgb(0, 0, 0);
     background-color: inherit;
-    
-}
+    width: 40%;
+} */
 /*End of search friends styles*/
 
 /*Side list styles*/
 .side_list {
     position: fixed;
-    background-color: white;
+    background-color: var(--bbg);
     left: 0px;
     top: 43px;
     height: 100vh;
-    width: 30%;
+    width: 27%;
+    border-right: var(--color2) 2px solid;
+    border-radius: 3px;
     padding: 40px 15px 15px 15px;
 }
 
@@ -213,6 +231,7 @@
     transition: 0.5s ease;
     padding-bottom: 10px;
     padding-top: 10px;
+    margin-left: 362px;
 }
 .chat input  {
     background-color: var(--chatBox);
@@ -224,8 +243,8 @@
     font-size: 15px;
     color: black;
     height: 35px;
-    width: 50%;
-    margin-left: 340px;
+    width: 80%;
+    margin-left: 30px;
     padding-left: 10px;
 }
 
@@ -248,3 +267,7 @@
 .nav{
     height: 20px;
 }
+
+
+
+

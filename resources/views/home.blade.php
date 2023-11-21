@@ -7,6 +7,26 @@
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 
 <body>
+
+<div class="background">
+        <div class="lets-chat">
+            <h4 style= "color:rgb(3, 3, 3);font-size: 20px;">Let's Chat!</h4>
+        </div>
+    <div class="mess" id="animation-send"></div>
+
+    <script>
+        var animation = bodymovin.loadAnimation({
+            container:document.getElementById('animation-send'),
+            path: 'https://lottie.host/d733751a-a9b5-4b54-96e2-c49f7fd856a4/PCaTs9xhl6.json',
+            render: 'svg',
+            loop: true,
+            autoplay: true,
+            name: 'plane'
+        });
+        </script>
+
+    </div>
+
     <div class="nav">
         @if (Route::has('login'))
             {{-- <a href="/">Chatify</a> --}}
@@ -33,7 +53,7 @@
             @endauth
         @endif
     </div>
-    
+
     <input style="display: none" type="checkbox" name="" id="check">
     <div class="side">
         <label for="check">
@@ -47,9 +67,9 @@
             <li><a href="#">Contact</a></li>
             <li><a href="#">About</a></li>
         </ul>
-        
+
     </div>
-    
+
     <div class="side_list" id="side_list">
         <!-- Contents of this div are in public/assets/js/home.js line 20 - 35 and css in home.css from line 75 -->
     </div>
@@ -71,8 +91,8 @@
     <button onclick="Mode()"><i id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #000000"></i></i></button>
     </div> --}}
 
-    
-    
+
+
 </body>
 </html>
 @endsection
