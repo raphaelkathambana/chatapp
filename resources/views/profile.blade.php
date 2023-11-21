@@ -15,7 +15,7 @@
             <div class="profile_header">
                 {{-- <p id="profile_image_url" class="hidden">{{ Auth::user()->profile_photo }}</p> --}}
                 <div id="profile_image_container" class="image_container">
-                    <img width="100%" id="profile_image" class="profile_image" src="" alt="profile image" />
+                    <img width="100%" id="profile_image" class="profile_image" src="uploads/{{ Auth::user()->profile_photo }}" alt="profile image" />
                 </div>
                 <div>
                     <br /><br /><br /><br /><br /><br /><br />
