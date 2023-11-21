@@ -53,15 +53,29 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('/search_user', [HomeController::class, 'searchUser'])->name('search_user.post');
     Route::group(['prefix' => 'chat', 'as' => 'chat.'], function () {
         Route::get('/get-chat', [App\Http\Controllers\MessageController::class, 'index'])->name('get');
+
+        Route::post('/get-chat', [App\Http\Controllers\MessageController::class, 'generateMessages'])->name('generate-messages');
+
         Route::get('/get-chat/{receiver?}', [App\Http\Controllers\MessageController::class, 'index'])->name('getChatsBySenderAndReceiver');
+
         Route::post('/get-chat/{receiver?}', [App\Http\Controllers\MessageController::class, 'store'])->name('saveMessage');
+
         Route::get('/fail', function () {
             return view('chat.fail');
         })->name('fail');
-        Route::get('/testNewChat/{receiver?}', function () {
+
+        Route::get('/testNewChat', function () {
             return view('chat.chat-layout-jsloading');
         })->name('testNewChat');
-        Route::get('/get-chats-json', [App\Http\Controllers\MessageController::class, 'getChatsJSON'])->name('getChatsJSON');
+
+        Route::get('/TestNewChat/{receiver?}', [App\Http\Controllers\MessageController::class, 'indexing'])->name('TestingChatsBySenderAndReceiver');
+
+        Route::post('/TestNewChat/{receiver?}', [App\Http\Controllers\MessageController::class, 'store'])->name('sendMessage');
+
+        Route::get('/get-chats-json/{receiver?}', [App\Http\Controllers\MessageController::class, 'getChatsJSON'])->name('getChatsJSON');
+
         Route::get('/get-users-json', [App\Http\Controllers\MessageController::class, 'getUsersJSON'])->name('getUsersJSON');
+
+        Route::get('TestNewChat/{receiver?}', [App\Http\Controllers\MessageController::class, 'getChatsJSON'])->name('getChatsForUser');
     });
 });
