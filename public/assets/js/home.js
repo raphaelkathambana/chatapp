@@ -11,7 +11,7 @@ $(document).ready(function () {
     $('#user_search_input').on("input", function() {
         let keyword = $(this).val();
         
-        console.log(keyword);
+        // console.log(keyword);
         $.ajax({
             url: '/search_user',
             method: 'POST',
@@ -19,7 +19,7 @@ $(document).ready(function () {
             // processData: false,
             // contentType: false,
             success: function (response) {
-                console.log(response);
+                // console.log(response);
                 let sideListContent = "";
                 if (response.length < 1) {
                     sideListContent += `<h4 class='side_list_title'>No results found for '${keyword}'</h4>`
