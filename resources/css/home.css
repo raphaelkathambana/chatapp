@@ -1,3 +1,26 @@
+.background{
+    min-height: 50vh;
+    align-content: center;
+    background-color: var(--newbbg);
+    width: 70%;
+}
+
+#animation-send{
+    width: 30%;
+    margin: 130px auto;
+    margin-right: -10px;
+    margin-top: 20px;
+}
+/* .lets-chat{
+    min-height: 10vh;
+    background-color: rgb(7, 29, 46);
+    margin-top: 100px;
+
+}
+
+.lets-chat h4{
+    color: rgb(255, 255, 255);
+} */
 
 .side {
     top: 38px;
@@ -9,6 +32,9 @@
     transition: 0.5s;
     transform: translate(-250px);
 }
+
+
+
 
 .side .side-menu {
     color: var(--fontColor);
@@ -74,10 +100,10 @@
 .search_input_container{
     font-size: 18px;
     outline: 0;
-    width: 40%;
+    width: 20%;
     margin: 5px auto;
     padding: 7px;
-    margin-left: 20px;
+    margin-left: 10px;
     min-height: 1vh;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
 }
@@ -90,7 +116,7 @@
     display: block;
     height: 2px;
     left: 50%;
-    margin-left: -105px;
+    margin-left: -120px;
     position: relative;
     background: var(--color3);
     transition: width 0.3s ease 0s, left 0.5s ease 0s;
@@ -110,6 +136,7 @@
 }
 
 /*End of search friends styles*/
+
 
 /*Side list styles*/
 .side_list {
@@ -146,8 +173,6 @@
 }
 /*End of side list styles*/
 
-
-/*search friends styles*/
 .search_input_container {
     /* background-color: white; */
     padding: 7px;
@@ -162,6 +187,7 @@
     width: 40%;
 }
 /*End of search friends styles*/
+
 
 /*Side list styles*/
 .side_list {
@@ -245,3 +271,7 @@
 .nav{
     height: 20px;
 }
+
+
+
+

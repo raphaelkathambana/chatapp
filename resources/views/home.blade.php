@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
     <script src="{{ asset('assets/js/home.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -17,6 +18,34 @@
                             placeholder="Search friends" />
                     </div>
 
+
+<body>
+
+<div class="background">
+        {{-- <div class="lets-chat">
+            <h4 style= "color:rgb(3, 3, 3);font-size: 20px;">Let's Chat!</h4>
+        </div> --}}
+    <div class="mess" id="animation-send"></div>
+
+    <script>
+        var animation = bodymovin.loadAnimation({
+            container:document.getElementById('animation-send'),
+            path: 'https://lottie.host/95127c83-012e-4e2b-94c8-c95b64b509b0/pDpD6reTWG.json',
+            render: 'svg',
+            loop: true,
+            autoplay: true,
+            name: 'plane'
+        });
+        </script>
+
+    </div>
+
+    <div class="nav">
+        @if (Route::has('login'))
+            {{-- <a href="/">Chatify</a> --}}
+            @auth
+            <div class="search_input_container">
+
                     <a href="{{ route('chat.get') }}">Chat</a>
                     <i onClick="redirect()" class="fa-solid fa-house"
                         style="color: var(--profileIcon);font-size:25px; margin-left:550px; margin-right:20px;"></i>
@@ -24,18 +53,44 @@
                         style="color: var(--profileIcon);font-size:30px; cursor:pointer; margin-right:30px;"></i>
 
 
-                    {{-- <a href="{{ url('/home') }}">Home</a>
+
+
+            <i onClick="redirect()" class="fa-solid fa-house" style="color: var(--profileIcon);font-size:25px; margin: 22px;"></i>
+            <i onClick="redirect()" class="fa-solid fa-circle-user" style="color: var(--profileIcon);font-size:30px; cursor:pointer; margin-right:30px;"></i>
+
+                {{-- <a href="{{ url('/home') }}">Home</a>
                 <a href="{{ url('/logout') }}"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 <form class="form" action="{{ route('logout') }}" method='post' id="logout-form">
                     @csrf
                 </form> --}}
-                @else
-                    <a href="{{ route('login') }}">Log in</a>
-                    <a href="{{ route('register') }}">Register</a>
-                @endauth
-            @endif
-        </div>
+
+            @else
+                <a href="{{ route('login') }}">Log in</a>
+                <a href="{{ route('register') }}">Register</a>
+            @endauth
+        @endif
+    </div>
+
+    <input style="display: none" type="checkbox" name="" id="check">
+    <div class="side">
+        <label for="check">
+            {{-- <span class="span fas fa-times" id="times"></span> --}}
+            {{-- <span class="span fas fa-bars" id="bars"></span> --}}
+        </label>
+        <ul class="side-menu ul">
+            <button onclick="Mode()">Mode</button>
+            <li><a href="{{ route('chat.get') }}">Chat</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+
+    </div>
+
+    <div class="side_list" id="side_list">
+        <!-- Contents of this div are in public/assets/js/home.js line 20 - 35 and css in home.css from line 75 -->
+    </div>
 
         <input style="display: none" type="checkbox" name="" id="check">
         <div class="side">
@@ -73,4 +128,5 @@
     </body>
 
     </html>
+
 @endsection
