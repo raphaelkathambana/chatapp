@@ -11,7 +11,7 @@
                         <li>
                             <a href="{{ url('/logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                            <form action='{{ route('logout') }}' method='post' id="logout-form">
+                            <form action="{{ route('logout') }}" method='post' id="logout-form">
                                 @csrf
                             </form>
                         </li>
@@ -26,7 +26,18 @@
         <div>
             <div>
                 <div class="welcome">
-                    <h1> Welcome To Chatify</h1>
+                    <div class="message" id="animation-container"></div>
+                    <h1> Welcome To <span class="chatify">Chatify</span></h1>
+                    <script>
+                        var animation = bodymovin.loadAnimation({
+                            container:document.getElementById('animation-container'),
+                            path: 'https://lottie.host/140dbc61-982a-49ee-983e-82eea6102d06/sDxlQ7gWtj.json',
+                            render: 'svg',
+                            loop: true,
+                            autoplay: true,
+                            name: 'message animation'
+                        });
+                        </script> 
                 </div>
                 <hr>
                 <div class="lorem">
@@ -46,5 +57,5 @@
             <i onclick="Mode()" id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #fff; margin:10px;font-size:20px;"></i>
             </i></i></button>
     </div>
-
+             
 </body>
