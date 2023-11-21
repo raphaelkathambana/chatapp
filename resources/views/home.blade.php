@@ -9,15 +9,15 @@
 <body>
 
 <div class="background">
-        <div class="lets-chat">
+        {{-- <div class="lets-chat">
             <h4 style= "color:rgb(3, 3, 3);font-size: 20px;">Let's Chat!</h4>
-        </div>
+        </div> --}}
     <div class="mess" id="animation-send"></div>
 
     <script>
         var animation = bodymovin.loadAnimation({
             container:document.getElementById('animation-send'),
-            path: 'https://lottie.host/d733751a-a9b5-4b54-96e2-c49f7fd856a4/PCaTs9xhl6.json',
+            path: 'https://lottie.host/95127c83-012e-4e2b-94c8-c95b64b509b0/pDpD6reTWG.json',
             render: 'svg',
             loop: true,
             autoplay: true,
@@ -38,7 +38,7 @@
                 </div>
 
 
-            <i onClick="redirect()" class="fa-solid fa-house" style="color: var(--profileIcon);font-size:25px; margin-left:550px;"></i>
+            <i onClick="redirect()" class="fa-solid fa-house" style="color: var(--profileIcon);font-size:25px; margin: 22px;"></i>
             <i onClick="redirect()" class="fa-solid fa-circle-user" style="color: var(--profileIcon);font-size:30px; cursor:pointer; margin-right:30px;"></i>
 
                 {{-- <a href="{{ url('/home') }}">Home</a>

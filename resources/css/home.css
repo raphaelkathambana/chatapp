@@ -2,8 +2,15 @@
     min-height: 50vh;
     align-content: center;
     background-color: var(--newbbg);
+    width: 70%;
 }
 
+#animation-send{
+    width: 30%;
+    margin: 130px auto;
+    margin-right: -10px;
+    margin-top: 20px;
+}
 /* .lets-chat{
     min-height: 10vh;
     background-color: rgb(7, 29, 46);
@@ -27,12 +34,7 @@
 }
 
 
-#animation-send{
-    width: 25%;
-    margin: 120px auto;
-     margin-right: 280px;
-     margin-top: 20px;
-}
+
 
 .side .side-menu {
     color: var(--fontColor);
@@ -182,8 +184,9 @@
     color: rgb(0, 0, 0);
     background-color: inherit;
     width: 40%;
-} */
-/*End of search friends styles*/
+}  */
+
+/*End of search friends styles
 
 /*Side list styles*/
 .side_list {
