@@ -10,7 +10,7 @@
                         <li>
                             <a href="{{ url('/logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                            <form action='{{ route('logout') }}' method='post' id="logout-form">
+                            <form action="{{ route('logout') }}" method='post' id="logout-form">
                                 @csrf
                             </form>
                         </li>
@@ -60,5 +60,5 @@
             <i onclick="Mode()" id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #000000; margin:10px;font-size:20px;"></i>
             </i></i></button>
     </div>
-
+             
 </body>
