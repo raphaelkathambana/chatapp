@@ -7,8 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ Config::get('app.name', 'Chatify') }}</title>
-    {{-- <link rel="icon" href="resources\css\images\logo.png" type="image/icon"> --}}
+    <title>{{ Config::get('app.name', 'Chatify Chat') }}</title>
 
     <script>
         var dark = true;
@@ -26,21 +25,7 @@
             }
         }
     </script>
-    <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        // Enable pusher logging - don't include this in production
-        Pusher.logToConsole = true;
-
-        var pusher = new Pusher('4f2a200844f169242694', {
-            cluster: 'ap2'
-        });
-
-        var channel = pusher.subscribe('my-channel');
-        channel.bind('my-event', function(data) {
-            alert(JSON.stringify(data));
-        });
-    </script>
 
     <style>
         a {
@@ -224,10 +209,6 @@
 </head>
 
 <body>
-    <p>
-        Try publishing an event to channel <code>my-channel</code>
-        with event name <code>my-event</code>.
-    </p>
     {{-- container for content --}}
     <div class="chat-container">
         <!-- chat header -->
@@ -247,16 +228,8 @@
                 {{-- the chat icons --}}
                 <div class="chat-icons">
                     {{-- loaded as links(a tags) --}}
-                    {{-- @foreach ($recentMessages as $message) --}}
                     {{-- contains the user's avatar, theeir name, and last message sent --}}
                     <a class="chat-icon" id="chat-icon">
-                        {{-- to be replaced with logic for retrieving a User's avatar --}}
-                        <img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}" alt="Avatar">
-                        {{-- div containing name and last message --}}
-                        <div>
-                            <p id="name"></p>
-                            <p class="last-message"></p>
-                        </div>
                     </a>
                     {{-- @endforeach --}}
                 </div>
@@ -264,34 +237,14 @@
             {{-- chat screen --}}
             <div class="chat-screen">
                 {{-- check if a user has been selected for the chat --}}
-                {{-- @if (!isset($receiver['id'])) --}}
                 {{-- if not, The following message is displayed --}}
-                {{-- {{ __('Please Select a User to Start a Chat') }} --}}
-                {{-- @else --}}
+                {{ __('Please Select a User to Start a Chat') }}
                 {{-- if a user has been selected, the following is displayed --}}
                 {{-- this will contain all the messages from both users in the chat --}}
                 {{-- the receiver's name and avatar being displayed --}}
                 <div class="chat-username">
-                    <h2>Name</h2> <!-- name -->
-                    {{-- to be replaced with logic for retrieving a User's avatar --}}
-                    <img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}" alt="Avatar">
                 </div>
                 <!-- Messages will be added dynamically with JavaScript -->
-                {{-- Work in progress to achieve this --}}
-                {{-- @foreach ($messages as $message) --}}
-                <!-- if the message is from the receiver, it will be displayed on the left -->
-                {{-- @if ($message->sender_id != Auth::user()->id) --}}
-                <div class="received">
-                    <p class="message"></p>
-                </div>
-                {{-- @endif --}}
-                <!-- if the message is from the sender, it will be displayed on the right -->
-                {{-- @if ($message->sender_id == Auth::user()->id) --}}
-                <div class="sent">
-                    <p class="message"></p>
-                </div>
-                {{-- @endif --}}
-                {{-- @endforeach --}}
             </div>
         </div> <!-- end of chat screen -->
         <!-- chat input -->
@@ -301,7 +254,8 @@
                 @csrf
                 <input type="hidden" name="receiverid" value="">
                 <!-- the recepient's user id -->
-                <input type="text" name="message" placeholder="Type your message..." autocomplete="off" required> <!-- the message -->
+                <input type="text" name="message" placeholder="Type your message..." autocomplete="off" required>
+                <!-- the message -->
                 <button type="submit">
                     <i class="fa-solid fa-paper-plane"
                         style="color: #0d133f; font-size:19px; cursor: pointer; border:solid 2px;padding:3px;border-radius:10px;">
@@ -311,9 +265,7 @@
             {{-- @endif --}}
         </div> <!-- end of chat input -->
     </div>
-    {{-- '<a class="chat-icon" href="{{ route('chat.TestingChatsBySenderAndReceiver', "+value.user_id+") }}"><img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}" alt="Avatar"><div><p>' +
-        value.name + '</p><p class="last-message">' + value.message +
-        '</p></div></a>' --}}
+
     <script>
         let receivingUser;
         console.log({{ $receiver }});
@@ -332,9 +284,11 @@
                     console.log(receiverId);
                     receivingUser = receiverId;
                     //looping through the data
+                    $('.chat-screen').empty();
                     $.each(data, function(key, value) {
                         //checking if the user is the sender
                         if (value.sender_id == {{ Auth::user()->id }}) {
+                            // remove message on chat screen
                             //if the user is the sender, the message will be displayed on the right
                             $('.chat-screen').append(
                                 '<div class="sent"><p>' + value.message + '</p></div>'
@@ -353,13 +307,6 @@
                 }
             });
         }
-
-        $(document).ready(function() {
-            //loading the chats
-            // loadChatsForUser();
-            //scrolling to the bottom of the screen
-            // scrollToBottom();
-        });
 
         //load users to chat sidebar
         function loadUsers() {
