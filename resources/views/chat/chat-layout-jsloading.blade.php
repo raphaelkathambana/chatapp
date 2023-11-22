@@ -297,10 +297,11 @@
         <!-- chat input -->
         <div>
             {{-- a form to take in the input from the user --}}
-            <form action="" method="POST" class="chat-input">
+            <form action="{{ route('chat.sendMessage') }}" method="POST" class="chat-input">
                 @csrf
-                <input type="hidden" name="receiverid"> <!-- the recepient's user id -->
-                <input type="text" name="message" placeholder="Type your message..."> <!-- the message -->
+                <input type="hidden" name="receiverid" value="">
+                <!-- the recepient's user id -->
+                <input type="text" name="message" placeholder="Type your message..." autocomplete="off" required> <!-- the message -->
                 <button type="submit">
                     <i class="fa-solid fa-paper-plane"
                         style="color: #0d133f; font-size:19px; cursor: pointer; border:solid 2px;padding:3px;border-radius:10px;">
@@ -310,19 +311,26 @@
             {{-- @endif --}}
         </div> <!-- end of chat input -->
     </div>
+    {{-- '<a class="chat-icon" href="{{ route('chat.TestingChatsBySenderAndReceiver', "+value.user_id+") }}"><img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}" alt="Avatar"><div><p>' +
+        value.name + '</p><p class="last-message">' + value.message +
+        '</p></div></a>' --}}
     <script>
+        let receivingUser;
+        console.log({{ $receiver }});
         // scrolling to the bottom of the screen
         function scrollToBottom() {
             $('.chat-screen').scrollTop($('.chat-screen')[0].scrollHeight);
         }
         //loading the chats from the database
-        function loadChats() {
+        function loadChats(receiverId) {
             $.ajax({
-                url: "{{ route('chat.getChatsJSON') }}",
+                url: '/chat/TestNewChat/get-chats-json/' + receiverId,
                 type: "GET",
                 dataType: "json",
                 success: function(data) {
                     console.log(data);
+                    console.log(receiverId);
+                    receivingUser = receiverId;
                     //looping through the data
                     $.each(data, function(key, value) {
                         //checking if the user is the sender
@@ -339,6 +347,9 @@
                         }
                     });
                     scrollToBottom();
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
                 }
             });
         }
@@ -362,7 +373,7 @@
                     $.each(data, function(key, value) {
                         // adding users to chat icon
                         $('.chat-icons').append(
-                            '<a class="chat-icon" href="/chat/testNewChat/' + value.user_id +
+                            '<a class="chat-icon" href="/chat/TestNewChat/' + value.user_id +
                             '"><img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}" alt="Avatar"><div><p>' +
                             value.name + '</p><p class="last-message">' + value.message +
                             '</p></div></a>'
@@ -376,10 +387,17 @@
         // Event listener for chat icons
         $(document).on('click', '.chat-icon', function(e) {
             e.preventDefault();
-            loadChats();
+            //getting the receiver's id
+            var receiver_id = $(this).attr('href').split('/')[3];
+            loadChats(receiver_id);
         });
 
-        //sending a new message
+        //load chats periodically
+        setInterval(function() {
+            loadChats(receivingUser);
+        }, 1000);
+
+        // //sending a new message
         $('.chat-input').submit(function(e) {
             //preventing the default action
             e.preventDefault();
@@ -393,38 +411,27 @@
             var _token = $('input[name=_token]').val();
             //sending the ajax request
             $.ajax({
-                url: "{{ route('chat.saveMessage', 2) }}",
+                url: "/chat/TestNewChat/send/" + receivingUser,
                 type: "POST",
                 data: {
                     message: message,
-                    receiver_id: receiver_id,
+                    receiverid: receivingUser,
                     sender_id: sender_id,
                     _token: _token
                 },
                 dataType: "json",
-                success: function(data) {
-                    console.log(data);
-                    //checking if the user is the sender
-                    if (data.sender_id == {{ Auth::user()->id }}) {
-                        //if the user is the sender, the message will be displayed on the right
-                        $('.chat-screen').append(
-                            '<div class="sent"><p>' + data.message + '</p></div>'
-                        );
-                    } else {
-                        //if the user is the receiver, the message will be displayed on the left
-                        $('.chat-screen').append(
-                            '<div class="received"><p>' + data.message + '</p></div>'
-                        );
-                    }
-                    //scrolling to the bottom of the screen
-                    scrollToBottom();
+                success: function() {
+                    loadChats(receivingUser);
                     //emptying the input field
                     $('input[name=message]').val('');
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
                 }
             }).fail(function() {
-                    //displaying an error message
-                    alert("Oops! Something went wrong!")
-                });
+                //displaying an error message
+                alert("Oops! Something went wrong!")
+            });
         });
     </script>
 </body>
