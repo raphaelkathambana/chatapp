@@ -31,7 +31,7 @@
                             placeholder="Search friends" />
                     </div>
 
-                    <a href="{{ route('chat.get') }}">Chat</a>
+                   <div> <a href="{{ route('chat.get') }}">Chat</a> </div>
                     <i onClick="redirect()" class="fa-solid fa-house"
                         style="color: var(--profileIcon);font-size:25px; margin-left:550px; margin-right:20px;"></i>
                     <i onClick="redirect()" class="fa-solid fa-circle-user"

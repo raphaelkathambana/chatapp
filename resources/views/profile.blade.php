@@ -10,7 +10,7 @@
     <body>
         <div class="profile_page_container">
 
-            <h2>Profile</h2>
+            <h2 id="header">Profile</h2>
 
             <div class="profile_header">
                 {{-- <p id="profile_image_url" class="hidden">{{ Auth::user()->profile_photo }}</p> --}}
@@ -21,6 +21,7 @@
                     <br /><br /><br /><br /><br /><br /><br />
                     <p class="user_name">{{ Auth::user()->name }}</p>
                     <p class="user_name">{{ Auth::user()->email }}</p>
+                    {{-- <p class="user_name">{{ Auth::user()->about }}</p> --}}
                 </div>
             </div>
 
@@ -28,7 +29,7 @@
                 <div class="edit"><br /><h3>Edit your details</h3></div>
 
                 <div>
-                    <p>Edit your bio</p>
+                    <p><span style="font-size: 20px; font-weight:bold;">Edit your bio</span></p>
                     <!-- <button class="edit_bio_btn" role="button">Edit Bio</button> -->
 
                     <form action="" class="about_form">
@@ -38,12 +39,17 @@
                 </div>
 
                 <div>
-                    <p>Manage Password</p>
+                    <p><span style="font-size: 20px; font-weight:bold;">Manage Password</p>
                     <a href="/profile/password">
-                        <button class="edit_bio_btn" role="button">Reset Password</button>
+                        <button id="reset_btn" role="button">Reset Password</button>
                     </a>
                 </div>
 
+            <div>
+                <p><span style="font-size: 20px; font-weight:bold;">Edit your avatar</span></p>
+                <a href="/profile/password">
+                    <button id="reset_btn" role="button">Change profile picture</button>
+            </div>
 
                 <div class="edit"><h3>Other options</h3></div>
 
