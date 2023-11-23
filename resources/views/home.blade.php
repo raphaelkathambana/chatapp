@@ -98,8 +98,8 @@
                             required>
                         </label>
                         <button type="submit">
-                            <i class="fa-solid fa-paper-plane"
-                            style="color: var(--sendIcon);margin-top:10px;"></i>
+                            {{-- <i class="fa-sharp fa-light fa-paper-plane" style="color: var(--profileIcon);font-size:24px; cursor:pointer;background-color:#ffff;color: var(--color2); margin:2px auto;"></i> --}}
+                            <i class="fa-solid fa-paper-plane" style="color: #010d23;font-size:20px;padding:5px auto; margin: 5px auto;"></i>
                             <!-- icon to send message -->
                         </button> <!-- submit button -->
                     </form>
