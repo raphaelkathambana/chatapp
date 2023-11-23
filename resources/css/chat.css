@@ -83,7 +83,7 @@ a {
     width: 20%;
 }
 
-.chat-screen {
+/* .chat-screen {
     background-color: #eee;
     color: #333;
     padding: 10px;
@@ -93,7 +93,7 @@ a {
     align-self: flex-end;
     overflow: inherit;
     height: -webkit-fill-available;
-}
+} */
 
 
 .chat-icon {

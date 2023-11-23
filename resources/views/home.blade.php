@@ -49,15 +49,15 @@
                 @endauth
             @endif
         </div>
+        <div class="drop-home-container">
 
-        <input style="display: none" type="checkbox" name="" id="check">
+            <input style="display: none" type="checkbox" name="" id="check">
+            <div class="side_list" id="side_list">
+                <!-- Contents of this div are in public/assets/js/home.js line 20 - 35 and css in home.css from line 75 -->
+            </div>
 
-        <div class="side_list" id="side_list">
-            <!-- Contents of this div are in public/assets/js/home.js line 20 - 35 and css in home.css from line 75 -->
-        </div>
-
-        <input style="display: none" type="checkbox" name="" id="check">
-        {{-- <div class="side">
+            <input style="display: none" type="checkbox" name="" id="check">
+            {{-- <div class="side">
             <label for="check">
                 <span class="span fas fa-times" id="times"></span>
                 <span class="span fas fa-bars" id="bars"></span>
@@ -72,35 +72,41 @@
 
         </div> --}}
 
-        <div class="side_list" id="side_list">
-            <!-- Contents of this div are in public/assets/js/home.js line 20 - 35 and css in home.css from line 75 -->
-        </div>
-        <div class="chat">
-            <!-- chat messages go here-->
-            <div class="lets-chat">
-                <h4 style="color: var(--color3); font-size:40px;"> Let's chat !</h4>
+            <div class="side_list" id="side_list">
+                <!-- Contents of this div are in public/assets/js/home.js line 20 - 35 and css in home.css from line 75 -->
             </div>
-            <!-- chat input -->
-            <div>
-                {{-- a form to take in the input from the user --}}
-                <form action="{{ route('chat.sendMessage') }}" method="POST">
-                    @csrf
-                    <label for="check">
-                        <!-- the recepient's user id -->
-                        <input type="hidden" name="receiverid" value="">
-                        <!-- the message -->
-                        <input type="text" name="message" placeholder="Type your message..." autocomplete="off" required>
-                    </label>
-                    <button type="submit">
-                        <i class="fa-solid fa-paper-plane"
-                            style="color: var(--sendIcon); margin:10px; font-size:19px; cursor: pointer; border:solid 2px;padding:6px;border-radius:10px;"></i>
-                        <!-- icon to send message -->
-                    </button> <!-- submit button -->
-                </form>
-                {{-- @endif --}}
-            </div> <!-- end of chat input -->
+            <div class="chat-screen">
 
+                <div class="chat">
+                    <!-- chat messages go here-->
+                    {{-- <div class="lets-chat">
+                        <h4 style="color: var(--color3); font-size:40px;"> Let's chat !</h4>
+            </div> --}}
+                <!-- chat input -->
+                <div>
+                    {{-- a form to take in the input from the user --}}
+                    <form action="{{ route('chat.sendMessage') }}" method="POST">
+                        @csrf
+                        <label for="check">
+                            <!-- the recepient's user id -->
+                            <input type="hidden" name="receiverid" value="">
+                            <!-- the message -->
+                            <input type="text" name="message" placeholder="Type your message..." autocomplete="off"
+                            required>
+                        </label>
+                        <button type="submit">
+                            <i class="fa-solid fa-paper-plane"
+                            style="color: var(--sendIcon); margin:10px; font-size:19px; cursor: pointer; border:solid 2px;padding:6px;border-radius:10px;"></i>
+                            <!-- icon to send message -->
+                        </button> <!-- submit button -->
+                    </form>
+                    {{-- @endif --}}
+                </div> <!-- end of chat input -->
+            </div>
+
+            </div>
         </div>
+
         {{-- <div class="set_mode">
     <button onclick="Mode()"><i id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #000000"></i></i></button>
     </div> --}}
