@@ -14,12 +14,13 @@ body {
     top: 0;
     left: 0;
     right: 0;
-     display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 10px;
     padding-top: 13px;
     list-style: none;
+
     background-color: white;
     margin-bottom: auto;
 }
@@ -27,6 +28,7 @@ body {
 .nav a {
     color: var(--fontColor);
     text-decoration: none;
+    width: 100%;
     padding: 11px;
 }
 

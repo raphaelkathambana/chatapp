@@ -7,6 +7,9 @@
 
     <body>
         <div class="background">
+            <div class="lets-chat">
+                <h4 style="color: var(--color3); font-size:40px;"> Let's chat !</h4>
+             </div>
             <div class="mess" id="animation-send"></div>
 
             <script>
@@ -48,33 +51,19 @@
                     <a href="{{ route('register') }}">Register</a>
                 @endauth
             @endif
-        </div>
+            </div>
 
         <input style="display: none" type="checkbox" name="" id="check">
-        <div class="side">
-            <label for="check">
-                {{-- <span class="span fas fa-times" id="times"></span> --}}
-                {{-- <span class="span fas fa-bars" id="bars"></span> --}}
-            </label>
-            <ul class="side-menu ul">
-                <button onclick="Mode()">Mode</button>
-                <li><a href="{{ route('chat.get') }}">Chat</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-
-        </div>
 
         <div class="side_list" id="side_list">
             <!-- Contents of this div are in public/assets/js/home.js line 20 - 35 and css in home.css from line 75 -->
         </div>
 
         <input style="display: none" type="checkbox" name="" id="check">
-        <div class="side">
+        {{-- <div class="side">
             <label for="check">
-                {{-- <span class="span fas fa-times" id="times"></span> --}}
-                {{-- <span class="span fas fa-bars" id="bars"></span> --}}
+                <span class="span fas fa-times" id="times"></span>
+                <span class="span fas fa-bars" id="bars"></span>
             </label>
             <ul class="side-menu ul">
                 <button onclick="Mode()">Mode</button>
@@ -84,7 +73,7 @@
                 <li><a href="#">About</a></li>
             </ul>
 
-        </div>
+        </div> --}}
 
         <div class="side_list" id="side_list">
             <!-- Contents of this div are in public/assets/js/home.js line 20 - 35 and css in home.css from line 75 -->
