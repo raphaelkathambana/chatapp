@@ -42,6 +42,7 @@
                 </div>
                 <hr>
                 <div class="lorem">
+                    <button class="get-started">Let's get started! </button>
                     {{-- <p> Lorem ipsum! dolor sit amet consectetur adipisicing elit. Eius blanditiis dignissimos nihil
                         harum, eum quis
                         nisi laudantium quaerat laborum ratione mollitia tenetur consequuntur alias libero animi error
@@ -60,5 +61,5 @@
             <i onclick="Mode()" id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #000000; margin:10px;font-size:20px;"></i>
             </i></i></button>
     </div>
-             
+
 </body>
