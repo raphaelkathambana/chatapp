@@ -9,15 +9,14 @@
     margin: 70px auto;
     margin-right: 230px;
 }
-/* .lets-chat{
+ /* .lets-chat{
     min-height: 10vh;
-    background-color: rgb(7, 29, 46);
-    margin-top: 100px;
+    background-color: rgb(68, 170, 248);
+    margin: 100px auto;
+} */
 
-}
-
-.lets-chat h4{
-    color: rgb(255, 255, 255);
+/* .lets-chat h4{
+    color: rgb(0, 0, 0);
 } */
 
 .side {
@@ -30,8 +29,6 @@
     transition: 0.5s;
     transform: translate(-250px);
 }
-
-
 
 
 .side .side-menu {
@@ -98,12 +95,21 @@
 .search_input_container{
     font-size: 18px;
     outline: 0;
-    width: 20%;
+    width: 22%;
     margin: 5px auto;
     padding: 7px;
     margin-left: 10px;
     min-height: 1vh;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+.user_search_input {
+    border: none;
+    outline: none;
+    padding: 3px;
+    color: rgb(0, 0, 0);
+    background-color: inherit;
+    width: 40%;
 }
 
 /* transition */
@@ -118,76 +124,18 @@
     position: relative;
     background: var(--color3);
     transition: width 0.3s ease 0s, left 0.5s ease 0s;
-    width: 0%;
+    width: 10%;
   }
 
 .search_input_container:hover:after{
     width: 100%;
-    left:10;
-}
-.user_search_input {
-    border: none;
-    outline: none;
-    color:#000000;
-    background-color: inherit;
-    padding: 5px;
+    left: 15;
 }
 
 /*End of search friends styles*/
 
-
 /*Side list styles*/
-.side_list {
-    position: fixed;
-    background-color: white;
-    left: 0px;
-    top: 43px;
-    height: 100vh;
-    width: 25%;
-    padding: 40px 15px 15px 15px;
-}
 
-.side_list_item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    border-bottom: 1px solid grey;
-}
-
-.side_list_title {
-    color: black;
-    margin: 15px 0;
-}
-
-.side_list_text {
-    color: black;
-    margin-left: 15px;
-}
-
-.side_list_photo {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-}
-/*End of side list styles*/
-
-.search_input_container {
-    /* background-color: white; */
-    padding: 7px;
-    border-radius: 5px;
-    width: 20%;
-}
-.user_search_input {
-    border: none;
-    outline: none;
-    color: rgb(0, 0, 0);
-    background-color: inherit;
-    width: 40%;
-}
-/*End of search friends styles*/
-
-
-/*Side list styles*/
 .side_list {
     position: fixed;
     background-color: var(--bbg);
@@ -233,7 +181,7 @@
     transition: 0.5s ease;
     padding-bottom: 10px;
     padding-top: 10px;
-    margin-left: 362px;
+    margin-left: 358px;
 }
 .chat input  {
     background-color: var(--chatBox);
@@ -250,10 +198,10 @@
     padding-left: 10px;
 }
 
-#check:checked ~ .chat {
-    transition: 0.47s;
-    left: 240px;
-}
+    #check:checked ~ .chat {
+        transition: 0.47s;
+        left: 240px;
+    }
 
 /*********** NAV BAR **********/
 .nav a{
