@@ -27,7 +27,7 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <style>
+    {{-- <style>
         a {
             text-decoration: none;
             color: inherit;
@@ -203,7 +203,7 @@
         .chat-username>h2 {
             margin-left: 10px;
         }
-    </style>
+    </style> --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
