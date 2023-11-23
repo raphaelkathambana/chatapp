@@ -7,9 +7,6 @@
 
     <body>
         <div class="background">
-            <div class="lets-chat">
-                <h4 style="color: var(--color3); font-size:40px;"> Let's chat !</h4>
-             </div>
             <div class="mess" id="animation-send"></div>
 
             <script>
@@ -34,7 +31,7 @@
                             placeholder="Search friends" />
                     </div>
 
-                   <div> <a href="{{ route('chat.testNewChat') }}">Chat Page Updated</a> </div>
+                    <div> <a href="{{ route('chat.testNewChat') }}">Chat Page Updated</a> </div>
                     <i onClick="redirect('/home')" class="fa-solid fa-house"
                         style="color: var(--profileIcon);font-size:25px; margin-left:550px; margin-right:20px;"></i>
                     <i onClick="redirect('/profile')" class="fa-solid fa-circle-user"
@@ -51,7 +48,7 @@
                     <a href="{{ route('register') }}">Register</a>
                 @endauth
             @endif
-            </div>
+        </div>
 
         <input style="display: none" type="checkbox" name="" id="check">
 
@@ -79,14 +76,30 @@
             <!-- Contents of this div are in public/assets/js/home.js line 20 - 35 and css in home.css from line 75 -->
         </div>
         <div class="chat">
-            <label for="check">
+            <!-- chat messages go here-->
+            <div class="lets-chat">
+                <h4 style="color: var(--color3); font-size:40px;"> Let's chat !</h4>
+            </div>
+            <!-- chat input -->
+            <div>
+                {{-- a form to take in the input from the user --}}
+                <form action="{{ route('chat.sendMessage') }}" method="POST">
+                    @csrf
+                    <label for="check">
+                        <!-- the recepient's user id -->
+                        <input type="hidden" name="receiverid" value="">
+                        <!-- the message -->
+                        <input type="text" name="message" placeholder="Type your message..." autocomplete="off" required>
+                    </label>
+                    <button type="submit">
+                        <i class="fa-solid fa-paper-plane"
+                            style="color: var(--sendIcon); margin:10px; font-size:19px; cursor: pointer; border:solid 2px;padding:6px;border-radius:10px;"></i>
+                        <!-- icon to send message -->
+                    </button> <!-- submit button -->
+                </form>
+                {{-- @endif --}}
+            </div> <!-- end of chat input -->
 
-                <input type="text">
-
-            </label>
-            <i class="fa-solid fa-paper-plane"
-                style="color: var(--sendIcon); margin:10px; font-size:19px; cursor: pointer; border:solid 2px;padding:6px;border-radius:10px;"></i>
-            <!-- icon to send message -->
         </div>
         {{-- <div class="set_mode">
     <button onclick="Mode()"><i id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #000000"></i></i></button>

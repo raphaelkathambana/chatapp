@@ -8,10 +8,6 @@
     color: var(--color3);
 }
 
-body{
-    background-color: var(--newbbg);
-}
-
 /* nav bar */
 .options{
   display: inline;
