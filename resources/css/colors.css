@@ -1,6 +1,6 @@
 .dark {
     /* background-image: url('images/bg.gif'); */
-    --bbg: hsl(0, 0%, 95%);
+    /* --bbg: hsl(0, 0%, 95%); */
     --newbbg: rgb(241, 241, 241);
 
     --fontColor: #171932;
@@ -8,18 +8,18 @@
     --color2: #0a2d4a;
     --color3: #8bd3ff;
     --placeholder: #00000068;
-    --inputColor: #324A5F;
+    --inputColor: #ffffff;
     --chatColor: #0b2235;
     --chatBox: hsl(0, 0%, 95%);
     --linkColor: rgb(94, 185, 241);
     --navColor: #0b2235;
-    --profileIcon: #324A5F;
-    --sendIcon: #e0e0e0;
-    --searchIcon: #141414;
+    --profileIcon: #0a2d4a;
+    --sendIcon: #0a2d4a;
+    --searchIcon: #000000;
 }
 
 .light {
-    --color2: #324A5F;
+    --color2: #0a2d4a;
     background-image: url('images/bg.png');
     --fontColor: #ffffff;
     --color3: #8bd3ff;

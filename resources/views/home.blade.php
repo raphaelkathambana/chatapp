@@ -8,7 +8,7 @@
     <body>
         <div class="background">
             <div class="mess" id="animation-send"></div>
-
+            {{-- <div class="lets-chat"><h4> Let's chat! </h4></div> --}}
             <script>
                 var animation = bodymovin.loadAnimation({
                     container: document.getElementById('animation-send'),
@@ -20,20 +20,23 @@
                 });
             </script>
 
+        <div class="invite-text"> <p> Connect with friends and chat endlessly!</p>
+        </div>
+
         </div>
         <div class="nav">
             @if (Route::has('login'))
                 @auth
                     <div class="search_input_container">
 
-                        <i class="fa-solid fa-magnifying-glass" style="color: var(--searchIcon);"></i>
+                        <i class="fa-solid fa-magnifying-glass" style="color: var(--searchIcon);margin-left:1px"></i>
                         <input class="user_search_input" name="user_search_input" id="user_search_input"
                             placeholder="Search friends" />
                     </div>
 
-                    <div> <a href="{{ route('chat.testNewChat') }}">Chat Page Updated</a> </div>
+                    <div> <button id="lets-chat"> <a href="{{ route('chat.testNewChat') }}">Lets Chat!</button></a> </div>
                     <i onClick="redirect('/home')" class="fa-solid fa-house"
-                        style="color: var(--profileIcon);font-size:25px; margin-left:550px; margin-right:20px;"></i>
+                        style="color: var(--profileIcon);font-size:25px; margin-left:50px; margin-right:20px;"></i>
                     <i onClick="redirect('/profile')" class="fa-solid fa-circle-user"
                         style="color: var(--profileIcon);font-size:30px; cursor:pointer; margin-right:30px;"></i>
 
@@ -96,7 +99,7 @@
                         </label>
                         <button type="submit">
                             <i class="fa-solid fa-paper-plane"
-                            style="color: var(--sendIcon); margin:10px; font-size:19px; cursor: pointer; border:solid 2px;padding:6px;border-radius:10px;"></i>
+                            style="color: var(--sendIcon);margin-top:10px;"></i>
                             <!-- icon to send message -->
                         </button> <!-- submit button -->
                     </form>

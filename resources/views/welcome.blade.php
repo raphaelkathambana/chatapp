@@ -43,11 +43,6 @@
                 <hr>
                 <div class="lorem">
                     <button class="get-started">Let's get started! </button>
-                    {{-- <p> Lorem ipsum! dolor sit amet consectetur adipisicing elit. Eius blanditiis dignissimos nihil
-                        harum, eum quis
-                        nisi laudantium quaerat laborum ratione mollitia tenetur consequuntur alias libero animi error
-                        numquam
-                        nesciunt officia!</p> --}}
 
 
                 </div>
