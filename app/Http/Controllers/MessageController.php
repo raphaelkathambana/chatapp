@@ -53,7 +53,7 @@ class MessageController extends Controller
 
     public function getChatsJSON(Request $request, ?int $receiverId = null)
     {
-        $messages = $this->chats->getUserChats($request->user()->id, 2);
+        $messages = empty($receiverId) ? [] : $this->chats->getUserChats($request->user()->id, $receiverId);
         return response()->json($messages);
     }
 
@@ -90,6 +90,35 @@ class MessageController extends Controller
 
         event(new MessageSent($newMessage->message, Auth::user()));
         return Redirect::route('chat.getChatsBySenderAndReceiver', $receiverId);
+    }
+
+        /**
+     * Store a new message in the database.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int|null  $receiverId
+     */
+    public function storing(Request $request, ?int $receiverId = null)
+    {
+        if (empty($receiverId) && $receiverId == 0) {
+            return view('chat.fail', [
+                "wa" => $receiverId,
+                "wawawa" => $request->get("receiverid"),
+                "message" => $request->get("message"),
+            ]);
+        }
+        $request->validate([
+            'receiverid' => 'required|integer',
+            'message' => 'required|string',
+        ]);
+        $newMessage = $this->chats->storeMessage([
+            'sender_id' => (int) Auth::user()->id,
+            'receiver_id' => $request->get("receiverid"),
+            'message' => $request->get('message'),
+        ]);
+
+        event(new MessageSent($newMessage->message, Auth::user()));
+        return response()->json($newMessage);
     }
 
     /**
