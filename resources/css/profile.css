@@ -1,23 +1,63 @@
 .profile_page_container {
     background-color: #FFFFFF;
     border-radius: 20px;
-    min-height: 120vh;
+    min-height: 140vh;
     margin-top: 27px;
     width: 90%;
     column-width: 30%;
 
 }
 
+#header{
+    color: var(--title);
+    font-size: 30px;
+    padding: 30px;
+    margin-top: 10px ;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    /* font-weight: 0; */
+    display: block;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+    margin-right:25px;
+    cursor: pointer;
+}
+
+#header::after{
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 45%;
+    position: absolute;
+    background: var(--color3);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+#header:hover::after{
+    width: 10%;
+    left: 60;
+  }
+
 .edit h3{
     color: var(--color3);
     margin-left: -10px;
 }
 
+#save_btn {
+    margin-right: -100px;
+}
+
 .profile_page_container h2{
     color: var(--title);
     font-size: 30px;
-    padding: 10px;
-    margin: 20px auto;
+    padding: 30px;
+    margin-top: 10px ;
+    margin-bottom: 30px;
     text-align: center;
 }
 
@@ -27,6 +67,7 @@
     align-items: flex-start;
     color: black;
     margin-left: 40px;
+    margin-top: 20px;
    font-weight: 600;
     font-size: 18px;
 }
@@ -34,16 +75,11 @@
 /* right side column*/
 .column-2{
     float: right;
-    margin-top: -300px;
+    margin-top: -250px;
     margin-right: 300px;
     padding-left: 50px;
     color: var(--title);
     border-left: solid 2px var(--color2);
-}
-
-.column-2 p{
-    font-size: 19px;
-    font-weight: 400;
 }
 
 .image_container {
@@ -55,10 +91,15 @@
     background-color: rgba(0, 0, 0, 0.489);
 }
 
+#profile_pic{
+    margin-right: 260px;
+    font-size: 16px;
+}
 .profile_page_container p{
     color: var(--color2);
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
+
 }
 
 /* container with name and profile photo*/
@@ -109,18 +150,36 @@ a {
   border: 0;
   box-sizing: border-box;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: 0.05rem;
   font-family: Georgia;
   height: 40px;
-  margin-top: 25px;
-  margin-left: 95px;
-  text-align: center;
+  margin-top: 15px;
   width: 50%;
 }
 
-.edit_bio_btn:disabled {
-  cursor: default;
+#reset_btn{
+    margin-left: 300px;
+    margin-right: -200px;
+    background-color: var(--color2);
+    color: white;
+    border-radius: 18px;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 0.05rem;
+    font-family: Georgia;
+    height: 40px;
+    margin-top: 25px;
+    width: 50%;
+}
+
+#reset_btn:hover{
+    color: var(--color3);
+}
+.edit_bio_btn:hover {
+  color: var(--color3);
 }
 
 .edit_bio_btn:focus {
@@ -134,7 +193,7 @@ a {
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 0.05rem;
     font-family: Georgia;
     height: 40px;
@@ -157,7 +216,7 @@ a {
 }
 
 .profile_signout_btn:hover {
-  background-color: var(--linkColor);
+  background-color: var(--color3);
 }
 
 .profile_signout_btn:active:hover,
@@ -175,7 +234,7 @@ a {
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 0.05rem;
     font-family: Georgia;
     height: 40px;
@@ -186,14 +245,14 @@ a {
 }
 
 .delete_account:active,
-.delete_account:focus {
+/* .delete_account:focus {
   border-bottom-style: none;
   border-color: #dadada;
   box-shadow: rgba(0, 0, 0, .3) 0 3px 3px inset;
   outline: 0;
-}
+} */
 
 .delete_account:hover {
-  border-bottom-style: none;
-  border-color: #dadada;
+  background-color: var(--color3);
+
 }
