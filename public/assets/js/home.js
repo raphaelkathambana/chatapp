@@ -1,5 +1,5 @@
-function redirect() {
-    window.location.assign("/profile");
+function redirect(path) {
+    window.location.assign(path);
 }
 
 $(document).ready(function () {
