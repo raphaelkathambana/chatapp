@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileImageManager;
+use App\Http\Controllers\UserAboutController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,6 +33,7 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('upload_profile_photo', [ProfileImageManager::class, 'upload'])->name('upload_profile.post');
+    Route::post('/update_about', [UserAboutController::class, 'updateAbout'])->name('update_about.post');
     Route::get('/home', function () {
         return view('home');
     });
