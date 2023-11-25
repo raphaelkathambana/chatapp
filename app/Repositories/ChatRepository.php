@@ -43,7 +43,7 @@ class ChatRepository
                 ->orWhere('receiver_id', $senderId);
         })->groupBy('sender_id', 'receiver_id')
             ->select('sender_id', 'receiver_id', 'message')
-            ->orderBy('created_at', 'asc')
+            ->orderBy('created_at', 'desc')
             ->get();
 
         return $this->getFilteredRecentMessages($recentMessages, $senderId);
