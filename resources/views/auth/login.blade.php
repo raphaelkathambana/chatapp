@@ -46,4 +46,22 @@
             <a class="a-link" href="{{ route('register') }}">Don't have an account? Sign Up!</a>
         </div>
     </form>
+
+    <div class="lottie">
+        <div class="authentication" id="login-container"></div>
+
+        <script>
+                var animation = bodymovin.loadAnimation({
+                    container: document.getElementById('login-container'),
+                    path: 'https://lottie.host/ec1dbf3e-5976-4553-8a67-368a0261f9f2/0Y0QQy2D11.json',
+                    render: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    name: 'auth'
+                });
+            </script>
+
+        </div>
+
+
 @endsection

@@ -2,6 +2,20 @@
     border-radius: 20px;
     box-sizing: border-box;
     width: 360px;
+    margin-left: 200px;
+}
+
+.lottie{
+    min-height: 5vh;
+    width: 30%;
+    margin-bottom: -330px;
+    margin-left: 40px;
+    margin-right: -160px;
+}
+
+.login-container{
+    width:20%;
+
 }
 
 .login {
@@ -190,3 +204,10 @@
     width: 63%;
 }
 */
+
+@media only screen and (max-width: 600px) {
+    .lottie {
+  width: 30%;
+  margin-bottom: -400px;
+    }
+}

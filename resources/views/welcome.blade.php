@@ -22,12 +22,14 @@
             </div>
         @endif
 
-        <div>
+
+
+            <link rel="icon" href="resources\css\images\logo.png" type="image/icon">
+            {{-- <img src="{{ asset("public/assets/css/logo.png") }}"> --}}
             <div>
                 <div class="welcome">
                     <div class="message" id="animation-container"></div>
                     <h1> Welcome To <span class="chatify">Chatify</span></h1>
-
 
                     <script>
                         var animation = bodymovin.loadAnimation({

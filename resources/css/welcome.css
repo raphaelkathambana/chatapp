@@ -8,6 +8,11 @@
     color: var(--color3);
 }
 
+#animation-container{
+    width: 37%;
+    margin-left: 100px;
+}
+
 /* nav bar */
 .options{
   display: inline;
@@ -84,22 +89,6 @@
     margin-top: 200px;
 }
 
-/* .lorem p{
-    color: rgb(254, 254, 254);
-    width: 100%;
-}
-
-.lorem {
-    margin-left: 100px;
-    width: 60%;
-} */
-/*
-.list a:hover{
-    transition: 0.3s;;
-    color: var(--linkHover);
-    text-decoration: none;
-} */
-
 hr{
     background-color: var(--hr);
     margin-left: 30px;
@@ -127,8 +116,9 @@ hr{
     font-family: Georgia;
     font-size: 15px;
     letter-spacing: 0.10em;
-    margin-top: -200px;
+    margin-top: -160px;
     margin-left: 60px;
+    cursor:pointer;
 }
 
 .get-started:hover{
@@ -146,13 +136,13 @@ hr{
     }
 
     .welcome{
-        margin-top: -150px;
+        margin-top: -140px;
         margin-left: 2px;
     }
 
     #animation-container{
-        width: 60%;
-        margin-top: 50px;
+        width: 70%;
+        margin-top: 68px;
     }
 
     .chatify{
