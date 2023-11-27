@@ -23,6 +23,10 @@ $(document).ready(function () {
             success: function (response) {
                 // console.log(response);
                 let sideListContent = "";
+                if (keyword == "") {
+                    $("#side_list").html(sideListContent);
+                    return;
+                }
                 if (response.length < 1) {
                     sideListContent += `<h4 class='side_list_title'>No results found for '${keyword}'</h4>`
                 } else {
