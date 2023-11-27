@@ -51,6 +51,9 @@ php artisan serve
 - In `.env`, set the value for BROADCAST_DRIVER to `pusher`
 - In `.env`, set the value for LOG_CHANNEL to `stack`
 - In `.env`, set the value for PUSHER_APP_CLUSTER to `mt1`
+- In `.env`, set the value for PUSHER_HOST to `127.0.0.1`
+- In `.env`, set the value for PUSHER_PORT to `6001`
+- In `.env`, set the value for PUSHER_SCHEME to `http`
 - Set the following values in your `.env` file. You can put any values in, so long as they are a string. For instance:
 
 > - In `.env`, set the value for PUSHER_APP_KEY to `CHATIFYEIUFHWICBCSBSJ`
@@ -58,6 +61,10 @@ php artisan serve
 > - In `.env`, set the value for PUSHER_APP_ID to `CHATIFY`
 
 - Run the following command to add the necessary fields to your database
+
+```bash
+php artisan migrate
+```
 
 - Run the following command to run the chat websockets server
 
