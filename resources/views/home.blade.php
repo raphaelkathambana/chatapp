@@ -12,6 +12,11 @@
                 @csrf
                 <button type="submit">Display User Report</button>
             </form>
+            <br>
+            <form method="POST" action="{{ route('report.excel') }}">
+                @csrf
+                <button type="submit">Download excel</button>
+            </form>
             @if (isset($users))
             <div style="display:flex; align-items: center">
                 <p>Name</p> |
