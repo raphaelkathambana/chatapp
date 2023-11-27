@@ -10,7 +10,7 @@
                         <li>
                             <a href="{{ url('/logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                            <form action='{{ route('logout') }}' method='post' id="logout-form">
+                            <form action="{{ route('logout') }}" method='post' id="logout-form">
                                 @csrf
                             </form>
                         </li>
@@ -22,12 +22,14 @@
             </div>
         @endif
 
-        <div>
+
+
+            <link rel="icon" href="resources\css\images\logo.png" type="image/icon">
+            {{-- <img src="{{ asset("public/assets/css/logo.png") }}"> --}}
             <div>
                 <div class="welcome">
                     <div class="message" id="animation-container"></div>
                     <h1> Welcome To <span class="chatify">Chatify</span></h1>
-
 
                     <script>
                         var animation = bodymovin.loadAnimation({
@@ -42,11 +44,7 @@
                 </div>
                 <hr>
                 <div class="lorem">
-                    {{-- <p> Lorem ipsum! dolor sit amet consectetur adipisicing elit. Eius blanditiis dignissimos nihil
-                        harum, eum quis
-                        nisi laudantium quaerat laborum ratione mollitia tenetur consequuntur alias libero animi error
-                        numquam
-                        nesciunt officia!</p> --}}
+                    <button class="get-started">Let's get started! </button>
 
 
                 </div>

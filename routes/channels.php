@@ -28,3 +28,6 @@ use Illuminate\Support\Facades\Broadcast;
 Broadcast::channel('messenger.{sender}.{receiver}', function ($user) {
     return !is_null($user);
 });
+Broadcast::channel('presence.chat.{id}', function ($user, $id){
+    return $user;
+});

@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileImageManager;
+use App\Http\Controllers\UserAboutController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -31,6 +33,7 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('upload_profile_photo', [ProfileImageManager::class, 'upload'])->name('upload_profile.post');
+    Route::post('/update_about', [UserAboutController::class, 'updateAbout'])->name('update_about.post');
     Route::get('/home', function () {
         return view('home');
     });
@@ -50,13 +53,29 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/home', function () {
         return view('home');
     });
-    Route::post('/search_user', [HomeController::class,'searchUser'])->name('search_user.post');
-    Route::group(['prefix' => 'chat', 'as' => 'chat.'], function() {
+    Route::post('/search_user', [HomeController::class, 'searchUser'])->name('search_user.post');
+
+    Route::group(['prefix' => 'chat', 'as' => 'chat.'], function () {
         Route::get('/get-chat', [App\Http\Controllers\MessageController::class, 'index'])->name('get');
+
+        Route::post('/get-chat', [App\Http\Controllers\MessageController::class, 'generateMessages'])->name('generate-messages');
+
         Route::get('/get-chat/{receiver?}', [App\Http\Controllers\MessageController::class, 'index'])->name('getChatsBySenderAndReceiver');
+
         Route::post('/get-chat/{receiver?}', [App\Http\Controllers\MessageController::class, 'store'])->name('saveMessage');
-        Route::get('/fail', function() {
+
+        Route::get('/fail', function () {
             return view('chat.fail');
         })->name('fail');
+
+        Route::get('/testNewChat', [MessageController::class, 'indexing'])->name('testNewChat');
+
+        Route::get('/TestNewChat/{receiver?}', [App\Http\Controllers\MessageController::class, 'indexing'])->name('TestingChatsBySenderAndReceiver');
+
+        Route::post('/TestNewChat/send/{receiver?}', [App\Http\Controllers\MessageController::class, 'storing'])->name('sendMessage');
+
+        Route::get('/TestNewChat/get-chats-json/{receiver?}', [App\Http\Controllers\MessageController::class, 'getChatsJSON'])->name('getChatsJSON');
+
+        Route::get('/get-users-json', [App\Http\Controllers\MessageController::class, 'getUsersJSON'])->name('getUsersJSON');
     });
 });

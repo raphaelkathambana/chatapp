@@ -7,10 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ Config::get('app.name', 'Chatify') }}</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    {{-- <link rel="icon" href="resources\css\images\logo.png" type="image/icon"> --}}
+    <title>{{ Config::get('app.name', 'Chatify Chat') }}</title>
 
     <script>
         var dark = true;
@@ -28,8 +25,9 @@
             }
         }
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <style>
+    {{-- <style>
         a {
             text-decoration: none;
             color: inherit;
@@ -205,7 +203,7 @@
         .chat-username>h2 {
             margin-left: 10px;
         }
-    </style>
+    </style> --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
@@ -215,7 +213,7 @@
     <div class="chat-container">
         <!-- chat header -->
         <div class="chat-header">
-            <h1><a href="{{ route('chat.get') }}">{{ __('Chat') }}</a></h1>
+            <h1><a href="{{ route('chat.testNewChat') }}">{{ __('Chat') }}</a></h1>
         </div>
         <!-- chat messages -->
         <div class="chat-messages">
@@ -230,94 +228,159 @@
                 {{-- the chat icons --}}
                 <div class="chat-icons">
                     {{-- loaded as links(a tags) --}}
-                    @foreach ($recentMessages as $message)
-                        {{-- contains the user's avatar, theeir name, and last message sent --}}
-                        <a class="chat-icon" href="/chat/get-chat/{{ $message['user_id'] }}">
-                            {{-- to be replaced with logic for retrieving a User's avatar --}}
-                            <img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}"
-                                alt="Avatar">
-                            {{-- div containing name and last message --}}
-                            <div>
-                                <p>{{ $message['name'] }}</p>
-                                <p class="last-message">{{ $message['message'] }}</p>
-                            </div>
-                        </a>
-                    @endforeach
-                    <a href="/chat/testNewChat">New Chat</a>
-                    <br>
-                    <a href="#" onclick="generateMessages();">Generate Test Messages</a>
+                    {{-- contains the user's avatar, theeir name, and last message sent --}}
+                    <a class="chat-icon" id="chat-icon">
+                    </a>
+                    {{-- @endforeach --}}
                 </div>
             </div> <!-- end of sidebar -->
             {{-- chat screen --}}
             <div class="chat-screen">
                 {{-- check if a user has been selected for the chat --}}
-                @if (!isset($receiver['id']))
-                    {{-- if not, The following message is displayed --}}
-                    {{ __('Please Select a User to Start a Chat') }}
-                @else
-                    {{-- if a user has been selected, the following is displayed --}}
-                    {{-- this will contain all the messages from both users in the chat --}}
-                    {{-- the receiver's name and avatar being displayed --}}
-                    <div class="chat-username">
-                        <h2>{{ $receiver['name'] }}</h2> <!-- name -->
-                        {{-- to be replaced with logic for retrieving a User's avatar --}}
-                        <img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}" alt="Avatar">
-                    </div>
-                    <!-- Messages will be added dynamically with JavaScript -->
-                    {{-- Work in progress to achieve this --}}
-                    @foreach ($messages as $message)
-                        <!-- if the message is from the receiver, it will be displayed on the left -->
-                        @if ($message->sender_id != Auth::user()->id)
-                            <div class="received">
-                                <p>{{ $message->message }}</p>
-                            </div>
-                        @endif
-                        <!-- if the message is from the sender, it will be displayed on the right -->
-                        @if ($message->sender_id == Auth::user()->id)
-                            <div class="sent">
-                                <p>{{ $message->message }}</p>
-                            </div>
-                        @endif
-                    @endforeach
+                {{-- if not, The following message is displayed --}}
+                {{ __('Please Select a User to Start a Chat') }}
+                {{-- if a user has been selected, the following is displayed --}}
+                {{-- this will contain all the messages from both users in the chat --}}
+                {{-- the receiver's name and avatar being displayed --}}
+                <div class="chat-username">
+                </div>
+                <!-- Messages will be added dynamically with JavaScript -->
             </div>
         </div> <!-- end of chat screen -->
         <!-- chat input -->
         <div>
             {{-- a form to take in the input from the user --}}
-            <form action="{{ route('chat.saveMessage', $receiver['id']) }}" method="POST" class="chat-input">
+            <form action="{{ route('chat.sendMessage') }}" method="POST" class="chat-input">
                 @csrf
-                <input type="hidden" name="receiverid" value="{{ $receiver['id'] }}"> <!-- the recepient's user id -->
-                <input type="text" name="message" placeholder="Type your message..."> <!-- the message -->
+                <input type="hidden" name="receiverid" value="">
+                <!-- the recepient's user id -->
+                <input type="text" name="message" placeholder="Type your message..." autocomplete="off" required>
+                <!-- the message -->
                 <button type="submit">
                     <i class="fa-solid fa-paper-plane"
                         style="color: #0d133f; font-size:19px; cursor: pointer; border:solid 2px;padding:3px;border-radius:10px;">
                     </i>
                 </button> <!-- submit button -->
             </form>
-            @endif
+            {{-- @endif --}}
         </div> <!-- end of chat input -->
     </div>
-    </body>
 
-    </html>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        function generateMessages() {
+        let receivingUser;
+        console.log({{ $receiver }});
+        // scrolling to the bottom of the screen
+        function scrollToBottom() {
+            $('.chat-screen').scrollTop($('.chat-screen')[0].scrollHeight);
+        }
+        //loading the chats from the database
+        function loadChats(receiverId) {
             $.ajax({
-                url: "{{ route('chat.generate-messages') }}",
-                type: "POST",
+                url: '/chat/TestNewChat/get-chats-json/' + receiverId,
+                type: "GET",
                 dataType: "json",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
                 success: function(data) {
                     console.log(data);
+                    console.log(receiverId);
+                    receivingUser = receiverId;
+                    //looping through the data
+                    $('.chat-screen').empty();
+                    $.each(data, function(key, value) {
+                        //checking if the user is the sender
+                        if (value.sender_id == {{ Auth::user()->id }}) {
+                            // remove message on chat screen
+                            //if the user is the sender, the message will be displayed on the right
+                            $('.chat-screen').append(
+                                '<div class="sent"><p>' + value.message + '</p></div>'
+                            );
+                        } else {
+                            //if the user is the receiver, the message will be displayed on the left
+                            $('.chat-screen').append(
+                                '<div class="received"><p>' + value.message + '</p></div>'
+                            );
+                        }
+                    });
+                    scrollToBottom();
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
                 }
             });
         }
+
+        //load users to chat sidebar
+        function loadUsers() {
+            $.ajax({
+                url: "{{ route('chat.getUsersJSON') }}",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    console.log(data);
+                    //looping through the data
+                    $.each(data, function(key, value) {
+                        // adding users to chat icon
+                        $('.chat-icons').append(
+                            '<a class="chat-icon" href="/chat/TestNewChat/' + value.user_id +
+                            '"><img src="{{ asset('assets/css/c151a2b1-94cb-4c38-af80-c67711b7a7c4.png') }}" alt="Avatar"><div><p>' +
+                            value.name + '</p><p class="last-message">' + value.message +
+                            '</p></div></a>'
+                        );
+                    });
+                }
+            });
+        }
+
+        loadUsers();
+        // Event listener for chat icons
+        $(document).on('click', '.chat-icon', function(e) {
+            e.preventDefault();
+            //getting the receiver's id
+            var receiver_id = $(this).attr('href').split('/')[3];
+            loadChats(receiver_id);
+        });
+
+        //load chats periodically
+        setInterval(function() {
+            loadChats(receivingUser);
+        }, 1000);
+
+        // //sending a new message
+        $('.chat-input').submit(function(e) {
+            //preventing the default action
+            e.preventDefault();
+            //getting the message
+            var message = $('input[name=message]').val();
+            //getting the receiver's id
+            var receiver_id = $('input[name=receiverid]').val();
+            //getting the sender's id
+            var sender_id = {{ Auth::user()->id }};
+            //getting the CSRF token
+            var _token = $('input[name=_token]').val();
+            //sending the ajax request
+            $.ajax({
+                url: "/chat/TestNewChat/send/" + receivingUser,
+                type: "POST",
+                data: {
+                    message: message,
+                    receiverid: receivingUser,
+                    sender_id: sender_id,
+                    _token: _token
+                },
+                dataType: "json",
+                success: function() {
+                    loadChats(receivingUser);
+                    //emptying the input field
+                    $('input[name=message]').val('');
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            }).fail(function() {
+                //displaying an error message
+                alert("Oops! Something went wrong!")
+            });
+        });
     </script>
 </body>
 
 </html>
-

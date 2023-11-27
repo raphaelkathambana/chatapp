@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -14,23 +15,43 @@ use Illuminate\Queue\SerializesModels;
 class MessageSent implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
+    public string $message;
+    public $user;
 
     /**
      * Create a new event instance.
      */
     public function __construct(
-        public string $message
-        ){}
+        string $message,
+        $user
+    ) {
+        $this->message = $message;
+        $this->user = $user;
+    }
 
     /**
      * Get the channels the event should broadcast on.
      *
      * @return array<int, \Illuminate\Broadcasting\Channel>
      */
-    public function broadcastOn(): array
+    public function broadcastOn() : array
     {
         return [
             new PrivateChannel('messenger.1.2'),
+            new PresenceChannel('presence.chat.1'),
+        ];
+    }
+
+    public function broadcastAs()
+    {
+        return 'chat-message';
+    }
+
+    public function broadcastWith()
+    {
+        return [
+            'message' => $this->message,
+            'user' => $this->user->only(['name', 'email'])
         ];
     }
 }
