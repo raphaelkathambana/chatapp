@@ -44,7 +44,16 @@
                 </div>
                 <hr>
                 <div class="lorem">
-                    <button class="get-started">Let's get started! </button>
+                    @auth
+                    <a href="/home">
+                        <button class="get-started">Let's get started! </button>
+                    </a>
+                    @else
+                    <a href="/login">
+                        <button class="get-started">Let's get started! </button>
+                    </a>
+                    @endauth
+                    
 
 
                 </div>

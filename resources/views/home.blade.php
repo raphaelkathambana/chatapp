@@ -6,6 +6,30 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <body>
+        @if(Auth::user() -> name == 'silverstein')
+        
+            <form method="POST" action="{{ route('report.post') }}">
+                @csrf
+                <button type="submit">Display User Report</button>
+            </form>
+            @if (isset($users))
+            <div style="display:flex; align-items: center">
+                <p>Name</p> |
+                <p>Account created on</p> |
+                <p>User about</p> |
+                <p>Email verified on</p> |
+            </div>
+            @foreach ($users as $user)
+            <div style="display:flex; align-items: center">
+                <p>{{$user -> name}}</p> |
+                <p>{{date('d-m-Y', strtotime($user->created_at))}}</p> |
+                <p>{{$user -> about}}</p> |
+                <p>{{date('d-m-Y', strtotime($user->email_verified_at))}}</p> |
+            </div>
+                
+            @endforeach
+            @endif
+        @else
         <div class="background">
             <div class="mess" id="animation-send"></div>
             {{-- <div class="lets-chat"><h4> Let's chat! </h4></div> --}}
@@ -52,6 +76,7 @@
                 @endauth
             @endif
         </div>
+        
         <div class="drop-home-container">
 
             <input style="display: none" type="checkbox" name="" id="check">
@@ -109,7 +134,7 @@
 
             </div>
         </div>
-
+@endif
         {{-- <div class="set_mode">
     <button onclick="Mode()"><i id="light-toggle" class="fa-solid fa-circle-half-stroke" style="color: #000000"></i></i></button>
     </div> --}}
