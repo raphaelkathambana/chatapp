@@ -10,6 +10,35 @@ body{
     float: right;
 }
 
+.graph{
+    margin-top: 60px;
+    margin-left: 300px;
+    min-height: 70vh;
+    width: 70%;
+    margin-bottom: 80px;
+    background-color: white;
+}
+
+#display-user{
+    padding: 10px;
+    float: right;
+    background-color: var(--color3);
+    border: none;
+    min-height: 5vh;
+    color: white;
+    width:45%;
+    font-family: Georgia;
+    font-size: 12px;
+    letter-spacing: 0.10em;
+    cursor:pointer;
+  }
+
+.func{
+    float:right;
+    margin-top: -10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
 #animation-send{
     width: 30%;
     margin: 30px auto;
@@ -158,25 +187,6 @@ body{
     margin-left:270px;
     min-height: 10vh;
     margin-bottom: -60px;
-}
-
-#display-user{
-  float:right;
-  padding: 10px;
-  background-color: var(--color3);
-  border: none;
-  min-height: 5vh;
-  color: white;
-  width:12%;
-  margin: 10px auto;
-  font-family: Georgia;
-  font-size: 12px;
-  letter-spacing: 0.10em;
-  cursor:pointer;
-}
-
-#func{
-    margin-top: 100px;
 }
 
 .chat input  {

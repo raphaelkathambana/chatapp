@@ -5,13 +5,42 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['September',     1],
+            ['October',      2],
+            ['November',  3]
+          ]);
+
+
+          var options = {
+            title: 'Registered Users',
+            pieHole: 0.3,
+            titleTextStyle: {
+        fontSize: 18 // Change this value to set the desired font size
+            },
+            width: 500, // Set the width of the chart
+            height: 400, // Set the height of the chart
+            colors: ['#4285F4', '#34A853','#FBBC05', '#EA4335']
+          };
+
+          var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+          chart.draw(data, options);
+        }
+      </script>
     <style>
         table {
             width: 75%;
             border-collapse: collapse;
             margin-right: 28px;
            float: right;
-
+            margin-bottom: 50px;
         }
 
         th, td {
@@ -56,7 +85,9 @@
     </style>
 
     <body>
-        @if(Auth::user() -> name == 'shanikwa')
+
+        @if(Auth::user() -> name == 'silverstein')
+
 
            <div class="side">
 
@@ -70,11 +101,14 @@
         <div class="hello">
             <h1>Hello {{ Auth::user() ->name }},</h1>
             </div>
-            <form method="POST" action="{{ route('report.post') }}" id="func">
-                @csrf
-                <button id="display-user" type="submit" style="margin-right:10px;">Refresh Report </button>
-                <button id="display-user" type="submit" style="margin-right:10px;">Download excel</button>
-            </form>
+
+            <div class="graph">
+            <div id="donutchart" style="width:100px; height: 100px;margin-top:-220px;margin-left:-580px;></div>
+            </div>
+
+            <div class="funcs">
+
+            </div>
             <br>
 
             @if (isset($users))
@@ -82,11 +116,6 @@
 
             </div> --}}
             {{-- @if (isset($users)) --}}
-
-            <div class="table">
-
-            </div>
-
         </div>
 
             <table border="2">
@@ -109,6 +138,13 @@
                 @endforeach
             </table>
 
+            <div class="func">
+            <form method="POST" action="{{ route('report.post') }}">
+                @csrf
+                <button id="display-user" type="submit" style="margin-right:10px;">Refresh Report </button>
+                <button id="display-user" type="submit" style="margin-right:10px;">Download excel</button>
+            </form>
+            </div>
 
             {{-- @endforeach --}}
             @endif
