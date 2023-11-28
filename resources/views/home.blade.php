@@ -5,12 +5,64 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
+    <style>
+        table {
+            width: 83%;
+            border-collapse: collapse;
+            /* margin-top: 18px; */
+           float: right;
+
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #ffffff;
+        }
+
+        div {
+            margin-top: 60px;
+            display: flex;
+            align-items: center;
+            margin-left: 300px;
+        }
+
+        h1{
+        margin-top: -40px;
+        padding: -8px auto;
+        margin-left: -20px;
+        letter-spacing: 0.10rem;
+        font-family: 'Georgia';
+        font-size: 30px;
+        color: var(--color3);
+        }
+    </style>
+
     <body>
-        @if(Auth::user() -> name == 'silverstein')
-        
+        @if(Auth::user() -> name == 'shanikwa')
+
+           <div class="side">
+            <label for="check">
+                {{-- <span class="span fas fa-times" id="times"></span>
+                <span class="span fas fa-bars" id="bars"></span> --}}
+
+
+            </label>
+            <ul class="side-menu ul">
+                {{-- <button onclick="Mode()">Mode</button> --}}
+                <li><a href="#">My profile</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+
+        </div>
             <form method="POST" action="{{ route('report.post') }}">
                 @csrf
-                <button type="submit">Display User Report</button>
+                <button id="display-user" type="submit">Display User Report</button>
             </form>
             <br>
             <form method="POST" action="{{ route('report.excel') }}">
@@ -23,16 +75,39 @@
                 <p>Account created on</p> |
                 <p>User about</p> |
                 <p>Email verified on</p> |
+
             </div>
-            @foreach ($users as $user)
-            <div style="display:flex; align-items: center">
-                <p>{{$user -> name}}</p> |
-                <p>{{date('d-m-Y', strtotime($user->created_at))}}</p> |
-                <p>{{$user -> about}}</p> |
-                <p>{{date('d-m-Y', strtotime($user->email_verified_at))}}</p> |
+            @if (isset($users))
+
+            <div class="table">
+
             </div>
-                
-            @endforeach
+
+
+        </div>
+
+            <table border="2">
+                <tr>
+                    <th>Name</th>
+                    <th>Email address</th>
+                    <th>User about</th>
+                    <th>Email verified on</th>
+                </tr>
+
+                @foreach ($users as $user)
+                <tr>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->about }}</td>
+                    <td>{{ date('d-m-Y', strtotime($user->created_at)) }}</td>
+
+                    {{-- <td>{{ date('d-m-Y', strtotime($user->email_verified_at)) }}</td> --}}
+                </tr>
+                @endforeach
+            </table>
+
+
+            {{-- @endforeach --}}
             @endif
         @else
         <div class="background">
@@ -81,7 +156,7 @@
                 @endauth
             @endif
         </div>
-        
+
         <div class="drop-home-container">
 
             <input style="display: none" type="checkbox" name="" id="check">
@@ -90,20 +165,7 @@
             </div>
 
             <input style="display: none" type="checkbox" name="" id="check">
-            {{-- <div class="side">
-            <label for="check">
-                <span class="span fas fa-times" id="times"></span>
-                <span class="span fas fa-bars" id="bars"></span>
-            </label>
-            <ul class="side-menu ul">
-                <button onclick="Mode()">Mode</button>
-                <li><a href="{{ route('chat.generate-messages') }}">Chat</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
 
-        </div> --}}
 
             <div class="side_list" id="side_list">
                 <!-- Contents of this div are in public/assets/js/home.js line 20 - 35 and css in home.css from line 75 -->
@@ -148,3 +210,17 @@
 
     </html>
 @endsection
+
+       {{-- <div style="display:flex; align-items: center; margin-left:200px;">
+                <p>Name</p> |
+                <p>Account created on</p> |
+                <p>User about</p> |
+                <p>Email verified on</p> |
+            </div>
+            @foreach ($users as $user)
+            <div style="display:flex; align-items: center">
+                <p>{{$user -> name}}</p> |
+                <p>{{date('d-m-Y', strtotime($user->created_at))}}</p> |
+                <p>{{$user -> about}}</p> |
+                <p>{{date('d-m-Y', strtotime($user->email_verified_at))}}</p> |
+            </div> --}}
