@@ -20,6 +20,19 @@
             border: 1px solid #ddd;
         }
 
+        tr{
+        &:nth-of-type(even) {
+		/* background:rgb(100,100,110); */
+            background: var(--color2);
+        color:white;
+	}
+    &:nth-of-type(odd) {
+		/* background:rgb(100,100,110); */
+            background: white;
+        color:black;
+	}
+}
+
         th {
             background-color: #ffffff;
         }
@@ -32,12 +45,12 @@
         }
 
         h1{
-        margin-top: -40px;
+        margin-top: -46px;
         padding: -8px auto;
         margin-left: -20px;
         letter-spacing: 0.10rem;
         font-family: 'Georgia';
-        font-size: 30px;
+        font-size: 34px;
         color: var(--color3);
         }
     </style>
@@ -58,31 +71,27 @@
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">About</a></li>
             </ul>
-
         </div>
-            <form method="POST" action="{{ route('report.post') }}">
+
+        <div class="hello">
+            <h1>Hello {{ Auth::user() ->name }}</h1>
+            </div>
+            <form method="POST" action="{{ route('report.post') }}" id="func">
                 @csrf
-                <button id="display-user" type="submit">Display User Report</button>
+                <button id="display-user" type="submit" style="margin-left:10px;"">Refresh Report </button>
+                <button id="display-user" type="submit">Download excel</button>
             </form>
             <br>
-            <form method="POST" action="{{ route('report.excel') }}">
-                @csrf
-                <button type="submit">Download excel</button>
-            </form>
-            @if (isset($users))
-            <div style="display:flex; align-items: center">
-                <p>Name</p> |
-                <p>Account created on</p> |
-                <p>User about</p> |
-                <p>Email verified on</p> |
 
-            </div>
             @if (isset($users))
+            {{-- <div style="display:flex; align-items: center">
+
+            </div> --}}
+            {{-- @if (isset($users)) --}}
 
             <div class="table">
 
             </div>
-
 
         </div>
 

@@ -105,7 +105,7 @@ body{
     /* position: fixed; */
     background-color: var(--color2);
     left: 0px;
-    top: 43px;
+    top: 10px;
     height: 100vh;
     width: 25%;
     border-right: var(--color2) 1px solid;
@@ -120,10 +120,8 @@ body{
     border-bottom: 2px solid var(--color3);
     background-color: white;
     border-radius: 10px;
-    margin: 4px auto;
     padding: 5px;
     line-height: 2vh;
-
 }
 
 .side_list_title {
@@ -170,11 +168,17 @@ body{
   min-height: 5vh;
   color: white;
   margin-right: 4px;
-  width:14%;
+  /* margin-top: 40px; */
+  width:12%;
+  margin: 10px auto;
   font-family: Georgia;
   font-size: 12px;
   letter-spacing: 0.10em;
   cursor:pointer;
+}
+
+#func{
+    margin-top: 100px;
 }
 
 .chat input  {
@@ -218,7 +222,7 @@ body{
 }
 
 .side {
-    top: 56px;
+    top: 40px;
     height: 80%;
     position: absolute;
     background-color: var(--color2);
@@ -233,7 +237,7 @@ body{
 .side .side-menu {
     color: var(--color2);
     font-size: 28px;
-    margin-top: -80px;
+    margin-top: -200px;
     margin-left: -20px;
 }
 
