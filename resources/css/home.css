@@ -10,6 +10,35 @@ body{
     float: right;
 }
 
+.graph{
+    margin-top: 60px;
+    margin-left: 300px;
+    min-height: 70vh;
+    width: 70%;
+    margin-bottom: 80px;
+    background-color: white;
+}
+
+#display-user{
+    padding: 10px;
+    float: right;
+    background-color: var(--color3);
+    border: none;
+    min-height: 5vh;
+    color: white;
+    width:45%;
+    font-family: Georgia;
+    font-size: 12px;
+    letter-spacing: 0.10em;
+    cursor:pointer;
+  }
+
+.func{
+    float:right;
+    margin-top: -10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
 #animation-send{
     width: 30%;
     margin: 30px auto;
@@ -155,30 +184,9 @@ body{
 }
 
 .hello{
-    margin-left:240px;
+    margin-left:270px;
     min-height: 10vh;
     margin-bottom: -60px;
-}
-
-#display-user{
-  float:right;
-  padding: 10px;
-  background-color: var(--color3);
-  border: none;
-  min-height: 5vh;
-  color: white;
-  margin-right: 4px;
-  /* margin-top: 40px; */
-  width:12%;
-  margin: 10px auto;
-  font-family: Georgia;
-  font-size: 12px;
-  letter-spacing: 0.10em;
-  cursor:pointer;
-}
-
-#func{
-    margin-top: 100px;
 }
 
 .chat input  {
@@ -222,7 +230,8 @@ body{
 }
 
 .side {
-    top: 40px;
+    top: -50px;
+    border-top: 4px solid var(--color3);
     height: 80%;
     position: absolute;
     background-color: var(--color2);
@@ -251,21 +260,22 @@ body{
     text-decoration: none;
     letter-spacing: 0.15em;
     display: block;
-    font-size: 20px;
+    font-size: 18px;
     position: relative;
     /* transition: 0.3s;
     overflow: hidden; */
     /* text-transform: capitalize; */
 }
 .ul li a i{
-    width: 70px;
+    width: 80px;
+    min-height: 5vh;
     font-size: 25px;
     text-align: center;
 }
 
 .ul li:hover a{
- background-color: var(--navHover);
-    letter-spacing: 1px;
+ background-color: white;
+
 }
 
 /* .span{
@@ -279,3 +289,4 @@ body{
     cursor: pointer;
     background-color: var(--bgColor);
 } */
+
