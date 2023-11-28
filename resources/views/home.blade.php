@@ -7,9 +7,9 @@
 
     <style>
         table {
-            width: 83%;
+            width: 75%;
             border-collapse: collapse;
-            /* margin-top: 18px; */
+            margin-right: 28px;
            float: right;
 
         }
@@ -59,27 +59,21 @@
         @if(Auth::user() -> name == 'shanikwa')
 
            <div class="side">
-            <label for="check">
-                {{-- <span class="span fas fa-times" id="times"></span>
-                <span class="span fas fa-bars" id="bars"></span> --}}
 
-
-            </label>
             <ul class="side-menu ul">
-                {{-- <button onclick="Mode()">Mode</button> --}}
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Users</a></li>
                 <li><a href="#">My profile</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
             </ul>
         </div>
 
         <div class="hello">
-            <h1>Hello {{ Auth::user() ->name }}</h1>
+            <h1>Hello {{ Auth::user() ->name }},</h1>
             </div>
             <form method="POST" action="{{ route('report.post') }}" id="func">
                 @csrf
-                <button id="display-user" type="submit" style="margin-left:10px;"">Refresh Report </button>
-                <button id="display-user" type="submit">Download excel</button>
+                <button id="display-user" type="submit" style="margin-right:10px;">Refresh Report </button>
+                <button id="display-user" type="submit" style="margin-right:10px;">Download excel</button>
             </form>
             <br>
 
