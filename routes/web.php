@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileImageManager;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\UserAboutController;
 use Illuminate\Support\Facades\Route;
+use Rap2hpoutre\FastExcel\FastExcel;
 
 
 /*
@@ -33,6 +34,8 @@ Route::get('/', function () {
 });
 
 Route::post('/report', [ReportController::class, 'getUsers'])->name('report.post');
+
+Route::post('/report_excel', [ReportController::class, 'getExcel'])->name('report.excel');
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('upload_profile_photo', [ProfileImageManager::class, 'upload'])->name('upload_profile.post');

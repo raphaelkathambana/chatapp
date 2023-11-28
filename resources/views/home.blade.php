@@ -64,9 +64,18 @@
                 @csrf
                 <button id="display-user" type="submit">Display User Report</button>
             </form>
+            <br>
+            <form method="POST" action="{{ route('report.excel') }}">
+                @csrf
+                <button type="submit">Download excel</button>
+            </form>
+            @if (isset($users))
+            <div style="display:flex; align-items: center">
+                <p>Name</p> |
+                <p>Account created on</p> |
+                <p>User about</p> |
+                <p>Email verified on</p> |
 
-            <div class="hello">
-                <h1> Hello, {{ Auth::user() -> name }}</h1>
             </div>
             @if (isset($users))
 
